@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{f3627482-74e2-4286-9874-b6ad6635c2fd}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">SekilaETL</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">SakilaETL</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-O4BLR3E</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKPKE8jIHqEOIBKJ6VgPXNwAAAAACAAAAAAAQZgAAAAEAACAAAABCE0iPIFKFh7CN35sVvVXnxCrYWLBQWeGkLHAnsce5rwAAAAAOgAAAAAIAACAAAABj75uyyIpjeDQII41tQq64eN2eBwRfa+4IfzTpoUXryZAAAADMG+0UesE50jk1OH6E4axB8qQzc/ksnk5SBWlgjunLwmkTjIQsVwdfhM08698otpn5YqxaaGfavNayVfpMEusQC8ES23MX9mZbBNPR13odSoQeDbpw4H+yR3YPnRvnIrctB05d69rYF5GPcCBIXWbrM/0uvUrG7C9u9mSVsFvKbBPZOYEISYGRuHcCRzDMga9AAAAAdrAebJaapeqt7PK8UD6MzS9c94ywL4ih6y9tt0/vMj2TaD//WfzJFA7HJJYUY7dY4J+WM9m0pe5gEwKjEfIXdw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKPKE8jIHqEOIBKJ6VgPXNwAAAAACAAAAAAAQZgAAAAEAACAAAABzBesS+h71h+mGzEKJmXTCveVlryWPEgjt7YW09hhhdQAAAAAOgAAAAAIAACAAAAD36HSVG5Ri8uk0nTGU7wS8OxhBwZv2Q/3OT5047kCHO5AAAABk1O13S+6GcurL68iQ+eEZIQgD8qF+NgEcLUKrS7UnllX3K1Tptww5UxQ1ZiRGu7gLlOeOJaxCJOHQ861qIQVk2eNWK2ZbvUCbNEiJ8Ty6Av5h4AZtZEQFL4ySgEXqYkk5e9k6q89gLbsMUlGAEFwzMcwTMOBri/oLn57xNjgso3om6XHl3ThcXUtTpU/RZgFAAAAA0Z0lzcw7J8PzVQxKyhNttHY0jbx0FQZELeX+NGJAZWdAMzKa73sPdDrYSNSNmH/Ye88fbaJn/7qNosrYiYCXzA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
