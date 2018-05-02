@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SekilaETL", "Integration Services Project3\SekilaETL.dtproj", "{15E05587-9F85-4A5B-830E-CFF500DE5901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15E05587-9F85-4A5B-830E-CFF500DE5901}.Development|Default.ActiveCfg = Development
+		{15E05587-9F85-4A5B-830E-CFF500DE5901}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F83D0A2-B97F-4F10-AB9A-799F468A8CEF}
+	EndGlobalSection
+EndGlobal
