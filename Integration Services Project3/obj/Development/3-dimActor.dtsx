@@ -25,7 +25,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndDate">
       <DTS:VariableValue
-        DTS:DataType="7">4/30/2018 4:23:56 PM</DTS:VariableValue>
+        DTS:DataType="7">5/2/2018 11:54:36 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

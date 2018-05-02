@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_dimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{735A4EFC-3750-46F8-8BBD-93EC837AAD97}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{C1FBC1B2-6213-4987-8C4A-891AE80ECD4D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\1_dimCustomer_Sakila_Stage_20180430.txt">
+          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\1_dimCustomer_Sakila_Stage_20180503.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">4/30/2018 12:48:17 PM</DTS:VariableValue>
+        DTS:DataType="7">5/3/2018 12:08:40 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1298,18 +1298,12 @@ and address = ?</property>
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
-                    <inputColumn
-                      refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[inserted]"
-                      cachedDataType="date"
-                      cachedName="inserted"
-                      externalMetadataColumnId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
-                      lineageId="Package\Insert GW from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="customer_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
@@ -3591,18 +3585,12 @@ and address = ?</property>
                       cachedName="s_id"
                       externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
-                    <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[inserted]"
-                      cachedDataType="date"
-                      cachedName="inserted"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="customer_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
@@ -4982,47 +4970,47 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\get package_id"
           TopLeft="51.142857979755,154.552943329993" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="52.2857151420745,84.2000011668486" />
         <NodeLayout
-          Size="222,42"
+          Size="222.4,41.6"
           Id="Package\Insert GW from Stage to DWH"
           TopLeft="52.5714294667147,447.999995624318" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Insert GW to stage"
           TopLeft="78.857144200072,371.99999591603" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Insert Sakila from Stage to DWH"
           TopLeft="361.142863293084,309.317650499311" />
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Insert Sakila to stage"
           TopLeft="385.142863701801,242.964709211304" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Populate audit table"
           TopLeft="39.7142863565562,16.2941178615531" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Populate audit table 2"
           TopLeft="324.571434098847,527.152943184137" />
         <NodeLayout
-          Size="208,42"
+          Size="208,41.6"
           Id="Package\Trancate stage_Customer 1"
           TopLeft="389.714292351081,381.458824155735" />
         <NodeLayout
-          Size="208,42"
+          Size="208,41.6"
           Id="Package\Trancate stage_Customer 2"
           TopLeft="59.4285724406339,524.517650061743" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Trancate stage_Customer start"
           TopLeft="360.000006130763,170.07059062047" />
         <EdgeLayout
@@ -5290,35 +5278,35 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Insert GW from Stage to DWH\OLE DB Command 1"
           TopLeft="298.4,252.8" />
         <NodeLayout
-          Size="210,42"
+          Size="209.6,41.6"
           Id="Package\Insert GW from Stage to DWH\Lookup - find changed rows"
           TopLeft="44.8,158.4" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Insert GW from Stage to DWH\Flat File Destination"
           TopLeft="594.4,278.4" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Insert GW from Stage to DWH\OLE DB Destination"
           TopLeft="593.6,200.8" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Insert GW from Stage to DWH\OLE DB Source"
           TopLeft="36,20" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\Insert GW from Stage to DWH\Lookup - find new rows"
           TopLeft="328,161.6" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Insert GW from Stage to DWH\Derived Column"
           TopLeft="35.2,85.6" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Insert GW from Stage to DWH\OLE DB Command"
           TopLeft="40.8,251.2" />
         <EdgeLayout
@@ -5340,9 +5328,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5532,9 +5518,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5618,19 +5602,19 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="258,42"
+          Size="257.6,41.6"
           Id="Package\Insert GW to stage\OLE DB Destination - Stage_Customer"
           TopLeft="33.6,169.6" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Insert GW to stage\Flat File Destination"
           TopLeft="43.2,255.2" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Insert GW to stage\Derived Column"
           TopLeft="28.8,97.6" />
         <NodeLayout
-          Size="196,42"
+          Size="196,41.6"
           Id="Package\Insert GW to stage\OLE DB Source - DB_GW"
           TopLeft="30.4,25.6" />
         <EdgeLayout
@@ -5664,9 +5648,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5736,9 +5718,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5821,9 +5801,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6013,9 +5991,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

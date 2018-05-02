@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="3-dimActor"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{7CEB07D6-6F73-41E9-9277-1B5C05A51E6D}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{44EAAA1A-E086-4FA7-895A-9D218F24BC3E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -271,7 +271,7 @@
                       lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
                     <inputColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
@@ -280,7 +280,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[actor_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="actor_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
@@ -300,7 +300,7 @@
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
@@ -438,7 +438,7 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Insert to DWH\Lookup.Inputs[Lookup Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]">
                       <properties>
@@ -561,7 +561,7 @@ END</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
@@ -767,7 +767,7 @@ END</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
@@ -795,7 +795,7 @@ END</property>
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                   </externalMetadataColumns>
                 </output>
@@ -825,7 +825,7 @@ END</property>
                       name="s_id" />
                     <outputColumn
                       refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
                       name="g_id" />
                     <outputColumn
@@ -1003,7 +1003,7 @@ END</property>
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Insert stage_Actor.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                   </externalMetadataColumns>
                 </input>
@@ -1103,7 +1103,7 @@ END</property>
                       lineageId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[actor_id]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\Merge Join.Inputs[Merge Join Right Input].Columns[first_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="first_name"
@@ -1111,7 +1111,7 @@ END</property>
                       lineageId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[first_name]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\Merge Join.Inputs[Merge Join Right Input].Columns[last_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="last_name"
@@ -1161,7 +1161,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[first_name]"
@@ -1176,7 +1176,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[last_name]"
@@ -1287,14 +1287,14 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\REPLACE First_Last Name.Inputs[Derived Column Input].Columns[first_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="first_name"
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[first_name]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\REPLACE First_Last Name.Inputs[Derived Column Input].Columns[last_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="last_name"
@@ -1580,7 +1580,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort sakila.Inputs[Sort Input].Columns[first_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="first_name"
@@ -1598,7 +1598,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort sakila.Inputs[Sort Input].Columns[last_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="last_name"
@@ -1640,7 +1640,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[first_name]"
@@ -1656,7 +1656,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Sort sakila.Outputs[Sort Output].Columns[last_name]"
@@ -1913,7 +1913,7 @@ END</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1924,7 +1924,7 @@ END</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1942,13 +1942,13 @@ END</property>
                       name="actor_id" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       name="last_name" />
@@ -1966,14 +1966,14 @@ END</property>
                       name="actor_id" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="45"
                       lineageId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Error Output].Columns[last_name]"
@@ -2233,23 +2233,31 @@ END</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\audit table"
           TopLeft="267,18" />
         <NodeLayout
-          Size="172,42"
+          Size="208.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="243,517" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\Get Audit_id"
+          TopLeft="241,430" />
+        <NodeLayout
+          Size="172,41.6"
           Id="Package\get strart_date"
           TopLeft="261,103" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Insert to DWH"
           TopLeft="243,350" />
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Load stage_Actor"
           TopLeft="245,263" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\TRUNCATE TABLE stage_Actor"
           TopLeft="227,180" />
         <EdgeLayout
@@ -2340,10 +2348,6 @@ END</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Get Audit_id"
-          TopLeft="241,430" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="345.25,392">
@@ -2366,10 +2370,6 @@ END</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="243,517" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="346.5,472">
@@ -2401,13 +2401,21 @@ END</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
+          Size="184.8,41.6"
+          Id="Package\Insert to DWH\OLE DB Command"
+          TopLeft="424,226" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Insert to DWH\Lookup"
+          TopLeft="224,132" />
+        <NodeLayout
+          Size="150.4,41.6"
           Id="Package\Insert to DWH\OLE DB Source"
           TopLeft="234,38" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Insert to DWH\Lookup"
-          TopLeft="224,132" />
+          Size="300,41.6"
+          Id="Package\Insert to DWH\Destination Insert New rows To DWH dimActor"
+          TopLeft="47,228" />
         <EdgeLayout
           Id="Package\Insert to DWH.Paths[OLE DB Source Output]"
           TopLeft="306.5,80">
@@ -2430,10 +2438,6 @@ END</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="300,42"
-          Id="Package\Insert to DWH\Destination Insert New rows To DWH dimActor"
-          TopLeft="47,228" />
         <EdgeLayout
           Id="Package\Insert to DWH.Paths[Lookup No Match Output]"
           TopLeft="304,174">
@@ -2470,10 +2474,6 @@ END</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Insert to DWH\OLE DB Command"
-          TopLeft="424,226" />
         <EdgeLayout
           Id="Package\Insert to DWH.Paths[Lookup Match Output]"
           TopLeft="329.333333333333,174">
@@ -2514,7 +2514,43 @@ END</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert to DWH\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimActor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert to DWH\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to DWH\Destination Insert New rows To DWH dimActor">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2530,37 +2566,37 @@ END</property>
     design-time-name="Package\Load stage_Actor">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Load stage_Actor\Sort GroupWorks"
           TopLeft="237,161" />
         <NodeLayout
-          Size="172,42"
+          Size="172,41.6"
           Id="Package\Load stage_Actor\Source GroupWorks"
           TopLeft="225,48" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Load stage_Actor\REPLACE First_Last Name"
           TopLeft="295,354" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Load stage_Actor\Merge Join"
           TopLeft="308,267" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Load stage_Actor\UPPER COLUMN"
           TopLeft="45,100" />
         <NodeLayout
-          Size="141,42"
+          Size="140.8,41.6"
           Id="Package\Load stage_Actor\Source sakila"
           TopLeft="473,50" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Load stage_Actor\Insert stage_Actor"
           TopLeft="304,437" />
         <NodeLayout
-          Size="128,42"
+          Size="128,41.6"
           Id="Package\Load stage_Actor\Sort sakila"
           TopLeft="462,157" />
         <EdgeLayout
@@ -2594,9 +2630,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2630,9 +2664,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2666,9 +2698,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2702,9 +2732,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2738,9 +2766,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2774,9 +2800,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2810,9 +2834,7 @@ END</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2836,42 +2858,6 @@ END</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load stage_Actor\Insert stage_Actor">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert to DWH\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimActor]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert to DWH\Destination Insert New rows To DWH dimActor">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

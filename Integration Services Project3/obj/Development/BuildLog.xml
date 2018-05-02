@@ -1,64 +1,69 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>Integration Services Project3</Name>
-    <LastWriteTime>2018-05-01T13:20:58.0733427Z</LastWriteTime>
+    <Name>SakilaETL</Name>
+    <LastWriteTime>2018-05-02T21:12:58.0016095Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>2-dimEmployee.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.5797639Z</LastWriteTime>
+      <LastWriteTime>2018-05-01T15:47:58.6965743Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3-dimActor.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.5953956Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T20:15:31.9929929Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>4-dimFilm.dtsx</Name>
-      <LastWriteTime>2018-05-01T11:00:15.7267733Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T20:15:31.9974472Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>5-dimCategory.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.6266592Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T20:51:55.4706222Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>6-Film_Category.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.6266592Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T19:28:00.2453406Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>7-Film_Actor.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.6422909Z</LastWriteTime>
+      <LastWriteTime>2018-05-01T12:43:31.6889945Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>8-dimGeography.dtsx</Name>
-      <LastWriteTime>2018-05-01T11:02:36.167323Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T20:15:32.0074831Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>9-dimLanguage.dtsx</Name>
-      <LastWriteTime>2018-05-01T13:20:58.041305Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T20:15:32.0090139Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>10-dimDate.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.5716965Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T17:38:00.0786128Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>11-Facts.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.5797639Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T19:17:26.4303092Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>1_dimCustomer.dtsx</Name>
-      <LastWriteTime>2018-05-01T10:54:11.5547899Z</LastWriteTime>
+      <LastWriteTime>2018-05-02T21:07:27.4579996Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>master.dtsx</Name>
+      <LastWriteTime>2018-05-02T21:00:13.0601393Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

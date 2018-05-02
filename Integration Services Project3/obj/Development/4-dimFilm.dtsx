@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\4-dimFilm_Sakila_Stage_20180501.txt">
+          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\4-dimFilm_Sakila_Stage_20180502.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">5/1/2018 2:08:59 PM</DTS:VariableValue>
+        DTS:DataType="7">5/2/2018 11:54:36 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
