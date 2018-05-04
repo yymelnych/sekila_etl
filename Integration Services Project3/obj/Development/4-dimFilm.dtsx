@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="4-dimFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="83"
-  DTS:VersionGUID="{4DF7ED94-BFFE-4E39-95BD-4FB57B431723}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{DF0C07E4-9316-45D4-904F-7609FAF7854D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\4-dimFilm_Sakila_Stage_20180502.txt">
+          DTS:ConnectionString="E:\DWBI\GroupWork\24-dimFilm_Sakila_Stage_20180504.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">5/2/2018 11:54:36 PM</DTS:VariableValue>
+        DTS:DataType="7">5/4/2018 1:18:20 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -116,7 +116,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Start">
       <DTS:VariableValue
-        DTS:DataType="7">4/30/2018 3:49:25 PM</DTS:VariableValue>
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -393,7 +393,7 @@ where [refTable].[g_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="film_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="release_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="original_language" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="film_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="release_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="original_language" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -423,7 +423,7 @@ where [refTable].[g_id] = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert GW from Stage to DWH\Lookup - find changed rows.Inputs[Lookup Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]">
                       <properties>
@@ -534,7 +534,7 @@ where [refTable].[title] = ? and [refTable].[release_year] = ? and [refTable].[o
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="film_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="release_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="original_language" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="film_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="release_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="original_language" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -734,7 +734,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[original_language]" />
                     <inputColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert GW from Stage to DWH\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
@@ -743,7 +743,7 @@ title = ? and release_year  = ? and original_language = ?
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i2"
+                      dataType="i4"
                       name="Param_0">
                       <properties>
                         <property
@@ -938,7 +938,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert GW from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
                     <inputColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[g_id]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
@@ -951,7 +951,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
@@ -965,7 +965,7 @@ title = ? and release_year  = ? and original_language = ?
                       scale="7" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[film_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="film_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
@@ -1105,7 +1105,7 @@ title = ? and release_year  = ? and original_language = ?
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
@@ -1121,7 +1121,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
@@ -1179,7 +1179,7 @@ title = ? and release_year  = ? and original_language = ?
                       specialFlags="2" />
                     <outputColumn
                       refId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       lineageId="Package\Insert GW from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
                       name="g_id" />
                   </outputColumns>
@@ -1570,17 +1570,17 @@ title = ? and release_year  = ? and original_language = ?
                       externalMetadataColumnId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
                       lineageId="Package\Insert GW to stage\Derived Column 1.Outputs[Derived Column Output].Columns[name2]" />
                     <inputColumn
-                      refId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilmId]"
-                      cachedDataType="i4"
-                      cachedName="FilmId"
-                      externalMetadataColumnId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      lineageId="Package\Insert GW to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[FilmId]" />
-                    <inputColumn
                       refId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[year2]"
                       cachedDataType="i4"
                       cachedName="year2"
                       externalMetadataColumnId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[release_year]"
                       lineageId="Package\Insert GW to stage\Derived Column 1.Outputs[Derived Column Output].Columns[year2]" />
+                    <inputColumn
+                      refId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[filmid]"
+                      cachedDataType="i2"
+                      cachedName="filmid"
+                      externalMetadataColumnId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      lineageId="Package\Insert GW to stage\Derived Column 1.Outputs[Derived Column Output].Columns[filmid]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1606,7 +1606,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW to stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                   </externalMetadataColumns>
                 </input>
@@ -2639,7 +2639,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
@@ -2653,7 +2653,7 @@ title = ? and release_year  = ? and original_language = ?
                       scale="7" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[film_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="film_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
@@ -2809,7 +2809,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
@@ -2940,11 +2940,18 @@ title = ? and release_year  = ? and original_language = ?
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[title]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[language_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="language_name"
+                      lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2979,6 +2986,30 @@ title = ? and release_year  = ? and original_language = ?
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,50,1251)UPPER(TRIM(title))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[Language_name 2]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[Language_name 2]"
+                      name="Language_name 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1251)[TRIM](#{Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1251)TRIM(language_name)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3053,33 +3084,33 @@ title = ? and release_year  = ? and original_language = ?
                       externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       lineageId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[language_name]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="language_name"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Language]"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
-                    <inputColumn
                       refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[film_id]"
                       cachedDataType="i2"
                       cachedName="film_id"
                       externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[film_id]" />
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[title]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="title"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]" />
-                    <inputColumn
                       refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[release_year]"
                       cachedDataType="i4"
                       cachedName="release_year"
                       externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Year]"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[release_year]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[Language_name 2]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Language_name 2"
+                      externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Language]"
+                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[Language_name 2]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].Columns[title_2]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="title_2"
+                      externalMetadataColumnId="Package\Insert Sakila to stage\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[title_2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3208,13 +3239,13 @@ title = ? and release_year  = ? and original_language = ?
                       externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[release_year]"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[release_year]" />
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].Columns[language_name]"
+                      refId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].Columns[Language_name 2]"
                       cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="20"
-                      cachedName="language_name"
+                      cachedName="Language_name 2"
                       externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[original_language]"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
+                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[Language_name 2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3224,7 +3255,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      dataType="i2"
+                      dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[title]"
@@ -3349,7 +3380,7 @@ where (f.last_update &gt;= ?);</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3369,7 +3400,7 @@ where (f.last_update &gt;= ?);</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3387,7 +3418,7 @@ where (f.last_update &gt;= ?);</property>
                       name="film_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="255"
                       name="title" />
@@ -3397,7 +3428,7 @@ where (f.last_update &gt;= ?);</property>
                       name="release_year" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="language_name" />
@@ -3415,7 +3446,7 @@ where (f.last_update &gt;= ?);</property>
                       name="film_id" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="255"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
@@ -3427,7 +3458,7 @@ where (f.last_update &gt;= ?);</property>
                       name="release_year" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
@@ -3671,13 +3702,49 @@ where (f.last_update &gt;= ?);</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="172,41.6"
-          Id="Package\Populate audit table"
-          TopLeft="10.285714460879,41.1092438813312" />
+          Size="150.4,41.6"
+          Id="Package\get package_id"
+          TopLeft="443.346946325664,41.1966388405401" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="253.632657380563,39.3613446971537" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Insert GW from Stage to DWH"
+          TopLeft="445.4693953414,201.936135636564" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Insert GW to stage"
+          TopLeft="245.551024589872,200.820169144601" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\Insert Sakila from Stage to DWH"
+          TopLeft="446.224497378047,111.549581003684" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Insert Sakila to stage"
+          TopLeft="242.367351066267,109.015127186627" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Populate audit table"
+          TopLeft="10.285714460879,41.1092438813312" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Populate audit table 2"
+          TopLeft="244.897963354261,339.300844702011" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Trancate stage_Film"
+          TopLeft="10.9387756964903,198.964707606887" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Trancate stage_Film 1"
+          TopLeft="247.346942987804,272.7462218237" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Trancate stage_Film start"
+          TopLeft="8.63673176195461,106.218488491943" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="182.285714460879,61.0352942892425">
@@ -3700,10 +3767,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\get package_id"
-          TopLeft="443.346946325664,41.1966388405401" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="402.432657380563,61.0789917688469">
@@ -3726,10 +3789,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Trancate stage_Film start"
-          TopLeft="8.63673176195461,106.218488491943" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="518.146946325664,82.7966388405401">
@@ -3764,10 +3823,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Insert Sakila to stage"
-          TopLeft="242.367351066267,109.015127186627" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="207.036731761955,128.416807839285">
@@ -3790,24 +3845,20 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="232,41.6"
-          Id="Package\Insert Sakila from Stage to DWH"
-          TopLeft="445.224497378047,111.549581003684" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="420.767351066267,131.082354095155">
+          TopLeft="420.367351066267,131.282354095156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.4571463117794,0"
+              EndConnector="25.85714631178,0"
               Start="0,0"
-              End="16.9571463117794,0">
+              End="18.35714631178,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="16.9571463117794,0" />
+                    End="18.35714631178,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3816,36 +3867,32 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Trancate stage_Film"
-          TopLeft="10.9387756964903,198.964707606887" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="561.224497378047,153.149581003684">
+          TopLeft="562.224497378047,153.549581003684">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-463.485721681556,45.8151266032023"
+              EndConnector="-464.285721681557,45.415126603203"
               Start="0,0"
-              End="-463.485721681556,38.3151266032023">
+              End="-464.285721681557,37.915126603203">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.9075633016012" />
+                    End="0,18.7075633016015" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.9075633016012"
-                    Point2="0,22.9075633016012"
-                    Point3="-4,22.9075633016012" />
+                    Point1="0,18.7075633016015"
+                    Point2="0,22.7075633016015"
+                    Point3="-4,22.7075633016015" />
                   <mssgle:LineSegment
-                    End="-459.485721681556,22.9075633016012" />
+                    End="-460.285721681557,22.7075633016015" />
                   <mssgle:CubicBezierSegment
-                    Point1="-459.485721681556,22.9075633016012"
-                    Point2="-463.485721681556,22.9075633016012"
-                    Point3="-463.485721681556,26.9075633016012" />
+                    Point1="-460.285721681557,22.7075633016015"
+                    Point2="-464.285721681557,22.7075633016015"
+                    Point3="-464.285721681557,26.7075633016015" />
                   <mssgle:LineSegment
-                    End="-463.485721681556,38.3151266032023" />
+                    End="-464.285721681557,37.915126603203" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3854,10 +3901,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,41.6"
-          Id="Package\Insert GW to stage"
-          TopLeft="245.551024589872,200.820169144601" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="184.53877569649,220.692438375744">
@@ -3880,10 +3923,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\Insert GW from Stage to DWH"
-          TopLeft="445.4693953414,201.936135636564" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="413.551024589872,222.178152390582">
@@ -3906,10 +3945,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Trancate stage_Film 1"
-          TopLeft="247.346942987804,272.7462218237" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="556.2693953414,243.536135636564">
@@ -3944,10 +3979,6 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Populate audit table 2"
-          TopLeft="244.897963354261,339.300844702011" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="334.922453171032,314.3462218237">
@@ -3974,62 +4005,64 @@ where (f.last_update &gt;= ?);</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Insert Sakila to stage">
+    design-time-name="Package\Insert GW from Stage to DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Insert Sakila to stage\OLE DB Source"
-          TopLeft="353.6,72" />
+          Size="169.6,41.6"
+          Id="Package\Insert GW from Stage to DWH\OLE DB Destination"
+          TopLeft="520,260.8" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert Sakila to stage\Derived Column"
-          TopLeft="348,147.2" />
-        <EdgeLayout
-          Id="Package\Insert Sakila to stage.Paths[OLE DB Source Output]"
-          TopLeft="426.4,113.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.6"
-              Start="0,0"
-              End="0,26.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="188.8,41.6"
+          Id="Package\Insert GW from Stage to DWH\Lookup - find new rows"
+          TopLeft="304.8,152.8" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert GW from Stage to DWH\OLE DB Source"
+          TopLeft="253.6,24.8" />
         <NodeLayout
           Size="171.2,41.6"
-          Id="Package\Insert Sakila to stage\Flat File Destination"
-          TopLeft="332.8,310.4" />
+          Id="Package\Insert GW from Stage to DWH\Flat File Destination"
+          TopLeft="522.4,332.8" />
         <NodeLayout
-          Size="258.4,41.6"
-          Id="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer"
-          TopLeft="291.2,240.8" />
+          Size="174.4,41.6"
+          Id="Package\Insert GW from Stage to DWH\OLE DB Command 1"
+          TopLeft="313.6,253" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Insert GW from Stage to DWH\Lookup - find changed rows"
+          TopLeft="37.6,153.6" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Insert GW from Stage to DWH\Derived Column"
+          TopLeft="250.4,88.8" />
         <EdgeLayout
-          Id="Package\Insert Sakila to stage.Paths[Derived Column Output]"
-          TopLeft="422.4,188.8">
+          Id="Package\Insert GW from Stage to DWH.Paths[OLE DB Source Output]"
+          TopLeft="403.2,45.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="1.13686837721616E-13,64"
               Start="0,0"
-              End="0,44.5">
+              End="7.50000000000011,64">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="18.5000000000001,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5000000000001,0"
+                    Point2="22.5000000000001,0"
+                    Point3="22.5000000000001,4" />
+                  <mssgle:LineSegment
+                    End="22.5000000000001,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5000000000001,60"
+                    Point2="22.5000000000001,64"
+                    Point3="18.5000000000001,64" />
+                  <mssgle:LineSegment
+                    End="7.50000000000011,64" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4039,139 +4072,68 @@ where (f.last_update &gt;= ?);</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila to stage.Paths[OLE DB Destination Error Output]"
-          TopLeft="419.4,282.4">
+          Id="Package\Insert GW from Stage to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="606.6,302.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28"
+              EndConnector="0,30.4"
               Start="0,0"
-              End="0,20.5">
+              End="0,22.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,22.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,4.533203125,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,5.733203125,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila to stage\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Insert Sakila from Stage to DWH">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\OLE DB Command 1"
-          TopLeft="313.6,252" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows"
-          TopLeft="37.6,154.4" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\Flat File Destination"
-          TopLeft="522.4,332.8" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\OLE DB Destination"
-          TopLeft="519.2,252.8" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\Lookup - find new rows"
-          TopLeft="304.8,152.8" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\OLE DB Source"
-          TopLeft="253.6,24.8" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\Derived Column"
-          TopLeft="257.6,92.8" />
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Source Output]"
-          TopLeft="331.2,66.4">
+          Id="Package\Insert GW from Stage to DWH.Paths[Lookup No Match Output1]"
+          TopLeft="399.2,194.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.4"
+              EndConnector="206,66.4"
               Start="0,0"
-              End="0,18.9">
+              End="206,58.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output]"
-          TopLeft="257.6,113.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-115.2,40.8"
-              Start="0,0"
-              End="-115.2,33.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-111.2,0" />
+                    End="0,29.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-111.2,0"
-                    Point2="-115.2,0"
-                    Point3="-115.2,4" />
+                    Point1="0,29.2"
+                    Point2="0,33.2"
+                    Point3="4,33.2" />
                   <mssgle:LineSegment
-                    End="-115.2,33.3" />
+                    End="202,33.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202,33.2"
+                    Point2="206,33.2"
+                    Point3="206,37.2" />
+                  <mssgle:LineSegment
+                    End="206,58.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="47.19361328125,38.2,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output]"
-          TopLeft="247.2,174.4">
+          Id="Package\Insert GW from Stage to DWH.Paths[Lookup No Match Output]"
+          TopLeft="247.2,174">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4189,111 +4151,98 @@ where (f.last_update &gt;= ?);</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-30.75638671875,5,111.6127734375,11.609375"
+              BoundingBox="-30.7563867187499,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output1]"
-          TopLeft="429.333333333333,194.4">
+          Id="Package\Insert GW from Stage to DWH.Paths[Lookup Match Output]"
+          TopLeft="369.133333333333,194.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="175.066666666667,58.4"
+              EndConnector="31.4666666666667,58.2"
               Start="0,0"
-              End="175.066666666667,50.9">
+              End="31.4666666666667,50.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.6544537815126" />
+                    End="0,19.5731374606506" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.6544537815126"
-                    Point2="0,23.6544537815126"
-                    Point3="4,23.6544537815126" />
+                    Point1="0,19.5731374606506"
+                    Point2="0,23.5731374606506"
+                    Point3="4,23.5731374606506" />
                   <mssgle:LineSegment
-                    End="171.066666666667,23.6544537815126" />
+                    End="27.4666666666667,23.5731374606506" />
                   <mssgle:CubicBezierSegment
-                    Point1="171.066666666667,23.6544537815126"
-                    Point2="175.066666666667,23.6544537815126"
-                    Point3="175.066666666667,27.6544537815126" />
+                    Point1="27.4666666666667,23.5731374606506"
+                    Point2="31.4666666666667,23.5731374606506"
+                    Point3="31.4666666666667,27.5731374606506" />
                   <mssgle:LineSegment
-                    End="175.066666666667,50.9" />
+                    End="31.4666666666667,50.7" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.7269466145834,28.6544537815126,111.6127734375,11.609375"
+              BoundingBox="-32.4580533854167,28.5731374606506,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup Match Output]"
-          TopLeft="369.066666666667,194.4">
+          Id="Package\Insert GW from Stage to DWH.Paths[Derived Column Output]"
+          TopLeft="326.8,130.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.7333333333332,57.6"
+              EndConnector="-184.4,23.2"
               Start="0,0"
-              End="31.7333333333332,50.1">
+              End="-184.4,15.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3304201680672" />
+                    End="0,7.59999999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.3304201680672"
-                    Point2="0,23.3304201680672"
-                    Point3="4,23.3304201680672" />
+                    Point1="0,7.59999999999999"
+                    Point2="0,11.6"
+                    Point3="-4,11.6" />
                   <mssgle:LineSegment
-                    End="27.7333333333332,23.3304201680672" />
+                    End="-180.4,11.6" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.7333333333332,23.3304201680672"
-                    Point2="31.7333333333332,23.3304201680672"
-                    Point3="31.7333333333332,27.3304201680672" />
+                    Point1="-180.4,11.6"
+                    Point2="-184.4,11.6"
+                    Point3="-184.4,15.6" />
                   <mssgle:LineSegment
-                    End="31.7333333333332,50.1" />
+                    End="-184.4,15.7" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.3247200520834,28.3304201680672,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="606.2,294.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.4"
-              Start="0,0"
-              End="0,30.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,9.73320312499999,146.4178125,11.43359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows">
+    design-time-name="Package\Insert GW from Stage to DWH\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert GW from Stage to DWH\Lookup - find new rows">
     <Properties>
       <Property>
         <Name>UsedTableName</Name>
@@ -4311,12 +4260,12 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q4:boolean">true</Value>
+          type="q4:string">true</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Destination">
+    design-time-name="Package\Insert GW from Stage to DWH\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4329,7 +4278,7 @@ where (f.last_update &gt;= ?);</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find new rows">
+    design-time-name="Package\Insert GW from Stage to DWH\Lookup - find changed rows">
     <Properties>
       <Property>
         <Name>UsedTableName</Name>
@@ -4347,20 +4296,7 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q4:boolean">true</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
+          type="q4:string">true</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4370,39 +4306,21 @@ where (f.last_update &gt;= ?);</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Insert GW to stage\OLE DB Source"
-          TopLeft="322.4,53.6" />
+          Size="171.2,41.6"
+          Id="Package\Insert GW to stage\Flat File Destination"
+          TopLeft="317.6,254.4" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="161.6,41.6"
           Id="Package\Insert GW to stage\Derived Column 1"
           TopLeft="319.2,124" />
-        <EdgeLayout
-          Id="Package\Insert GW to stage.Paths[OLE DB Source Output]"
-          TopLeft="398.8,95.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.8"
-              Start="0,0"
-              End="0,21.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="170.4,41.6"
+          Size="169.6,41.6"
           Id="Package\Insert GW to stage\OLE DB Destination"
           TopLeft="317.6,192" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert GW to stage\OLE DB Source"
+          TopLeft="322.4,53.6" />
         <EdgeLayout
           Id="Package\Insert GW to stage.Paths[Derived Column Output]"
           TopLeft="401.6,165.6">
@@ -4425,10 +4343,28 @@ where (f.last_update &gt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Insert GW to stage\Flat File Destination"
-          TopLeft="317.6,254.4" />
+        <EdgeLayout
+          Id="Package\Insert GW to stage.Paths[OLE DB Source Output]"
+          TopLeft="398.8,95.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8"
+              Start="0,0"
+              End="0,21.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert GW to stage.Paths[OLE DB Destination Error Output]"
           TopLeft="317.6,212.8">
@@ -4469,14 +4405,6 @@ where (f.last_update &gt;= ?);</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert GW to stage\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Insert GW to stage\OLE DB Destination">
     <Properties>
       <Property>
@@ -4489,160 +4417,134 @@ where (f.last_update &gt;= ?);</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert GW to stage\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Insert GW from Stage to DWH">
+    design-time-name="Package\Insert Sakila from Stage to DWH">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Insert GW from Stage to DWH\OLE DB Command 1"
-          TopLeft="313.6,252" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert GW from Stage to DWH\Lookup - find changed rows"
-          TopLeft="37.6,153.6" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Insert GW from Stage to DWH\Flat File Destination"
-          TopLeft="522.4,332.8" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Insert GW from Stage to DWH\OLE DB Destination"
-          TopLeft="520,260.8" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Insert GW from Stage to DWH\Lookup - find new rows"
-          TopLeft="304.8,152.8" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Insert GW from Stage to DWH\OLE DB Source"
+          Size="150,42"
+          Id="Package\Insert Sakila from Stage to DWH\OLE DB Source"
           TopLeft="253.6,24.8" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert GW from Stage to DWH\Derived Column"
-          TopLeft="250.4,88.8" />
+          Size="174,42"
+          Id="Package\Insert Sakila from Stage to DWH\OLE DB Command 1"
+          TopLeft="313.6,252" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows"
+          TopLeft="37.6,154.4" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Insert Sakila from Stage to DWH\Flat File Destination"
+          TopLeft="522.4,332.8" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Insert Sakila from Stage to DWH\OLE DB Destination"
+          TopLeft="519.2,252.8" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insert Sakila from Stage to DWH\Derived Column"
+          TopLeft="257.6,92.8" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Insert Sakila from Stage to DWH\Lookup - find new rows"
+          TopLeft="304.8,152.8" />
         <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[Lookup No Match Output1]"
-          TopLeft="399.2,194.4">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Source Output]"
+          TopLeft="331.2,66.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206,66.4"
+              EndConnector="0,26.4"
               Start="0,0"
-              End="206,58.9">
+              End="0,18.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2"
-                    Point2="0,33.2"
-                    Point3="4,33.2" />
-                  <mssgle:LineSegment
-                    End="202,33.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202,33.2"
-                    Point2="206,33.2"
-                    Point3="206,37.2" />
-                  <mssgle:LineSegment
-                    End="206,58.9" />
+                    End="0,18.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="47.19361328125,38.2,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[Derived Column Output]"
-          TopLeft="326.8,130.4">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="606.2,294.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-184.4,23.2"
+              EndConnector="0,38.4"
               Start="0,0"
-              End="-184.4,15.7">
+              End="0,30.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.59999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.59999999999999"
-                    Point2="0,11.6"
-                    Point3="-4,11.6" />
-                  <mssgle:LineSegment
-                    End="-180.4,11.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-180.4,11.6"
-                    Point2="-184.4,11.6"
-                    Point3="-184.4,15.6" />
-                  <mssgle:LineSegment
-                    End="-184.4,15.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="606.6,302.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.4"
-              Start="0,0"
-              End="0,22.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.9" />
+                    End="0,30.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,5.733203125,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,9.73320312499999,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[Lookup Match Output]"
-          TopLeft="369.333333333333,194.4">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output1]"
+          TopLeft="429.333333333333,194.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.6"
+              EndConnector="175.066666666667,58.4"
               Start="0,0"
-              End="0,50.1">
+              End="175.066666666667,50.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.1" />
+                    End="0,19.6544537815126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6544537815126"
+                    Point2="0,23.6544537815126"
+                    Point3="4,23.6544537815126" />
+                  <mssgle:LineSegment
+                    End="171.066666666667,23.6544537815126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.066666666667,23.6544537815126"
+                    Point2="175.066666666667,23.6544537815126"
+                    Point3="175.066666666667,27.6544537815126" />
+                  <mssgle:LineSegment
+                    End="175.066666666667,50.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.2453125,96.3827734375,11.609375"
+              BoundingBox="31.7269466145834,28.6544537815126,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[Lookup No Match Output]"
-          TopLeft="247.2,174">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output]"
+          TopLeft="247.2,174.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4660,72 +4562,81 @@ where (f.last_update &gt;= ?);</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-30.7563867187499,5,111.6127734375,11.609375"
+              BoundingBox="-30.75638671875,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW from Stage to DWH.Paths[OLE DB Source Output]"
-          TopLeft="403.2,45.6">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup Match Output]"
+          TopLeft="369.066666666667,194.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="1.13686837721616E-13,64"
+              EndConnector="31.7333333333332,57.6"
               Start="0,0"
-              End="7.50000000000011,64">
+              End="31.7333333333332,50.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.5000000000001,0" />
+                    End="0,19.3304201680672" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.5000000000001,0"
-                    Point2="22.5000000000001,0"
-                    Point3="22.5000000000001,4" />
+                    Point1="0,19.3304201680672"
+                    Point2="0,23.3304201680672"
+                    Point3="4,23.3304201680672" />
                   <mssgle:LineSegment
-                    End="22.5000000000001,60" />
+                    End="27.7333333333332,23.3304201680672" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.5000000000001,60"
-                    Point2="22.5000000000001,64"
-                    Point3="18.5000000000001,64" />
+                    Point1="27.7333333333332,23.3304201680672"
+                    Point2="31.7333333333332,23.3304201680672"
+                    Point3="31.7333333333332,27.3304201680672" />
                   <mssgle:LineSegment
-                    End="7.50000000000011,64" />
+                    End="31.7333333333332,50.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-32.3247200520834,28.3304201680672,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output]"
+          TopLeft="257.6,113.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.2,40.8"
+              Start="0,0"
+              End="-115.2,33.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-111.2,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.2,0"
+                    Point2="-115.2,0"
+                    Point3="-115.2,4" />
+                  <mssgle:LineSegment
+                    End="-115.2,33.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert GW from Stage to DWH\Lookup - find changed rows">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string">[dbo].[dimFilm]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q4:boolean">true</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert GW from Stage to DWH\OLE DB Destination">
+    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4738,7 +4649,7 @@ where (f.last_update &gt;= ?);</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert GW from Stage to DWH\Lookup - find new rows">
+    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows">
     <Properties>
       <Property>
         <Name>UsedTableName</Name>
@@ -4748,7 +4659,7 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q3:int">0</Value>
+          type="q3:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4756,12 +4667,12 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q4:boolean">true</Value>
+          type="q4:string">true</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert GW from Stage to DWH\OLE DB Source">
+    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4770,6 +4681,146 @@ where (f.last_update &gt;= ?);</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find new rows">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[dbo].[dimFilm]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">true</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insert Sakila to stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="257.6,41.6"
+          Id="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer"
+          TopLeft="291.2,240.8" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert Sakila to stage\OLE DB Source"
+          TopLeft="353.6,72" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Insert Sakila to stage\Flat File Destination"
+          TopLeft="332.8,310.4" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Insert Sakila to stage\Derived Column"
+          TopLeft="348,147.2" />
+        <EdgeLayout
+          Id="Package\Insert Sakila to stage.Paths[OLE DB Source Output]"
+          TopLeft="426.4,113.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.6"
+              Start="0,0"
+              End="0,26.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Sakila to stage.Paths[OLE DB Destination Error Output]"
+          TopLeft="419.4,282.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,4.533203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Sakila to stage.Paths[Derived Column Output]"
+          TopLeft="422.4,188.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila to stage\OLE DB Destination - Stage_Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila to stage\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

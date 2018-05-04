@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="10-dimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{2644FE37-FE0A-4734-8ECB-07CA5866EA5E}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{56067A58-3E2D-454A-97D3-2DC4F3067875}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -25,7 +25,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndDate">
       <DTS:VariableValue
-        DTS:DataType="7">5/2/2018 8:11:28 PM</DTS:VariableValue>
+        DTS:DataType="7">5/4/2018 1:20:31 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -89,8 +89,8 @@
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">declare @StartDate date
 declare @EndDate date
 
-set @StartDate = '2005-01-01'	
-set @EndDate = '2020-12-31'	
+set @StartDate = ?	
+set @EndDate = DATEADD(DAY, 365, ?)	
 
 ;with cte ([date]) as (
 select	@StartDate as [date]
@@ -152,7 +152,7 @@ option(maxrecursion  0)</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{695BF35D-19D7-4F36-A28E-E262CF40CB19};"Parameter1:Input",{0FBC2D39-0C81-46AD-B369-55243F6491E9};</property>
               </properties>
               <connections>
                 <connection
@@ -883,7 +883,7 @@ where [refTable].[DateKey] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="SELECT ISNULL ((SELECT start_date FROM dbo.audit &#xA;WHERE  id in (SELECT max (id) FROM dbo.audit&#xA;WHERE package_name = ? and end_date is not null)), cast ('2001-01-01' as datetime))"
+          SQLTask:SqlStatementSource="SELECT ISNULL ((SELECT dateadd (day, 1, start_date) FROM dbo.audit &#xA;WHERE  id in (SELECT max (id) FROM dbo.audit&#xA;WHERE package_name = ? and end_date is not null)), cast ('2001-01-01' as datetime))"
           SQLTask:CodePage="1251"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1002,21 +1002,25 @@ where [refTable].[DateKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="522,131" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\get package_id"
           TopLeft="387.428571623199,81.25882546844" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="222.571428785518,41.9058833052955" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Populate audit table"
           TopLeft="35,13" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Populate audit table 2"
+          TopLeft="651,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="208,19.4058833052955">
@@ -1045,38 +1049,6 @@ where [refTable].[DateKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="371.571428785518,58.75882546844">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90.857142837681,22.5"
-              Start="0,0"
-              End="90.857142837681,15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="86.857142837681,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86.857142837681,0"
-                    Point2="90.857142837681,0"
-                    Point3="90.857142837681,4" />
-                  <mssgle:LineSegment
-                    End="90.857142837681,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Populate audit table 2"
-          TopLeft="651,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="537.428571623199,102.25882546844">
@@ -1133,6 +1105,34 @@ where [refTable].[DateKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="371.571428785518,58.75882546844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.857142837681,22.5"
+              Start="0,0"
+              End="90.857142837681,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.857142837681,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.857142837681,0"
+                    Point2="90.857142837681,0"
+                    Point3="90.857142837681,4" />
+                  <mssgle:LineSegment
+                    End="90.857142837681,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1142,15 +1142,19 @@ where [refTable].[DateKey] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Data Flow Task\write dimDate"
-          TopLeft="509,212" />
-        <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Data Flow Task\transformation"
           TopLeft="171,64" />
         <NodeLayout
-          Size="163,42"
+          Size="216,41.6"
+          Id="Package\Data Flow Task\Lookup - find additional rows"
+          TopLeft="319,115" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Data Flow Task\write dimDate"
+          TopLeft="509,212" />
+        <NodeLayout
+          Size="163.2,41.6"
           Id="Package\Data Flow Task\generate dimDate"
           TopLeft="19,16" />
         <EdgeLayout
@@ -1173,38 +1177,6 @@ where [refTable].[DateKey] = ?</property>
                     Point3="63,4" />
                   <mssgle:LineSegment
                     End="63,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Data Flow Task\Lookup - find additional rows"
-          TopLeft="319,115" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="319,85">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108,30"
-              Start="0,0"
-              End="108,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="104,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="104,0"
-                    Point2="108,0"
-                    Point3="108,4" />
-                  <mssgle:LineSegment
-                    End="108,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1249,9 +1221,60 @@ where [refTable].[DateKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="319,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,30"
+              Start="0,0"
+              End="108,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,0"
+                    Point2="108,0"
+                    Point3="108,4" />
+                  <mssgle:LineSegment
+                    End="108,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup - find additional rows">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\write dimDate">
     <Properties>
@@ -1268,29 +1291,6 @@ where [refTable].[DateKey] = ?</property>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\generate dimDate">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup - find additional rows">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

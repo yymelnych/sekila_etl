@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="9-dimLanguage"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{38A5B0BF-02D9-4758-91FA-9FCFFF5F545F}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{3939121E-6604-4BA7-80C5-FE9A36F46019}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndDate">
       <DTS:VariableValue
-        DTS:DataType="7">5/2/2018 11:54:37 PM</DTS:VariableValue>
+        DTS:DataType="7">5/4/2018 1:20:02 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1252,12 +1252,13 @@ ORDER BY language_id asc</property>
       DTS:refId="Package\Send Mail Task"
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1EB1E0E1-FF4D-4F07-8DC3-F3D6BA76A79F}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Mail Task"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
@@ -1354,14 +1355,6 @@ ORDER BY language_id asc</property>
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Populate audit table 2" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{64F05A42-D7AA-4F63-925B-C0BFCB600A73}"
-      DTS:From="Package\Populate audit table 2"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Send Mail Task" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
       DTS:DTSID="{9e55b65f-b0a6-4cf0-92fb-b53551319931}"
@@ -1381,37 +1374,41 @@ ORDER BY language_id asc</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\get package_id"
           TopLeft="452.428571623199,66" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="265.571428785518,64.6470578368555" />
         <NodeLayout
-          Size="233,42"
+          Size="232.8,41.6"
           Id="Package\Insert Sakila from Stage to DWH"
           TopLeft="343,164.894117715696" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Insert Sakila to stage"
           TopLeft="658.000000408717,162.54117642769" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Populate audit table"
           TopLeft="62,62.74117453156" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Populate audit table 2"
           TopLeft="38,282" />
         <NodeLayout
-          Size="210,42"
+          Size="150.4,41.6"
+          Id="Package\Send Mail Task"
+          TopLeft="144,415" />
+        <NodeLayout
+          Size="209.6,41.6"
           Id="Package\Trancate stage_Language 1"
           TopLeft="29,165.894117715696" />
         <NodeLayout
-          Size="225,42"
+          Size="224.8,41.6"
           Id="Package\Trancate stage_Language start"
           TopLeft="630.857142837679,66.6470578368555" />
         <EdgeLayout
@@ -1560,44 +1557,6 @@ ORDER BY language_id asc</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="30.357142837681,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Send Mail Task"
-          TopLeft="144,415" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="129,324">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90,91"
-              Start="0,0"
-              End="90,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5"
-                    Point2="0,45.5"
-                    Point3="4,45.5" />
-                  <mssgle:LineSegment
-                    End="86,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86,45.5"
-                    Point2="90,45.5"
-                    Point3="90,49.5" />
-                  <mssgle:LineSegment
-                    End="90,83.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
