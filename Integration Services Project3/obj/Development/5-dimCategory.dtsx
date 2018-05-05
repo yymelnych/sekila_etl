@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="5-dimCategory"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{629E8030-9093-43DB-9FE9-E5F566B3E46A}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{4DDA0599-589B-46DC-883C-6B15B75020DF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\DWBI\GroupWork\25-dimCategory_Sakila_Stage_20180505.txt">
+          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\5-dimCategory_Sakila_Stage_20180502.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +81,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">5/5/2018 8:34:10 PM</DTS:VariableValue>
+        DTS:DataType="7">5/2/2018 11:54:37 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3093,7 +3093,7 @@ where [refTable].[s_id] = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="25"
                       cachedName="name"
@@ -3454,7 +3454,7 @@ WHERE  (last_update &gt;= ?) OR
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3472,7 +3472,7 @@ WHERE  (last_update &gt;= ?) OR
                       name="category_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="25"
                       name="name" />
@@ -3490,7 +3490,7 @@ WHERE  (last_update &gt;= ?) OR
                       name="category_id" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="25"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
@@ -3547,7 +3547,7 @@ WHERE  (last_update &gt;= ?) OR
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource=" INSERT INTO dbo.audit&#xA;(session_id, package_name, start_date) VALUES (2, ?, ?)"
+          SQLTask:SqlStatementSource="INSERT INTO dbo.audit&#xA;(package_name, start_date) values (?, ?)&#xA;"
           SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -6133,71 +6133,71 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="149.6,41.6"
           Id="Package\get package_id"
           TopLeft="42.8571435869956,163.341178761387" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="44.0000007493151,92.9882365982425" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Insert GW to DWH"
           TopLeft="78.8571442000721,588.564705127333" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Insert GW to stage"
           TopLeft="87.2857167939746,454.341173911672" />
         <NodeLayout
-          Size="190,42"
+          Size="189.6,41.6"
           Id="Package\Insert GW type to DWH"
           TopLeft="365.714291942363,801.18823911426" />
         <NodeLayout
-          Size="191,42"
+          Size="191.2,41.6"
           Id="Package\Insert GW type to stage"
           TopLeft="351.428577413364,651.070592990631" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Insert S to DWH"
           TopLeft="354.142863173874,376.423532054333" />
         <NodeLayout
-          Size="178,42"
+          Size="178.4,41.6"
           Id="Package\Insert Sakila to stage"
           TopLeft="343.428578298919,237.364709503016" />
         <NodeLayout
-          Size="172,42"
+          Size="172,41.6"
           Id="Package\Populate audit table"
           TopLeft="31.4285719637968,25.082353292947" />
         <NodeLayout
-          Size="182,42"
+          Size="181.6,41.6"
           Id="Package\Populate audit table 2"
           TopLeft="95.1428597849239,877.611771022738" />
         <NodeLayout
-          Size="206,42"
+          Size="205.6,41.6"
           Id="Package\Trancate stage_Category 1"
           TopLeft="330.57143522282,453.858825541367" />
         <NodeLayout
-          Size="206,42"
+          Size="205.6,41.6"
           Id="Package\Trancate stage_Category 2"
           TopLeft="69.1428593421465,656.423534424495" />
         <NodeLayout
-          Size="206,42"
+          Size="205.6,41.6"
           Id="Package\Trancate stage_Category 3"
           TopLeft="367.428577685843,884.282354751508" />
         <NodeLayout
-          Size="223,42"
+          Size="223.2,41.6"
           Id="Package\Trancate stage_Category_start"
           TopLeft="33.7142873102298,232.98823893194" />
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Update DWH"
           TopLeft="365.714292964157,303.717650791023" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Update GW DWH"
           TopLeft="94.8571454943443,523.388230764" />
         <NodeLayout
-          Size="183,42"
+          Size="183.2,41.6"
           Id="Package\Update GW type DWH"
           TopLeft="366.285720523523,721.694120632818" />
         <EdgeLayout
@@ -6621,47 +6621,25 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Insert GW to DWH\OLE DB Destination 1"
           TopLeft="353.6,289.600000000001" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Insert GW to DWH\Flat File Destination 1"
-          TopLeft="354.4,360.800000000002" />
-        <NodeLayout
-          Size="227,42"
+          Size="227.2,41.6"
           Id="Package\Insert GW to DWH\OLE DB Source Stage_Category"
           TopLeft="323.2,21.6" />
         <NodeLayout
-          Size="182,42"
-          Id="Package\Insert GW to DWH\Lookup find new rows"
-          TopLeft="351.2,100" />
+          Size="171.2,41.6"
+          Id="Package\Insert GW to DWH\Flat File Destination 1"
+          TopLeft="354.4,360.800000000002" />
         <NodeLayout
-          Size="162,42"
+          Size="162.4,41.6"
           Id="Package\Insert GW to DWH\Derived Column 1"
           TopLeft="364.8,200.000000000001" />
-        <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[OLE DB Source Output]"
-          TopLeft="439.4,63.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.8"
-              Start="0,0"
-              End="0,29.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Insert GW to DWH\Lookup find new rows"
+          TopLeft="351.2,100" />
         <EdgeLayout
           Id="Package\Insert GW to DWH.Paths[OLE DB Destination Error Output]"
           TopLeft="439.4,331.200000000001">
@@ -6687,6 +6665,50 @@ WHERE category_description  like ('%'+?+'%')</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Insert GW to DWH.Paths[Derived Column Output]"
+          TopLeft="442.4,241.600000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert GW to DWH.Paths[OLE DB Source Output]"
+          TopLeft="439.4,63.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.8"
+              Start="0,0"
+              End="0,29.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Insert GW to DWH.Paths[Lookup No Match Output]"
           TopLeft="444,141.6">
           <EdgeLayout.Curve>
@@ -6708,28 +6730,6 @@ WHERE category_description  like ('%'+?+'%')</property>
             <mssgm:EdgeLabel
               BoundingBox="-55.80638671875,19.6453125000004,111.6127734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[Derived Column Output]"
-          TopLeft="442.4,241.600000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6931,14 +6931,6 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Insert GW type to DWH\OLE DB Destination 1"
-          TopLeft="353.6,289.600000000001" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Insert GW type to DWH\Flat File Destination 1"
-          TopLeft="354.4,360.800000000002" />
-        <NodeLayout
           Size="227.2,41.6"
           Id="Package\Insert GW type to DWH\OLE DB Source Stage_Category"
           TopLeft="323.2,21.6" />
@@ -6947,33 +6939,17 @@ WHERE category_description  like ('%'+?+'%')</property>
           Id="Package\Insert GW type to DWH\Lookup find new rows"
           TopLeft="351.2,100" />
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Insert GW type to DWH\OLE DB Destination 1"
+          TopLeft="353.6,289.600000000001" />
+        <NodeLayout
           Size="162.4,41.6"
           Id="Package\Insert GW type to DWH\Derived Column 1"
           TopLeft="364.8,200.000000000001" />
-        <EdgeLayout
-          Id="Package\Insert GW type to DWH.Paths[OLE DB Source Output]"
-          TopLeft="439.4,63.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.8"
-              Start="0,0"
-              End="0,29.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Insert GW type to DWH\Flat File Destination 1"
+          TopLeft="354.4,360.800000000002" />
         <EdgeLayout
           Id="Package\Insert GW type to DWH.Paths[OLE DB Destination Error Output]"
           TopLeft="439.4,331.200000000001">
@@ -7041,9 +7017,29 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert GW type to DWH.Paths[OLE DB Source Output]"
+          TopLeft="439.4,63.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.8"
+              Start="0,0"
+              End="0,29.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7150,9 +7146,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7186,9 +7180,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7343,9 +7335,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7379,9 +7369,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7442,19 +7430,19 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="206,42"
+          Size="206.4,41.6"
           Id="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila"
           TopLeft="27.2,23.2" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Insert Sakila to stage\Flat File Destination"
           TopLeft="58.8571438594741,255.858826489432" />
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Insert Sakila to stage\OLE DB Destination"
           TopLeft="37.7142863565562,173.270589016053" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Insert Sakila to stage\Derived Column"
           TopLeft="40.000000681196,95.9058834511516" />
         <EdgeLayout
@@ -7476,7 +7464,9 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7510,7 +7500,9 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7633,9 +7625,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7705,9 +7695,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7741,9 +7729,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7791,29 +7777,25 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Update GW DWH\OLE DB Source Stage_Category"
+          TopLeft="30.4,21.6" />
+        <NodeLayout
           Size="250.4,41.6"
           Id="Package\Update GW DWH\OLE DB Command - set g_id type_id"
           TopLeft="383.2,164.8" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Update GW DWH\Derived Column 2"
-          TopLeft="36.1142864246758,89.6941188825453" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Update GW DWH\OLE DB Command"
-          TopLeft="53.4857152101945,307.341178323819" />
         <NodeLayout
           Size="204.8,41.6"
           Id="Package\Update GW DWH\Lookup - find changed row"
           TopLeft="40.8,164" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Update GW DWH\Derived Column"
-          TopLeft="64,238.4" />
+          Size="164.8,41.6"
+          Id="Package\Update GW DWH\OLE DB Command"
+          TopLeft="53.4857152101945,307.341178323819" />
         <NodeLayout
-          Size="227.2,41.6"
-          Id="Package\Update GW DWH\OLE DB Source Stage_Category"
-          TopLeft="30.4,21.6" />
+          Size="162.4,41.6"
+          Id="Package\Update GW DWH\Derived Column 2"
+          TopLeft="36.1142864246758,89.6941188825453" />
         <EdgeLayout
           Id="Package\Update GW DWH.Paths[OLE DB Source Output]"
           TopLeft="144,63.2">
@@ -7845,35 +7827,47 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Update GW DWH.Paths[Lookup No Match Output]"
-          TopLeft="245.6,185.2">
+          Id="Package\Update GW DWH.Paths[Derived Column Output]"
+          TopLeft="117.314286424676,131.294118882545">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137.6,0"
+              EndConnector="25.8857135753242,32.705881117455"
               Start="0,0"
-              End="130.1,0">
+              End="25.8857135753242,25.205881117455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="130.1,0" />
+                    End="0,12.3529405587275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.3529405587275"
+                    Point2="0,16.3529405587275"
+                    Point3="4,16.3529405587275" />
+                  <mssgle:LineSegment
+                    End="21.8857135753242,16.3529405587275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.8857135753242,16.3529405587275"
+                    Point2="25.8857135753242,16.3529405587275"
+                    Point3="25.8857135753242,20.3529405587275" />
+                  <mssgle:LineSegment
+                    End="25.8857135753242,25.205881117455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.24361328124997,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Update GW DWH\Derived Column"
+          TopLeft="64,238.4" />
         <EdgeLayout
           Id="Package\Update GW DWH.Paths[Lookup Match Output]"
           TopLeft="141.8,205.6">
@@ -7917,44 +7911,30 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Update GW DWH.Paths[Derived Column Output]"
-          TopLeft="117.314286424676,131.294118882545">
+          Id="Package\Update GW DWH.Paths[Lookup No Match Output]"
+          TopLeft="245.6,185.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="25.8857135753242,32.705881117455"
+              EndConnector="137.6,0"
               Start="0,0"
-              End="25.8857135753242,25.205881117455">
+              End="130.1,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.3529405587275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.3529405587275"
-                    Point2="0,16.3529405587275"
-                    Point3="4,16.3529405587275" />
-                  <mssgle:LineSegment
-                    End="21.8857135753242,16.3529405587275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.8857135753242,16.3529405587275"
-                    Point2="25.8857135753242,16.3529405587275"
-                    Point3="25.8857135753242,20.3529405587275" />
-                  <mssgle:LineSegment
-                    End="25.8857135753242,25.205881117455" />
+                    End="130.1,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="9.24361328124997,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8003,13 +7983,21 @@ WHERE category_description  like ('%'+?+'%')</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="250.4,41.6"
-          Id="Package\Update GW type DWH\OLE DB Command - set g_id type_id"
-          TopLeft="383.2,164.8" />
+          Size="152.8,41.6"
+          Id="Package\Update GW type DWH\Derived Column"
+          TopLeft="64,238.4" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Update GW type DWH\Derived Column 2"
           TopLeft="36.1142864246758,89.6941188825453" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Update GW type DWH\OLE DB Source Stage_Category"
+          TopLeft="30.4,21.6" />
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Update GW type DWH\OLE DB Command - set g_id type_id"
+          TopLeft="383.2,164.8" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Update GW type DWH\OLE DB Command"
@@ -8018,14 +8006,30 @@ WHERE category_description  like ('%'+?+'%')</property>
           Size="204.8,41.6"
           Id="Package\Update GW type DWH\Lookup - find changed row"
           TopLeft="40.8,164" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Update GW type DWH\Derived Column"
-          TopLeft="64,238.4" />
-        <NodeLayout
-          Size="227.2,41.6"
-          Id="Package\Update GW type DWH\OLE DB Source Stage_Category"
-          TopLeft="30.4,21.6" />
+        <EdgeLayout
+          Id="Package\Update GW type DWH.Paths[Lookup No Match Output]"
+          TopLeft="245.6,185.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.6,0"
+              Start="0,0"
+              End="130.1,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130.1,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.24361328125,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Update GW type DWH.Paths[OLE DB Source Output]"
           TopLeft="144,63.2">
@@ -8057,81 +8061,7 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update GW type DWH.Paths[Lookup No Match Output]"
-          TopLeft="245.6,185.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="137.6,0"
-              Start="0,0"
-              End="130.1,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="130.1,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.24361328125,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update GW type DWH.Paths[Lookup Match Output]"
-          TopLeft="141.8,205.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.8"
-              Start="0,0"
-              End="0,25.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.84531249999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update GW type DWH.Paths[Derived Column Output1]"
-          TopLeft="138.142857605097,280">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.341178323819"
-              Start="0,0"
-              End="0,19.841178323819">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.841178323819" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8165,8 +8095,52 @@ WHERE category_description  like ('%'+?+'%')</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update GW type DWH.Paths[Derived Column Output1]"
+          TopLeft="138.142857605097,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.341178323819"
+              Start="0,0"
+              End="0,19.841178323819">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.841178323819" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update GW type DWH.Paths[Lookup Match Output]"
+          TopLeft="141.8,205.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.8"
+              Start="0,0"
+              End="0,25.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-48.19138671875,6.84531249999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
