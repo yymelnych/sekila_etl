@@ -11,10 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="11-Facts"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{4DDAD89E-7F29-4253-A4A6-EB8610F94F59}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{31166CF7-947A-4418-BD87-852BB808EEE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{997D3C94-C799-4FD0-B90B-9668B8DA7210}"
+      DTS:ObjectName="Session_id">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -61,20 +72,26 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="  INSERT INTO dbo.audit&#xA;(package_name, start_date) VALUES (?, ?)"
+          SQLTask:SqlStatementSource=" INSERT INTO dbo.audit&#xA;(session_id, package_name, start_date) VALUES (?, ?, ?)"
           SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
+            SQLTask:ParameterName="@Session_id"
+            SQLTask:DtsVariableName="$Package::Session_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Package_Name"
             SQLTask:DtsVariableName="User::Package_Name"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
-            SQLTask:ParameterSize="0" />
+            SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
+            SQLTask:ParameterName="@StartTime"
             SQLTask:DtsVariableName="System::StartTime"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="7"
-            SQLTask:ParameterSize="1" />
+            SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -92,14 +109,20 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="EXEC dbo.usp_DataLoad_Facts @Start_Data = ?"
+          SQLTask:SqlStatementSource="EXEC dbo.usp_DataLoad_Facts @Start_Data = ?, @Audit_id = ?"
           SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
+            SQLTask:ParameterName="@Start_Date"
             SQLTask:DtsVariableName="User::Start_Date"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="7"
-            SQLTask:ParameterSize="0" />
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::Audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -117,8 +140,15 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="EXEC dbo.usp_DataLoad_Facts_Final"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC dbo.usp_DataLoad_Facts_Final @Audit_id = ?"
+          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::Audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -227,15 +257,15 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{9891340c-6ba5-43a4-8dac-050c3fd4fbdf}"
+      DTS:DTSID="{8F06024B-BAF6-43EF-9BD5-E4041132837E}"
       DTS:From="Package\audit table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\get strart_date" />
+      DTS:To="Package\Get Audit_id" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{73afe228-a527-4b80-a79e-d73af4ef1687}"
+      DTS:DTSID="{8135013E-9299-4622-8194-B34722BBD856}"
       DTS:From="Package\get strart_date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -259,20 +289,79 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{DF30D94D-0AC0-4FF7-9DD3-A76917D5F090}"
-      DTS:From="Package\EXEC usp_DataLoad_Facts_Final To DWH"
+      DTS:DTSID="{DEF21439-D317-4883-BDF8-22C9AAB9489B}"
+      DTS:From="Package\Get Audit_id"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Get Audit_id" />
+      DTS:To="Package\get strart_date" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{F719BA51-5E4C-4DB4-BCDC-AE957D8C4D4B}"
-      DTS:From="Package\Get Audit_id"
+      DTS:DTSID="{2E1D4FD6-103E-4861-8943-C70FAA9A5954}"
+      DTS:From="Package\EXEC usp_DataLoad_Facts_Final To DWH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Finish Audit (Update)" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{4C608E70-4CB5-4262-82A3-2578B15F7597}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{13A638AD-1C06-4D61-BA81-2954F9548DC7}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{87b2c5f7-5a70-47a8-864f-9e34eeeb4aa0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task  - Audit Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+              SQLTask:SqlStatementSource="DECLARE @Audit_id INT = ?,&#xA;  @ErrorCode VARCHAR(1000) = ?,&#xA;  @ErrorDescription VARCHAR(1000) = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA; error = 'ErrorCode: ' + @ErrorCode + '; ErrorDescription: ' + @ErrorDescription ,&#xA;    status = 0&#xA;WHERE id = @Audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Audit_id"
+                SQLTask:DtsVariableName="User::Audit_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorCode"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorDescription"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -288,18 +377,100 @@
         <NodeLayout
           Size="163,42"
           Id="Package\audit table"
-          TopLeft="312,36" />
+          TopLeft="309,29" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\EXEC usp_DataLoad_Facts To Stage"
+          TopLeft="268,310" />
+        <NodeLayout
+          Size="275,42"
+          Id="Package\EXEC usp_DataLoad_Facts_Final To DWH"
+          TopLeft="254,380" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Finish Audit (Update)"
+          TopLeft="298,475" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Get Audit_id"
+          TopLeft="286,97" />
         <NodeLayout
           Size="172,42"
           Id="Package\get strart_date"
-          TopLeft="307,111" />
+          TopLeft="301,164" />
         <NodeLayout
           Size="232,42"
           Id="Package\TRUNCATE TABLE stage_Actor"
-          TopLeft="273,181" />
+          TopLeft="269,239" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="388.75,281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="392,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="393.25,78">
+          TopLeft="390.5,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="386,206">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -320,101 +491,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="391,153">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="249,42"
-          Id="Package\EXEC usp_DataLoad_Facts To Stage"
-          TopLeft="270,253" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="391.75,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="275,42"
-          Id="Package\EXEC usp_DataLoad_Facts_Final To DWH"
-          TopLeft="256,327" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="394,295">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Get Audit_id"
-          TopLeft="289,403" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Finish Audit (Update)"
-          TopLeft="298,475" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="393.5,369">
+          TopLeft="388.75,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,25"
               Start="0,0"
-              End="0,26.5">
+              End="0,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -425,18 +514,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="390.5,445">
+          TopLeft="389.5,422">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,22.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -448,5 +537,17 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="228,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          TopLeft="386,128" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

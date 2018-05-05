@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_dimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{C1FBC1B2-6213-4987-8C4A-891AE80ECD4D}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{34E60B50-FC31-4E2B-9751-452B00134B62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\EpamMisha\_e_project\Integration Services Project3_anja\1_dimCustomer_Sakila_Stage_20180503.txt">
+          DTS:ConnectionString="E:\DWBI\GroupWork\21_dimCustomer_Sakila_Stage_20180505.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">5/3/2018 12:02:46 AM</DTS:VariableValue>
+        DTS:DataType="7">5/5/2018 4:43:21 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3968,35 +3968,35 @@ and address = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[first_name]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="first_name"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[first_name]" />
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[last_name]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="45"
                       cachedName="last_name"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[last_name]" />
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[address]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="address"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[address]" />
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[city]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="city"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[email]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="email"
@@ -4565,7 +4565,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4576,7 +4576,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4587,7 +4587,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[email]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4598,7 +4598,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[address]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4609,7 +4609,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[city]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4620,7 +4620,7 @@ ORDER BY c.customer_id asc</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[country]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -4638,37 +4638,37 @@ ORDER BY c.customer_id asc</property>
                       name="customer_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="45"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="45"
                       name="last_name" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[email]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       name="email" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[address]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       name="address" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[city]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       name="city" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[country]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       name="country" />
@@ -4686,42 +4686,42 @@ ORDER BY c.customer_id asc</property>
                       name="customer_id" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="45"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="45"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       name="last_name" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[email]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[email]"
                       name="email" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[address]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[address]"
                       name="address" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[city]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[city]"
                       name="city" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[country]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="50"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[country]"
@@ -4970,47 +4970,47 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\get package_id"
           TopLeft="51.142857979755,154.552943329993" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\get strart_date"
           TopLeft="52.2857151420745,84.2000011668486" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Insert GW from Stage to DWH"
           TopLeft="52.5714294667147,447.999995624318" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Insert GW to stage"
           TopLeft="78.857144200072,371.99999591603" />
         <NodeLayout
-          Size="232,41.6"
+          Size="232,42"
           Id="Package\Insert Sakila from Stage to DWH"
           TopLeft="361.142863293084,309.317650499311" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Insert Sakila to stage"
           TopLeft="385.142863701801,242.964709211304" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Populate audit table"
           TopLeft="39.7142863565562,16.2941178615531" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Populate audit table 2"
           TopLeft="324.571434098847,527.152943184137" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Trancate stage_Customer 1"
           TopLeft="389.714292351081,381.458824155735" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Trancate stage_Customer 2"
           TopLeft="59.4285724406339,524.517650061743" />
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\Trancate stage_Customer start"
           TopLeft="360.000006130763,170.07059062047" />
         <EdgeLayout
@@ -5328,7 +5328,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5518,7 +5520,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5648,7 +5652,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5718,7 +5724,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5767,6 +5775,10 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert Sakila from Stage to DWH\OLE DB Destination"
           TopLeft="520,260.8" />
         <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Insert Sakila from Stage to DWH\OLE DB Source"
+          TopLeft="36,20" />
+        <NodeLayout
           Size="164.8,41.6"
           Id="Package\Insert Sakila from Stage to DWH\OLE DB Command"
           TopLeft="44,237.6" />
@@ -5774,10 +5786,6 @@ ORDER BY c.customer_id asc</property>
           Size="188.8,41.6"
           Id="Package\Insert Sakila from Stage to DWH\Lookup - find new rows"
           TopLeft="311.2,185.6" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Insert Sakila from Stage to DWH\OLE DB Source"
-          TopLeft="36,20" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Insert Sakila from Stage to DWH\Derived Column"
@@ -5801,7 +5809,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5991,7 +6001,9 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6034,6 +6046,19 @@ ORDER BY c.customer_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find new rows">
     <Properties>
       <Property>
@@ -6053,19 +6078,6 @@ ORDER BY c.customer_id asc</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6121,9 +6133,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6193,9 +6203,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
