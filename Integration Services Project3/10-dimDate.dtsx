@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="10-dimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{2D346059-0809-417E-BFC0-3B9B3DBD40D9}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{56067A58-3E2D-454A-97D3-2DC4F3067875}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -25,7 +25,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndDate">
       <DTS:VariableValue
-        DTS:DataType="7">5/5/2018 3:19:24 PM</DTS:VariableValue>
+        DTS:DataType="7">5/4/2018 1:20:31 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,23 +101,34 @@ select	DATEADD(DAY, 1, [date]) as [date]
 from cte
 where date &lt; @EndDate
 )
-select	
-cast(convert(varchar(8),[date],112) as int) as date_id,
-[date] as full_date ,
-DATEPART(YEAR, [date]) as calendar_year,
-datepart(month,[date]) as  month_number_of_year,
-datename(month,[date]) as  month_name_of_year,
-DAY([date]) as  day_number_of_month,
-datename (dw,[date]) as day_name_of_week,
-DATEPART(DW, date) as day_number_of_week,
+--insert into dimDate(
+--      DateKey             
+--     ,FullDate            
+--	   ,CalendarYear		
+--	   ,MonthNumberOfYear	
+--	   ,MonthNameOfYear		
+--	   ,DayNumberOfMonth	
+--	   ,DayNameOfWeek		
+--	   ,DayNumberOfWeek		
+--	   ,WeekNumberOfMonth	
+--)
 
-case 
-        when DATEPART(day,date)&lt;8 then 1
-        when DATEPART(day,date)&gt;=8 and  DATEPART(day,date)&lt;15 then 2
-        when DATEPART(day,date)&gt;=15 and  DATEPART(day,date)&lt;22 then 3
-        when DATEPART(day,date)&gt;=22 and  DATEPART(day,date)&lt;29 then 4
-        ELSE 5
-        end as weekn_number_of_month
+select	cast(convert(varchar(8),[date],112) as int) as DateKey,
+		[date] as FullDate ,
+		DATEPART(YEAR, [date]) as CalendarYear,
+		datepart(month,[date]) as  MonthNumberOfYear,
+		datename(month,[date]) as  MonthNameOfYear,
+		DAY([date]) as  DayNumberOfMonth,
+		datename (dw,[date]) as DayNameOfWeek,
+		DATEPART(DW, date) as DayNumberOfWeek,
+
+		case 
+			when DATEPART(day,date)&lt;8 then 1
+			when DATEPART(day,date)&gt;=8 and  DATEPART(day,date)&lt;15 then 2
+			when DATEPART(day,date)&gt;=15 and  DATEPART(day,date)&lt;22 then 3
+			when DATEPART(day,date)&gt;=22 and  DATEPART(day,date)&lt;29 then 4
+			ELSE 5
+		end as WeekNumberOfMonth
 
 from cte
 option(maxrecursion  0)</property>
@@ -157,129 +168,129 @@ option(maxrecursion  0)</property>
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[date_id]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DateKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[date_id]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[date_id]"
-                      name="date_id"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[full_date]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[FullDate]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[full_date]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[full_date]"
-                      name="full_date"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      name="FullDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[calendar_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[CalendarYear]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[calendar_year]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[calendar_year]"
-                      name="calendar_year"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[CalendarYear]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[CalendarYear]"
+                      name="CalendarYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_number_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNumberOfYear]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[month_number_of_year]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_number_of_year]"
-                      name="month_number_of_year"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[MonthNumberOfYear]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNumberOfYear]"
+                      name="MonthNumberOfYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_name_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNameOfYear]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[month_name_of_year]"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[MonthNameOfYear]"
                       length="30"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_name_of_year]"
-                      name="month_name_of_year"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNameOfYear]"
+                      name="MonthNameOfYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfMonth]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_number_of_month]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_month]"
-                      name="day_number_of_month"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNumberOfMonth]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfMonth]"
+                      name="DayNumberOfMonth"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_name_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNameOfWeek]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_name_of_week]"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNameOfWeek]"
                       length="30"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_name_of_week]"
-                      name="day_name_of_week"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNameOfWeek]"
+                      name="DayNameOfWeek"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfWeek]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_number_of_week]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_week]"
-                      name="day_number_of_week"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNumberOfWeek]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfWeek]"
+                      name="DayNumberOfWeek"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[weekn_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[WeekNumberOfMonth]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[weekn_number_of_month]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[weekn_number_of_month]"
-                      name="weekn_number_of_month"
+                      externalMetadataColumnId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[WeekNumberOfMonth]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[WeekNumberOfMonth]"
+                      name="WeekNumberOfMonth"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[date_id]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
                       dataType="i4"
-                      name="date_id" />
+                      name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[full_date]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
                       dataType="dbDate"
-                      name="full_date" />
+                      name="FullDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[calendar_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[CalendarYear]"
                       dataType="i4"
-                      name="calendar_year" />
+                      name="CalendarYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[month_number_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[MonthNumberOfYear]"
                       dataType="i4"
-                      name="month_number_of_year" />
+                      name="MonthNumberOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[month_name_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[MonthNameOfYear]"
                       dataType="wstr"
                       length="30"
-                      name="month_name_of_year" />
+                      name="MonthNameOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNumberOfMonth]"
                       dataType="i4"
-                      name="day_number_of_month" />
+                      name="DayNumberOfMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_name_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNameOfWeek]"
                       dataType="wstr"
                       length="30"
-                      name="day_name_of_week" />
+                      name="DayNameOfWeek" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[day_number_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[DayNumberOfWeek]"
                       dataType="i4"
-                      name="day_number_of_week" />
+                      name="DayNumberOfWeek" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[weekn_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].ExternalColumns[WeekNumberOfMonth]"
                       dataType="i4"
-                      name="weekn_number_of_month" />
+                      name="WeekNumberOfMonth" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -288,52 +299,52 @@ option(maxrecursion  0)</property>
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[date_id]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DateKey]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[date_id]"
-                      name="date_id" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[full_date]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[FullDate]"
                       dataType="dbDate"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[full_date]"
-                      name="full_date" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      name="FullDate" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[calendar_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[CalendarYear]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[calendar_year]"
-                      name="calendar_year" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[CalendarYear]"
+                      name="CalendarYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[month_number_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[MonthNumberOfYear]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[month_number_of_year]"
-                      name="month_number_of_year" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[MonthNumberOfYear]"
+                      name="MonthNumberOfYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[month_name_of_year]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[MonthNameOfYear]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[month_name_of_year]"
-                      name="month_name_of_year" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[MonthNameOfYear]"
+                      name="MonthNameOfYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNumberOfMonth]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_number_of_month]"
-                      name="day_number_of_month" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNumberOfMonth]"
+                      name="DayNumberOfMonth" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_name_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNameOfWeek]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_name_of_week]"
-                      name="day_name_of_week" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNameOfWeek]"
+                      name="DayNameOfWeek" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_number_of_week]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNumberOfWeek]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[day_number_of_week]"
-                      name="day_number_of_week" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[DayNumberOfWeek]"
+                      name="DayNumberOfWeek" />
                     <outputColumn
-                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[weekn_number_of_month]"
+                      refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[WeekNumberOfMonth]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[weekn_number_of_month]"
-                      name="weekn_number_of_month" />
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[WeekNumberOfMonth]"
+                      name="WeekNumberOfMonth" />
                     <outputColumn
                       refId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -365,16 +376,16 @@ option(maxrecursion  0)</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  date_id 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  DateKey 
 FROM sakila_DWH.dbo.dimDate</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT  date_id 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT  DateKey 
 FROM sakila_DWH.dbo.dimDate) [refTable]
-where [refTable].[date_id] = ?</property>
+where [refTable].[DateKey] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -405,12 +416,12 @@ where [refTable].[date_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[date_id]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DateKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -434,15 +445,15 @@ where [refTable].[date_id] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup - find additional rows.Inputs[Lookup Input].Columns[date_id]"
+                      refId="Package\Data Flow Task\Lookup - find additional rows.Inputs[Lookup Input].Columns[DateKey]"
                       cachedDataType="i4"
-                      cachedName="date_id"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[date_id]">
+                      cachedName="DateKey"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DateKey]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">date_id</property>
+                          name="JoinToReferenceColumn">DateKey</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -508,17 +519,17 @@ where [refTable].[date_id] = ?</property>
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\transformation.Inputs[Derived Column Input].Columns[month_name_of_year]"
+                      refId="Package\Data Flow Task\transformation.Inputs[Derived Column Input].Columns[MonthNameOfYear]"
                       cachedDataType="wstr"
                       cachedLength="30"
-                      cachedName="month_name_of_year"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_name_of_year]" />
+                      cachedName="MonthNameOfYear"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNameOfYear]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\transformation.Inputs[Derived Column Input].Columns[day_name_of_week]"
+                      refId="Package\Data Flow Task\transformation.Inputs[Derived Column Input].Columns[DayNameOfWeek]"
                       cachedDataType="wstr"
                       cachedLength="30"
-                      cachedName="day_name_of_week"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_name_of_week]" />
+                      cachedName="DayNameOfWeek"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNameOfWeek]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -532,51 +543,51 @@ where [refTable].[date_id] = ?</property>
                   synchronousInputId="Package\Data Flow Task\transformation.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[month_name_of_year2]"
+                      refId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[MonthNameOfYear2]"
                       codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="10"
-                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[month_name_of_year2]"
-                      name="month_name_of_year2"
+                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[MonthNameOfYear2]"
+                      name="MonthNameOfYear2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,10,1251)[TRIM](#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_name_of_year]})</property>
+                          name="Expression">(DT_STR,10,1251)[TRIM](#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNameOfYear]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,10,1251)TRIM(month_name_of_year)</property>
+                          name="FriendlyExpression">(DT_STR,10,1251)TRIM(MonthNameOfYear)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[day_name_of_week2]"
+                      refId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[DayNameOfWeek2]"
                       codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="10"
-                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[day_name_of_week2]"
-                      name="day_name_of_week2"
+                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[DayNameOfWeek2]"
+                      name="DayNameOfWeek2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,10,1251)[TRIM](#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_name_of_week]})</property>
+                          name="Expression">(DT_STR,10,1251)[TRIM](#{Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNameOfWeek]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,10,1251)TRIM(day_name_of_week)</property>
+                          name="FriendlyExpression">(DT_STR,10,1251)TRIM(DayNameOfWeek)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -680,106 +691,106 @@ where [refTable].[date_id] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[date_id]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[DateKey]"
                       cachedDataType="i4"
-                      cachedName="date_id"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[date_id]" />
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DateKey]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[full_date]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[FullDate]"
                       cachedDataType="dbDate"
-                      cachedName="full_date"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[full_date]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[full_date]" />
+                      cachedName="FullDate"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[FullDate]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[FullDate]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[calendar_year]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[CalendarYear]"
                       cachedDataType="i4"
-                      cachedName="calendar_year"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[calendar_year]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[calendar_year]" />
+                      cachedName="CalendarYear"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[CalendarYear]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[CalendarYear]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[month_number_of_year]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[MonthNumberOfYear]"
                       cachedDataType="i4"
-                      cachedName="month_number_of_year"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[month_number_of_year]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[month_number_of_year]" />
+                      cachedName="MonthNumberOfYear"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumberOfYear]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[MonthNumberOfYear]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[day_number_of_month]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[DayNumberOfMonth]"
                       cachedDataType="i4"
-                      cachedName="day_number_of_month"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_number_of_month]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_month]" />
+                      cachedName="DayNumberOfMonth"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumberOfMonth]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfMonth]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[day_number_of_week]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[DayNumberOfWeek]"
                       cachedDataType="i4"
-                      cachedName="day_number_of_week"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_number_of_week]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[day_number_of_week]" />
+                      cachedName="DayNumberOfWeek"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumberOfWeek]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[DayNumberOfWeek]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[weekn_number_of_month]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[WeekNumberOfMonth]"
                       cachedDataType="i4"
-                      cachedName="weekn_number_of_month"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[weekn_number_of_month]"
-                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[weekn_number_of_month]" />
+                      cachedName="WeekNumberOfMonth"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[WeekNumberOfMonth]"
+                      lineageId="Package\Data Flow Task\generate dimDate.Outputs[OLE DB Source Output].Columns[WeekNumberOfMonth]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[month_name_of_year2]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[MonthNameOfYear2]"
                       cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="10"
-                      cachedName="month_name_of_year2"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[month_name_of_year]"
-                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[month_name_of_year2]" />
+                      cachedName="MonthNameOfYear2"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNameOfYear]"
+                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[MonthNameOfYear2]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[day_name_of_week2]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].Columns[DayNameOfWeek2]"
                       cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="10"
-                      cachedName="day_name_of_week2"
-                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_name_of_week]"
-                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[day_name_of_week2]" />
+                      cachedName="DayNameOfWeek2"
+                      externalMetadataColumnId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNameOfWeek]"
+                      lineageId="Package\Data Flow Task\transformation.Outputs[Derived Column Output].Columns[DayNameOfWeek2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
                       dataType="i4"
-                      name="date_id" />
+                      name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[full_date]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[FullDate]"
                       dataType="dbDate"
-                      name="full_date" />
+                      name="FullDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[calendar_year]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[CalendarYear]"
                       dataType="i4"
-                      name="calendar_year" />
+                      name="CalendarYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[month_number_of_year]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumberOfYear]"
                       dataType="i4"
-                      name="month_number_of_year" />
+                      name="MonthNumberOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[month_name_of_year]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNameOfYear]"
                       codePage="1251"
                       dataType="str"
                       length="10"
-                      name="month_name_of_year" />
+                      name="MonthNameOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_number_of_month]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumberOfMonth]"
                       dataType="i4"
-                      name="day_number_of_month" />
+                      name="DayNumberOfMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_name_of_week]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNameOfWeek]"
                       codePage="1251"
                       dataType="str"
                       length="10"
-                      name="day_name_of_week" />
+                      name="DayNameOfWeek" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[day_number_of_week]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumberOfWeek]"
                       dataType="i4"
-                      name="day_number_of_week" />
+                      name="DayNumberOfWeek" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[weekn_number_of_month]"
+                      refId="Package\Data Flow Task\write dimDate.Inputs[OLE DB Destination Input].ExternalColumns[WeekNumberOfMonth]"
                       dataType="i4"
-                      name="weekn_number_of_month" />
+                      name="WeekNumberOfMonth" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -991,25 +1002,25 @@ where [refTable].[date_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="520,126" />
+          TopLeft="522,131" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\get package_id"
           TopLeft="387.428571623199,81.25882546844" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="222.571428785518,41.9058833052955" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Populate audit table"
           TopLeft="35,13" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Populate audit table 2"
-          TopLeft="652,175" />
+          TopLeft="651,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="208,19.4058833052955">
@@ -1044,20 +1055,20 @@ where [refTable].[date_id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="58.071428376801,23.74117453156"
+              EndConnector="60.071428376801,28.74117453156"
               Start="0,0"
-              End="58.071428376801,16.24117453156">
+              End="60.071428376801,21.24117453156">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="54.071428376801,0" />
+                    End="56.071428376801,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="54.071428376801,0"
-                    Point2="58.071428376801,0"
-                    Point3="58.071428376801,4" />
+                    Point1="56.071428376801,0"
+                    Point2="60.071428376801,0"
+                    Point3="60.071428376801,4" />
                   <mssgle:LineSegment
-                    End="58.071428376801,16.24117453156" />
+                    End="60.071428376801,21.24117453156" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1068,24 +1079,24 @@ where [refTable].[date_id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="671,147">
+          TopLeft="673,152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72,28"
+              EndConnector="69,30"
               Start="0,0"
-              End="72,20.5">
+              End="69,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="68,0" />
+                    End="65,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="68,0"
-                    Point2="72,0"
-                    Point3="72,4" />
+                    Point1="65,0"
+                    Point2="69,0"
+                    Point3="69,4" />
                   <mssgle:LineSegment
-                    End="72,20.5" />
+                    End="69,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1131,19 +1142,19 @@ where [refTable].[date_id] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Data Flow Task\transformation"
           TopLeft="171,64" />
         <NodeLayout
-          Size="216,42"
+          Size="216,41.6"
           Id="Package\Data Flow Task\Lookup - find additional rows"
           TopLeft="319,115" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Data Flow Task\write dimDate"
           TopLeft="509,212" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Data Flow Task\generate dimDate"
           TopLeft="19,16" />
         <EdgeLayout

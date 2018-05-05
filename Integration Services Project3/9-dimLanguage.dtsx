@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="9-dimLanguage"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{52FF36B5-6087-4BCB-9BCD-88A39C4B160A}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{3939121E-6604-4BA7-80C5-FE9A36F46019}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndDate">
       <DTS:VariableValue
-        DTS:DataType="7">5/4/2018 7:14:09 PM</DTS:VariableValue>
+        DTS:DataType="7">5/4/2018 1:18:48 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1363,29 +1363,6 @@ ORDER BY language_id asc</property>
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\get package_id" />
   </DTS:PrecedenceConstraints>
-  <DTS:EventHandlers>
-    <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnError]"
-      DTS:CreationName="OnError"
-      DTS:DTSID="{638E4E42-6EBD-4161-A7F6-0770D69EA134}"
-      DTS:EventID="2851029"
-      DTS:EventName="OnError"
-      DTS:LocaleID="-1">
-      <DTS:Variables>
-        <DTS:Variable
-          DTS:CreationName=""
-          DTS:Description="The propagate property of the event"
-          DTS:DTSID="{2AFB143F-3631-4DBA-9067-3EFC7DB17755}"
-          DTS:IncludeInDebugDump="6789"
-          DTS:Namespace="System"
-          DTS:ObjectName="Propagate">
-          <DTS:VariableValue
-            DTS:DataType="11">-1</DTS:VariableValue>
-        </DTS:Variable>
-      </DTS:Variables>
-      <DTS:Executables />
-    </DTS:EventHandler>
-  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1399,39 +1376,39 @@ ORDER BY language_id asc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\get package_id"
           TopLeft="452.428571623199,66" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\get strart_date"
           TopLeft="265.571428785518,64.6470578368555" />
         <NodeLayout
-          Size="233,42"
+          Size="232.8,41.6"
           Id="Package\Insert Sakila from Stage to DWH"
           TopLeft="343,164.894117715696" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Insert Sakila to stage"
           TopLeft="658.000000408717,162.54117642769" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Populate audit table"
           TopLeft="62,62.74117453156" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Populate audit table 2"
           TopLeft="38,282" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Send Mail Task"
-          TopLeft="295,276" />
+          TopLeft="144,415" />
         <NodeLayout
-          Size="210,42"
+          Size="209.6,41.6"
           Id="Package\Trancate stage_Language 1"
           TopLeft="29,165.894117715696" />
         <NodeLayout
-          Size="225,42"
+          Size="224.8,41.6"
           Id="Package\Trancate stage_Language start"
           TopLeft="630.857142837679,66.6470578368555" />
         <EdgeLayout
@@ -1635,7 +1612,9 @@ ORDER BY language_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1657,7 +1636,9 @@ ORDER BY language_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
