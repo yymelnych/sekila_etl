@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SakilaETL</Name>
-    <LastWriteTime>2018-05-04T09:56:48.5720294Z</LastWriteTime>
+    <LastWriteTime>2018-05-05T18:33:10.0307338Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>2-dimEmployee.dtsx</Name>
-      <LastWriteTime>2018-05-04T09:29:50.3511584Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T16:08:09.1733616Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3-dimActor.dtsx</Name>
-      <LastWriteTime>2018-05-02T21:17:35.9649532Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T17:35:35.3007362Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -43,27 +43,27 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>9-dimLanguage.dtsx</Name>
-      <LastWriteTime>2018-05-04T10:19:49.6248579Z</LastWriteTime>
+      <LastWriteTime>2018-05-05T12:36:43.5516821Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>10-dimDate.dtsx</Name>
-      <LastWriteTime>2018-05-04T10:27:32.7255238Z</LastWriteTime>
+      <LastWriteTime>2018-05-05T12:36:43.5487032Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>11-Facts.dtsx</Name>
-      <LastWriteTime>2018-05-02T19:17:26.4303092Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T17:14:40.1022703Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>1_dimCustomer.dtsx</Name>
-      <LastWriteTime>2018-05-02T21:07:27.4579996Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T17:56:21.082877Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>master.dtsx</Name>
-      <LastWriteTime>2018-05-02T21:00:13.0601393Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T17:05:21.4769205Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

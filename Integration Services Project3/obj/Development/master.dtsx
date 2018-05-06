@@ -11,16 +11,38 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="master"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{8CB1136B-CE38-45AE-8F00-38CEF2CBC5C1}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{34AD7A3A-2846-4F19-86F6-35D5B2E36BBF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9DFA4594-1E1B-4C5D-BD60-FB2AC6BC47F1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::StartTime]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="master_end">
+      <DTS:VariableValue
+        DTS:DataType="7">5/6/2018 8:05:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F12EF67F-FD0A-4E9E-AEE9-A6D861A6CB26}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="session_id">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\10_dimDate"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{BE62AA7A-A3EC-4B88-A56F-6357F5D783F0}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -38,6 +60,7 @@
       DTS:refId="Package\11_Facts"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9E1C561E-1FAB-410D-BE87-7971A5425733}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -65,6 +88,14 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>1_dimCustomer.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>child_session_id</ParameterName>
+            <BindedVariableOrParameterName>User::session_id</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>end</ParameterName>
+            <BindedVariableOrParameterName>User::master_end</BindedVariableOrParameterName>
+          </ParameterAssignment>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -72,6 +103,7 @@
       DTS:refId="Package\2_dimEmployee"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9C8138B8-0CAD-4A54-A88A-9E41EB1AC508}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -89,6 +121,7 @@
       DTS:refId="Package\3_dimActor"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{89B2FACB-00CB-4B29-94C8-9A61A921C697}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -106,6 +139,7 @@
       DTS:refId="Package\4_dimFilm"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{B269E575-4077-4C84-86EC-901F57C0F59D}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -123,6 +157,7 @@
       DTS:refId="Package\5_dimCategory"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{AD1F8A0E-3D12-4C08-AE3A-8E1975D964E8}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -140,6 +175,7 @@
       DTS:refId="Package\6_Film_Category"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8146E54C-9E9D-409E-91BD-61C8A91C3955}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -157,6 +193,7 @@
       DTS:refId="Package\7_Film_Actor"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{6A7FDBF4-1738-464E-809A-157F5A7505F7}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -174,6 +211,7 @@
       DTS:refId="Package\8_dimGeography"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{570BEDB6-1E15-47E1-9C75-F9D000F2ABF3}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -191,6 +229,7 @@
       DTS:refId="Package\9_dimLanguage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C462CA68-9E29-42C7-B792-5CD95C9029D0}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -204,16 +243,30 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get session_id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{944eaf80-e51b-43a7-8abc-08d20d96e70d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get session_id"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource="SELECT 1+ ISNULL ((SELECT max (session_id)  FROM dbo.audit), 0)"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::session_id" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{2714D817-4E0E-4E42-AFB7-DE1F675EB0DE}"
-      DTS:From="Package\1_dimCustomer"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\2_dimEmployee" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -222,6 +275,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\3_dimActor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{367AE836-4AF7-4BFB-947E-826AD9DFF36C}"
+      DTS:From="Package\get session_id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\1_dimCustomer" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -302,40 +363,54 @@
         <NodeLayout
           Size="152,41.6"
           Id="Package\1_dimCustomer"
-          TopLeft="33.1428577072766,25.6941180074091" />
+          TopLeft="38.8571424970821,111.611762234909" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\10_dimDate"
+          TopLeft="38.2857149377161,847.529414192781" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\11_Facts"
+          TopLeft="40.5714292623559,919.670590912182" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\2_dimEmployee"
-          TopLeft="37.7142863565562,100.94117788625" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="111.628572031916,67.2941180074091">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.647059878841"
-              Start="0,0"
-              End="0,26.147059878841">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.147059878841" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="34.8571434507565,268.564705710758" />
         <NodeLayout
           Size="132,41.6"
           Id="Package\3_dimActor"
-          TopLeft="41.1428578435158,174.964708336167" />
+          TopLeft="38.2857149377161,342.588236160675" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\4_dimFilm"
+          TopLeft="36.5714291942363,417.223531325054" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\5_dimCategory"
+          TopLeft="35.4285720319164,491.011767194016" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\6_Film_Category"
+          TopLeft="36.0000006130764,561.552943621704" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\7_Film_Actor"
+          TopLeft="37.7142863565562,631.341178907242" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\8_dimGeography"
+          TopLeft="36.5714291942363,705.223531908477" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\9_dimLanguage"
+          TopLeft="36.5714291942363,778.400002479553" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\get session_id"
+          TopLeft="38.2857149377161,17.1294120049394" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="110.628572100036,142.54117788625">
+          TopLeft="107.771429194236,310.164705710758">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -355,13 +430,31 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\4_dimFilm"
-          TopLeft="39.428572100036,249.600003500546" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="112.771428717399,58.7294120049394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.8823502299695"
+              Start="0,0"
+              End="0,45.3823502299695">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.3823502299695" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="104.885714971776,216.564708336167">
+          TopLeft="102.028572065976,384.188236160675">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -381,19 +474,15 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\5_dimCategory"
-          TopLeft="38.2857149377161,323.388239369508" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="102.628572100036,291.200003500546">
+          TopLeft="99.7714291942363,458.823531325054">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.4571428376801,32.1882358689622"
+              EndConnector="10.4571428376801,32.1882358689621"
               Start="0,0"
-              End="10.4571428376801,24.6882358689622">
+              End="10.4571428376801,24.6882358689621">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -410,7 +499,7 @@
                     Point2="10.4571428376801,16.0941179344811"
                     Point3="10.4571428376801,20.0941179344811" />
                   <mssgle:LineSegment
-                    End="10.4571428376801,24.6882358689622" />
+                    End="10.4571428376801,24.6882358689621" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -419,24 +508,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\6_Film_Category"
-          TopLeft="38.8571435188761,393.929415797197" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="115.371429228296,364.988239369508">
+          TopLeft="112.514286322496,532.611767194015">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.9411764276893"
+              EndConnector="0,28.9411764276892"
               Start="0,0"
-              End="0,21.4411764276893">
+              End="0,21.4411764276892">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.4411764276893" />
+                    End="0,21.4411764276892" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -445,13 +530,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\7_Film_Actor"
-          TopLeft="40.5714292623559,463.717651082735" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="114.114286390616,435.529415797197">
+          TopLeft="111.257143484816,603.152943621704">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -471,13 +552,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\8_dimGeography"
-          TopLeft="39.428572100036,537.60000408397" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="110.571429262356,505.317651082735">
+          TopLeft="107.714286356556,672.941178907242">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -509,13 +586,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\9_dimLanguage"
-          TopLeft="39.428572100036,610.776474655046" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="117.228572100036,579.20000408397">
+          TopLeft="114.371429194236,746.823531908478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -535,13 +608,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\10_dimDate"
-          TopLeft="41.1428578435158,679.905886368273" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="112.285714971776,652.376474655046">
+          TopLeft="109.428572065976,820.000002479553">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -561,24 +630,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\11_Facts"
-          TopLeft="43.4285721681556,752.047063087675" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="106.085715005836,721.505886368273">
+          TopLeft="103.228572100036,889.12941419278">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.5411767194015"
+              EndConnector="0,30.5411767194014"
               Start="0,0"
-              End="0,23.0411767194015">
+              End="0,23.0411767194014">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.0411767194015" />
+                    End="0,23.0411767194014" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
