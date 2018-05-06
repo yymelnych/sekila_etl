@@ -7,6 +7,6 @@
     DTS:Name="ServerName">@[$Project::Sakila_Server_Name]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=localhost;Initial Catalog=sakila_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=DESKTOP-U7JQ2B2\MM;Initial Catalog=sakila_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="4-dimFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="89"
-  DTS:VersionGUID="{DF0C07E4-9316-45D4-904F-7609FAF7854D}">
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{381F3FCF-1A4E-42D2-9156-7BB96AA7A249}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\DWBI\GroupWork\24-dimFilm_Sakila_Stage_20180504.txt">
+          DTS:ConnectionString="E:\EpamMisha\_e_project\sekila_etl\4-dimFilm_Sakila_Stage_20180506.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="End">
       <DTS:VariableValue
-        DTS:DataType="7">5/4/2018 1:18:20 PM</DTS:VariableValue>
+        DTS:DataType="7">5/6/2018 11:52:26 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1968,7 +1968,7 @@ where (inserted &gt;= ?) OR
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\Flat File Destination.Inputs[Flat File Destination Input].Columns[original_language]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="original_language"
@@ -1982,7 +1982,7 @@ where (inserted &gt;= ?) OR
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\Flat File Destination.Inputs[Flat File Destination Input].Columns[title]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
@@ -2252,7 +2252,7 @@ where [refTable].[title] = ? and [refTable].[release_year] = ? and [refTable].[o
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\Lookup - find new rows.Inputs[Lookup Input].Columns[title]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
@@ -2286,7 +2286,7 @@ where [refTable].[title] = ? and [refTable].[release_year] = ? and [refTable].[o
                     </inputColumn>
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\Lookup - find new rows.Inputs[Lookup Input].Columns[original_language]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="original_language"
@@ -2406,7 +2406,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[title]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
@@ -2420,7 +2420,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[release_year]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[original_language]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="original_language"
@@ -2604,7 +2604,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
@@ -2618,7 +2618,7 @@ title = ? and release_year  = ? and original_language = ?
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[release_year]" />
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[original_language]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="original_language"
@@ -2771,7 +2771,7 @@ title = ? and release_year  = ? and original_language = ?
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2791,7 +2791,7 @@ title = ? and release_year  = ? and original_language = ?
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[original_language]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2813,7 +2813,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="g_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="255"
                       name="title" />
@@ -2823,7 +2823,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="release_year" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[original_language]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="original_language" />
@@ -2836,7 +2836,7 @@ title = ? and release_year  = ? and original_language = ?
                   <outputColumns>
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="255"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
@@ -2848,7 +2848,7 @@ title = ? and release_year  = ? and original_language = ?
                       name="release_year" />
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[original_language]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[original_language]"
@@ -2940,14 +2940,14 @@ title = ? and release_year  = ? and original_language = ?
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[title]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="title"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]" />
                     <inputColumn
                       refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[language_name]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1251"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="language_name"
@@ -3380,7 +3380,7 @@ where (f.last_update &gt;= ?);</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3400,7 +3400,7 @@ where (f.last_update &gt;= ?);</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3418,7 +3418,7 @@ where (f.last_update &gt;= ?);</property>
                       name="film_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="255"
                       name="title" />
@@ -3428,7 +3428,7 @@ where (f.last_update &gt;= ?);</property>
                       name="release_year" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[language_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="20"
                       name="language_name" />
@@ -3446,7 +3446,7 @@ where (f.last_update &gt;= ?);</property>
                       name="film_id" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="255"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
@@ -3458,7 +3458,7 @@ where (f.last_update &gt;= ?);</property>
                       name="release_year" />
                     <outputColumn
                       refId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="20"
                       lineageId="Package\Insert Sakila to stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
@@ -3704,61 +3704,67 @@ where (f.last_update &gt;= ?);</property>
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\get package_id"
-          TopLeft="443.346946325664,41.1966388405401" />
+          TopLeft="443.346946325664,58.9378155599416" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\get strart_date"
-          TopLeft="253.632657380563,39.3613446971537" />
+          TopLeft="253.632657380563,57.1025214165552" />
         <NodeLayout
           Size="222.4,41.6"
           Id="Package\Insert GW from Stage to DWH"
-          TopLeft="445.4693953414,201.936135636564" />
+          TopLeft="445.4693953414,219.677312355966" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Insert GW to stage"
-          TopLeft="245.551024589872,200.820169144601" />
+          TopLeft="245.551024589872,218.561345864003" />
         <NodeLayout
           Size="232,41.6"
           Id="Package\Insert Sakila from Stage to DWH"
-          TopLeft="446.224497378047,111.549581003684" />
+          TopLeft="446.224497378047,129.290757723086" />
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\Insert Sakila to stage"
-          TopLeft="242.367351066267,109.015127186627" />
+          TopLeft="242.367351066267,126.756303906029" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\Populate audit table"
-          TopLeft="10.285714460879,41.1092438813312" />
+          TopLeft="178.857145903062,9.29747872930085" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Populate audit table 2"
-          TopLeft="244.897963354261,339.300844702011" />
+          TopLeft="244.897963354261,357.042021421412" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Trancate stage_Film"
-          TopLeft="10.9387756964903,198.964707606887" />
+          TopLeft="10.9387756964903,216.705884326289" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Trancate stage_Film 1"
-          TopLeft="247.346942987804,272.7462218237" />
+          TopLeft="247.346942987804,290.487398543102" />
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\Trancate stage_Film start"
-          TopLeft="8.63673176195461,106.218488491943" />
+          TopLeft="8.63673176195461,123.959665211345" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="182.285714460879,61.0352942892425">
+          TopLeft="350.857145903062,30.0974787293009">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71.3469429196839,0"
+              EndConnector="-22.8244885224991,27.0050426872544"
               Start="0,0"
-              End="63.8469429196839,0">
+              End="-22.8244885224991,19.5050426872544">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.8469429196839,0" />
+                    End="-18.8244885224991,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.8244885224991,0"
+                    Point2="-22.8244885224991,0"
+                    Point3="-22.8244885224991,4" />
+                  <mssgle:LineSegment
+                    End="-22.8244885224991,19.5050426872544" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3769,7 +3775,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="402.432657380563,61.0789917688469">
+          TopLeft="402.432657380563,78.8201684882484">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3791,7 +3797,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="518.146946325664,82.7966388405401">
+          TopLeft="518.146946325664,100.537815559942">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3825,7 +3831,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="207.036731761955,128.416807839285">
+          TopLeft="207.036731761955,146.157984558687">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3847,7 +3853,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="420.367351066267,131.282354095156">
+          TopLeft="420.367351066267,149.023530814558">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3869,7 +3875,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="562.224497378047,153.549581003684">
+          TopLeft="562.224497378047,171.290757723086">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3903,7 +3909,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="184.53877569649,220.692438375744">
+          TopLeft="184.53877569649,238.433615095146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3925,7 +3931,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="413.551024589872,222.178152390582">
+          TopLeft="413.551024589872,239.919329109984">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3947,7 +3953,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="556.2693953414,243.536135636564">
+          TopLeft="556.2693953414,261.277312355965">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3981,7 +3987,7 @@ where (f.last_update &gt;= ?);</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="334.922453171032,314.3462218237">
+          TopLeft="334.922453171032,332.087398543101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4252,7 +4258,7 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q3:int">0</Value>
+          type="q3:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4288,7 +4294,7 @@ where (f.last_update &gt;= ?);</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q3:int">0</Value>
+          type="q3:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
