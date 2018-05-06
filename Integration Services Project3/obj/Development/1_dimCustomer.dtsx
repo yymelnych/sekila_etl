@@ -15,6 +15,101 @@
   DTS:VersionGUID="{B9CE5064-E041-4A0C-9FD6-7C3CEB294087}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+<<<<<<< HEAD
+=======
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B096D4D2-3B4D-4118-B098-437C8A092C3B}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::File_folder] +  @[System::PackageName] + "_Sakila_Stage_" + REPLACE((DT_WSTR, 10)(DT_DBDATE)GETDATE(),"-","")   +".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="E:\EpamMisha\_e_project\sekila_etl\1_dimCustomer_Sakila_Stage_20180504.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_id"
+              DTS:DTSID="{CB4F3696-3016-4F3E-97C9-3358ABF9F0DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name2"
+              DTS:DTSID="{A53F3FC7-5D48-4829-AE3B-3E6C18F5FBDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name2"
+              DTS:DTSID="{7DD5C85B-E0DE-409F-A1D1-05E27598DD16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city2"
+              DTS:DTSID="{B5D7D69C-DE12-49CE-B579-791186E6395C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address2"
+              DTS:DTSID="{84E576CA-FD42-4F5E-BFE9-442E7DC359C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email2"
+              DTS:DTSID="{D21D950B-AADE-4AE9-A95B-F80D1061AC2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{2613E3DB-C224-4356-89A6-F826D06B187F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{FA3ECC3F-EA6E-45EF-B7E8-A5E939DC5D57}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+>>>>>>> 7f6c43f33943e01e4e18b5bb1ab8abc0a0b6eed1
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -70,6 +165,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
+<<<<<<< HEAD
         DTS:DataType="7">5/6/2018 8:56:21 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -80,6 +176,9 @@
       DTS:ObjectName="g_read">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+=======
+        DTS:DataType="7">5/4/2018 3:29:49 PM</DTS:VariableValue>
+>>>>>>> 7f6c43f33943e01e4e18b5bb1ab8abc0a0b6eed1
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
