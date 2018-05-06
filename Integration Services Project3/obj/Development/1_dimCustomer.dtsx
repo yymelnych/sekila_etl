@@ -11,115 +11,22 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_dimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{B9CE5064-E041-4A0C-9FD6-7C3CEB294087}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{98D179F0-170E-44FF-A542-F5271150ACCF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-<<<<<<< HEAD
-=======
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{B096D4D2-3B4D-4118-B098-437C8A092C3B}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::File_folder] +  @[System::PackageName] + "_Sakila_Stage_" + REPLACE((DT_WSTR, 10)(DT_DBDATE)GETDATE(),"-","")   +".txt"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1251"
-          DTS:ConnectionString="E:\EpamMisha\_e_project\sekila_etl\1_dimCustomer_Sakila_Stage_20180504.txt">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="2"
-              DTS:TextQualified="True"
-              DTS:ObjectName="customer_id"
-              DTS:DTSID="{CB4F3696-3016-4F3E-97C9-3358ABF9F0DD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="first_name2"
-              DTS:DTSID="{A53F3FC7-5D48-4829-AE3B-3E6C18F5FBDF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="last_name2"
-              DTS:DTSID="{7DD5C85B-E0DE-409F-A1D1-05E27598DD16}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="city2"
-              DTS:DTSID="{B5D7D69C-DE12-49CE-B579-791186E6395C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="address2"
-              DTS:DTSID="{84E576CA-FD42-4F5E-BFE9-442E7DC359C6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="email2"
-              DTS:DTSID="{D21D950B-AADE-4AE9-A95B-F80D1061AC2B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{2613E3DB-C224-4356-89A6-F826D06B187F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{FA3ECC3F-EA6E-45EF-B7E8-A5E939DC5D57}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
->>>>>>> 7f6c43f33943e01e4e18b5bb1ab8abc0a0b6eed1
-  <DTS:Variables>
-    <DTS:Variable
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DTSID="{0110AFF8-4CBC-4F45-8276-FEAD34E2D776}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="child_session_id">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
+      DTS:DataType="3"
+      DTS:DTSID="{F80D2D37-1473-4625-8F03-F381F5A5941B}"
+      DTS:ObjectName="session_id">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{130772E2-A2CA-419E-916C-092B81547BC1}"
@@ -165,8 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-<<<<<<< HEAD
-        DTS:DataType="7">5/6/2018 8:56:21 PM</DTS:VariableValue>
+        DTS:DataType="7">5/6/2018 10:24:32 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -176,9 +82,6 @@
       DTS:ObjectName="g_read">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
-=======
-        DTS:DataType="7">5/4/2018 3:29:49 PM</DTS:VariableValue>
->>>>>>> 7f6c43f33943e01e4e18b5bb1ab8abc0a0b6eed1
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1296,12 +1199,6 @@ WHERE g_id = ?</property>
                       externalMetadataColumnId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[address]"
                       lineageId="Package\Insert G from Stage to DWH\OLE DB Source Stage G.Outputs[OLE DB Source Output].Columns[address]" />
                     <inputColumn
-                      refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
-                      cachedDataType="i2"
-                      cachedName="package_id"
-                      externalMetadataColumnId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      lineageId="Package\Insert G from Stage to DWH\Derived Column package_id.Outputs[Derived Column Output].Columns[package_id]" />
-                    <inputColumn
                       refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
@@ -1369,10 +1266,6 @@ WHERE g_id = ?</property>
                       dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      dataType="i4"
-                      name="package_id" />
-                    <externalMetadataColumn
                       refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
                       dataType="i4"
                       name="error_code" />
@@ -1380,6 +1273,10 @@ WHERE g_id = ?</property>
                       refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       dataType="i4"
                       name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2996,12 +2893,6 @@ WHERE s_id = ?</property>
                       externalMetadataColumnId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
                       lineageId="Package\Insert S from Stage to DWH\OLE DB Source Stage S.Outputs[OLE DB Source Output].Columns[s_id]" />
                     <inputColumn
-                      refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
-                      cachedDataType="i2"
-                      cachedName="package_id"
-                      externalMetadataColumnId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      lineageId="Package\Insert S from Stage to DWH\Derived Column package_id.Outputs[Derived Column Output].Columns[package_id]" />
-                    <inputColumn
                       refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
@@ -3055,10 +2946,6 @@ WHERE s_id = ?</property>
                       dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      dataType="i4"
-                      name="package_id" />
-                    <externalMetadataColumn
                       refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
                       dataType="i4"
                       name="error_code" />
@@ -3066,6 +2953,10 @@ WHERE s_id = ?</property>
                       refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       dataType="i4"
                       name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4717,12 +4608,6 @@ WHERE g_id IS NULL</property>
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       lineageId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                    <inputColumn
-                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
-                      cachedDataType="i2"
-                      cachedName="package_id"
-                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      lineageId="Package\Insert sources to stage\Derived Column - package_id.Outputs[Derived Column Output].Columns[package_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4765,10 +4650,6 @@ WHERE g_id IS NULL</property>
                       dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      dataType="i4"
-                      name="package_id" />
-                    <externalMetadataColumn
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
                       dataType="i4"
                       name="error_code" />
@@ -4776,6 +4657,10 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       dataType="i4"
                       name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4893,12 +4778,6 @@ WHERE g_id IS NULL</property>
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
-                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].Columns[package_id]"
-                      cachedDataType="i2"
-                      cachedName="package_id"
-                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      lineageId="Package\Insert sources to stage\Derived Column 1 - package_id.Outputs[Derived Column Output].Columns[package_id]" />
-                    <inputColumn
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].Columns[firstname]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -4982,10 +4861,6 @@ WHERE g_id IS NULL</property>
                       dataType="i4"
                       name="g_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[package_id]"
-                      dataType="i4"
-                      name="package_id" />
-                    <externalMetadataColumn
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
                       dataType="i4"
                       name="error_code" />
@@ -4993,6 +4868,10 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       dataType="i4"
                       name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5650,7 +5529,7 @@ ORDER BY c.customer_id asc</property>
             SQLTask:ParameterSize="1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="2"
-            SQLTask:DtsVariableName="User::child_session_id"
+            SQLTask:DtsVariableName="$Package::session_id"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="2"
             SQLTask:ParameterSize="2" />
@@ -5921,6 +5800,10 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Populate audit table"
           TopLeft="39.7142863565562,16.2941178615531" />
         <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Populate audit table 1"
+          TopLeft="52.0000008855547,379.952942892424" />
+        <NodeLayout
           Size="182.4,41.6"
           Id="Package\Populate audit table 2"
           TopLeft="57.714286697154,587.105885201425" />
@@ -5997,6 +5880,40 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="151.314286492795,353.458827802137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.51428560724057,26.4941150902874"
+              Start="0,0"
+              End="-8.51428560724057,18.9941150902874">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.24705754514372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.24705754514372"
+                    Point2="0,13.2470575451437"
+                    Point3="-4,13.2470575451437" />
+                  <mssgle:LineSegment
+                    End="-4.51428560724057,13.2470575451437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.51428560724057,13.2470575451437"
+                    Point2="-8.51428560724057,13.2470575451437"
+                    Point3="-8.51428560724057,17.2470575451437" />
+                  <mssgle:LineSegment
+                    End="-8.51428560724057,18.9941150902874" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="150.742857911636,488.564711253289">
           <EdgeLayout.Curve>
@@ -6032,6 +5949,40 @@ ORDER BY c.customer_id asc</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,20.264705127334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="142.800000885555,421.552942892424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.11428560724116,25.4117683608647"
+              Start="0,0"
+              End="8.11428560724116,17.9117683608647">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.70588418043235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.70588418043235"
+                    Point2="0,12.7058841804323"
+                    Point3="4,12.7058841804323" />
+                  <mssgle:LineSegment
+                    End="4.11428560724116,12.7058841804323" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.11428560724116,12.7058841804323"
+                    Point2="8.11428560724116,12.7058841804323"
+                    Point3="8.11428560724116,16.7058841804323" />
+                  <mssgle:LineSegment
+                    End="8.11428560724116,17.9117683608647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6088,78 +6039,6 @@ ORDER BY c.customer_id asc</property>
                     Point3="23.9428571623192,23.382353511731" />
                   <mssgle:LineSegment
                     End="23.9428571623192,31.2647070234619" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Populate audit table 1"
-          TopLeft="52.0000008855547,379.952942892424" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="151.314286492795,353.458827802137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.51428560724057,26.4941150902874"
-              Start="0,0"
-              End="-8.51428560724057,18.9941150902874">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.24705754514372" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.24705754514372"
-                    Point2="0,13.2470575451437"
-                    Point3="-4,13.2470575451437" />
-                  <mssgle:LineSegment
-                    End="-4.51428560724057,13.2470575451437" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.51428560724057,13.2470575451437"
-                    Point2="-8.51428560724057,13.2470575451437"
-                    Point3="-8.51428560724057,17.2470575451437" />
-                  <mssgle:LineSegment
-                    End="-8.51428560724057,18.9941150902874" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="142.800000885555,421.552942892424">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.11428560724116,25.4117683608647"
-              Start="0,0"
-              End="8.11428560724116,17.9117683608647">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.70588418043235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.70588418043235"
-                    Point2="0,12.7058841804323"
-                    Point3="4,12.7058841804323" />
-                  <mssgle:LineSegment
-                    End="4.11428560724116,12.7058841804323" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.11428560724116,12.7058841804323"
-                    Point2="8.11428560724116,12.7058841804323"
-                    Point3="8.11428560724116,16.7058841804323" />
-                  <mssgle:LineSegment
-                    End="8.11428560724116,17.9117683608647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6550,6 +6429,19 @@ ORDER BY c.customer_id asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert G from Stage to DWH\OLE DB Destination DWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer">
     <Properties>
       <Property>
@@ -6608,19 +6500,6 @@ ORDER BY c.customer_id asc</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert G from Stage to DWH\OLE DB Destination DWH">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7013,7 +6892,7 @@ ORDER BY c.customer_id asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert S from Stage to DWH\OLE DB Source Stage S">
+    design-time-name="Package\Insert S from Stage to DWH\OLE DB Destination DWH">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7062,6 +6941,19 @@ ORDER BY c.customer_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert S from Stage to DWH\OLE DB Source Stage S">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert S from Stage to DWH\Lookup - find changed rows">
     <Properties>
       <Property>
@@ -7081,19 +6973,6 @@ ORDER BY c.customer_id asc</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert S from Stage to DWH\OLE DB Destination DWH">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7490,15 +7369,10 @@ ORDER BY c.customer_id asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_Sakila">
+    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_GW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7529,10 +7403,15 @@ ORDER BY c.customer_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_GW">
+    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_Sakila">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
