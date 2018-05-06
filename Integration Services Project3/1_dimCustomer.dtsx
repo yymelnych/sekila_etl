@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_dimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{98D179F0-170E-44FF-A542-F5271150ACCF}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{9DD27476-624F-4144-806E-AC62D02E70D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -72,7 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/6/2018 10:20:36 PM</DTS:VariableValue>
+        DTS:DataType="7">5/6/2018 10:24:29 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1224,6 +1224,12 @@ WHERE g_id = ?</property>
                       cachedName="city"
                       externalMetadataColumnId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
                       lineageId="Package\Insert G from Stage to DWH\OLE DB Source Stage G.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
+                      cachedDataType="i2"
+                      cachedName="package_id"
+                      externalMetadataColumnId="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      lineageId="Package\Insert G from Stage to DWH\Derived Column package_id.Outputs[Derived Column Output].Columns[package_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2904,6 +2910,12 @@ WHERE s_id = ?</property>
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       lineageId="Package\Insert S from Stage to DWH\OLE DB Destination DWH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
+                      cachedDataType="i2"
+                      cachedName="package_id"
+                      externalMetadataColumnId="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      lineageId="Package\Insert S from Stage to DWH\Derived Column package_id.Outputs[Derived Column Output].Columns[package_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4608,6 +4620,12 @@ WHERE g_id IS NULL</property>
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       lineageId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[package_id]"
+                      cachedDataType="i2"
+                      cachedName="package_id"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      lineageId="Package\Insert sources to stage\Derived Column - package_id.Outputs[Derived Column Output].Columns[package_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4819,6 +4837,12 @@ WHERE g_id IS NULL</property>
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       lineageId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].Columns[package_id]"
+                      cachedDataType="i2"
+                      cachedName="package_id"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      lineageId="Package\Insert sources to stage\Derived Column 1 - package_id.Outputs[Derived Column Output].Columns[package_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6068,6 +6092,10 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Insert G from Stage to DWH\OLE DB Destination DWH"
+          TopLeft="612.8,306.4" />
+        <NodeLayout
           Size="248.8,41.6"
           Id="Package\Insert G from Stage to DWH\OLE DB Destination Audit_Customer"
           TopLeft="622.4,465.6" />
@@ -6107,10 +6135,6 @@ ORDER BY c.customer_id asc</property>
           Size="229.6,41.6"
           Id="Package\Insert G from Stage to DWH\OLE DB Command Update DWH"
           TopLeft="42.4,304.8" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Insert G from Stage to DWH\OLE DB Destination DWH"
-          TopLeft="612.8,306.4" />
         <EdgeLayout
           Id="Package\Insert G from Stage to DWH.Paths[Row Count Output 11]"
           TopLeft="708,274.4">
@@ -6509,9 +6533,9 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Insert S from Stage to DWH\OLE DB Source Stage S"
-          TopLeft="36,20" />
+          Size="197.6,41.6"
+          Id="Package\Insert S from Stage to DWH\OLE DB Destination DWH"
+          TopLeft="612.8,306.4" />
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Insert S from Stage to DWH\OLE DB Destination Audit_Customer"
@@ -6520,6 +6544,10 @@ ORDER BY c.customer_id asc</property>
           Size="182.4,41.6"
           Id="Package\Insert S from Stage to DWH\Row Count dwh_ins_s"
           TopLeft="612.8,232.8" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Insert S from Stage to DWH\Row Count dwh_upd_s"
+          TopLeft="40,231.2" />
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Insert S from Stage to DWH\Derived Column package_id"
@@ -6533,9 +6561,9 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert S from Stage to DWH\OLE DB Command set s_id"
           TopLeft="316,305.6" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Insert S from Stage to DWH\Row Count dwh_upd_s"
-          TopLeft="40,231.2" />
+          Size="188.8,41.6"
+          Id="Package\Insert S from Stage to DWH\OLE DB Source Stage S"
+          TopLeft="36,20" />
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Insert S from Stage to DWH\Lookup - find changed rows"
@@ -6548,10 +6576,6 @@ ORDER BY c.customer_id asc</property>
           Size="229.6,41.6"
           Id="Package\Insert S from Stage to DWH\OLE DB Command Update DWH"
           TopLeft="42.4,304.8" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Insert S from Stage to DWH\OLE DB Destination DWH"
-          TopLeft="612.8,306.4" />
         <EdgeLayout
           Id="Package\Insert S from Stage to DWH.Paths[Row Count Output 11]"
           TopLeft="707.8,274.4">
@@ -6571,9 +6595,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6607,9 +6629,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6643,9 +6663,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6847,9 +6865,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6883,9 +6899,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6994,9 +7008,13 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert sources to stage\Derived Column 1 - package_id"
           TopLeft="364.000006198883,353.505885201424" />
         <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Insert sources to stage\Row Count g_read"
+          TopLeft="357.142863224964,100.988236014818" />
+        <NodeLayout
           Size="248.8,41.6"
           Id="Package\Insert sources to stage\OLE DB Destination Audit_Customer"
-          TopLeft="33.1428577072766,432.752944788553" />
+          TopLeft="33.1428577072766,432.141180074091" />
         <NodeLayout
           Size="257.6,41.6"
           Id="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1"
@@ -7014,10 +7032,6 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert sources to stage\OLE DB Source - DB_Sakila"
           TopLeft="27.2,23.2" />
         <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Insert sources to stage\Row Count g_read"
-          TopLeft="357.142863224964,100.988236014818" />
-        <NodeLayout
           Size="216.8,41.6"
           Id="Package\Insert sources to stage\Derived Column - package_id"
           TopLeft="32.0000005449568,355.482356501781" />
@@ -7029,6 +7043,50 @@ ORDER BY c.customer_id asc</property>
           Size="152.8,41.6"
           Id="Package\Insert sources to stage\Derived Column 1"
           TopLeft="361.714291874244,186.400001604417" />
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Row Count Output 11]"
+          TopLeft="439.028577549604,142.588236014818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.8117655895986"
+              Start="0,0"
+              End="0,36.3117655895986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3117655895986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Row Count Output 1]"
+          TopLeft="111.228571725378,143.20000072928">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.3294124425076"
+              Start="0,0"
+              End="0,36.8294124425076">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.8294124425076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert sources to stage.Paths[OLE DB Source Output1]"
           TopLeft="453.314291738004,69.7411768652576">
@@ -7060,9 +7118,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7096,9 +7152,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7204,9 +7258,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7240,9 +7292,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7251,34 +7301,32 @@ ORDER BY c.customer_id asc</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.1428571623198,35.6705882867727"
+              EndConnector="17.1428571623198,35.0588235723098"
               Start="0,0"
-              End="17.1428571623198,28.1705882867727">
+              End="17.1428571623198,27.5588235723098">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.8352941433863" />
+                    End="0,13.5294117861549" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.8352941433863"
-                    Point2="0,17.8352941433863"
-                    Point3="4,17.8352941433863" />
+                    Point1="0,13.5294117861549"
+                    Point2="0,17.5294117861549"
+                    Point3="4,17.5294117861549" />
                   <mssgle:LineSegment
-                    End="13.1428571623198,17.8352941433863" />
+                    End="13.1428571623198,17.5294117861549" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.1428571623198,17.8352941433863"
-                    Point2="17.1428571623198,17.8352941433863"
-                    Point3="17.1428571623198,21.8352941433863" />
+                    Point1="13.1428571623198,17.5294117861549"
+                    Point2="17.1428571623198,17.5294117861549"
+                    Point3="17.1428571623198,21.5294117861549" />
                   <mssgle:LineSegment
-                    End="17.1428571623198,28.1705882867727" />
+                    End="17.1428571623198,27.5588235723098" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7312,57 +7360,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Row Count Output 11]"
-          TopLeft="439.028577549604,142.588236014818">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.8117655895986"
-              Start="0,0"
-              End="0,36.3117655895986">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.3117655895986" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Row Count Output 1]"
-          TopLeft="111.228571725378,143.20000072928">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.3294124425076"
-              Start="0,0"
-              End="0,36.8294124425076">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.8294124425076" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

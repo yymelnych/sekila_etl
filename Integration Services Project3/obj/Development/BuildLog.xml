@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SakilaETL</Name>
-    <LastWriteTime>2018-05-06T19:16:59.9295097Z</LastWriteTime>
+    <LastWriteTime>2018-05-06T19:40:55.3887034Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3-dimActor.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:06:32.2375208Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T19:35:34.0555637Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>4-dimFilm.dtsx</Name>
-      <LastWriteTime>2018-05-06T18:05:30.509526Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T19:40:52.8513347Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -58,12 +58,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>1_dimCustomer.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:23:17.7293139Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T19:33:54.2553333Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>master.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:27:32.1498975Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T19:33:31.6377637Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
