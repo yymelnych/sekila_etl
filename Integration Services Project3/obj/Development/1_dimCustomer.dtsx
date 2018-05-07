@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_dimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{871DA321-B148-4F30-9844-C0C45EDE7D91}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{AB1CABC1-BD0F-4F59-BEC6-80EC9053FC48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -72,7 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/7/2018 9:47:24 PM</DTS:VariableValue>
+        DTS:DataType="7">5/7/2018 10:39:55 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1702,6 +1702,7 @@ last_name = ?,
 email = ?,
 address = ?,
 city = ?,
+country = ?,
 updated = ?
 WHERE s_id = ?</property>
                 <property
@@ -1766,16 +1767,24 @@ WHERE s_id = ?</property>
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].Columns[updated]"
                       cachedDataType="date"
                       cachedName="updated"
-                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Insert from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[updated]" />
                     <inputColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].Columns[s_id]"
                       cachedDataType="i2"
                       cachedName="s_id"
-                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[s_id]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1847,9 +1856,10 @@ WHERE s_id = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="dbTimeStamp2"
-                      name="Param_5"
-                      scale="7">
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1859,8 +1869,20 @@ WHERE s_id = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="dbTimeStamp2"
+                      name="Param_6"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       dataType="i2"
-                      name="Param_6">
+                      name="Param_7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1927,6 +1949,7 @@ last_name = ?,
 email = ?,
 address = ?,
 city = ?,
+country = ?,
 updated = ?
 WHERE g_id = ?</property>
                 <property
@@ -1991,16 +2014,24 @@ WHERE g_id = ?</property>
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].Columns[updated]"
                       cachedDataType="date"
                       cachedName="updated"
-                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Insert from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[updated]" />
                     <inputColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].Columns[g_id]"
                       cachedDataType="i4"
                       cachedName="g_id"
-                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[g_id]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -2072,9 +2103,10 @@ WHERE g_id = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="dbTimeStamp2"
-                      name="Param_5"
-                      scale="7">
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2084,8 +2116,20 @@ WHERE g_id = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="dbTimeStamp2"
+                      name="Param_6"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       dataType="i4"
-                      name="Param_6">
+                      name="Param_7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2264,6 +2308,14 @@ WHERE g_id = ?</property>
                       cachedName="package_id"
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       lineageId="Package\Insert from Stage to DWH\Derived Column package_id.Outputs[Derived Column Output].Columns[package_id]" />
+                    <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2317,6 +2369,12 @@ WHERE g_id = ?</property>
                       refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       dataType="i4"
                       name="audit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2481,6 +2539,14 @@ WHERE g_id = ?</property>
                       cachedName="package_id"
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       lineageId="Package\Insert from Stage to DWH\Derived Column package_id 1.Outputs[Derived Column Output].Columns[package_id]" />
+                    <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2534,6 +2600,12 @@ WHERE g_id = ?</property>
                       refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       dataType="i4"
                       name="audit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2692,6 +2764,14 @@ WHERE g_id = ?</property>
                       cachedName="package_id"
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       lineageId="Package\Insert from Stage to DWH\Derived Column package_id 2.Outputs[Derived Column Output].Columns[package_id]" />
+                    <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2745,6 +2825,12 @@ WHERE g_id = ?</property>
                       refId="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
                       dataType="i4"
                       name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2891,6 +2977,14 @@ WHERE g_id = ?</property>
                       cachedName="s_id"
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[s_id]" />
+                    <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2946,6 +3040,12 @@ WHERE g_id = ?</property>
                       dataType="dbTimeStamp2"
                       name="updated"
                       scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3092,6 +3192,14 @@ WHERE g_id = ?</property>
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[g_id]" />
+                    <inputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3147,6 +3255,12 @@ WHERE g_id = ?</property>
                       dataType="dbTimeStamp2"
                       name="updated"
                       scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3311,6 +3425,17 @@ WHERE g_id IS NULL</property>
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[g_id]"
                       name="g_id"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3352,6 +3477,12 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
                       dataType="i4"
                       name="g_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3394,6 +3525,13 @@ WHERE g_id IS NULL</property>
                       length="50"
                       lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Error Output].Columns[city]"
                       name="city" />
+                    <outputColumn
+                      refId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
                     <outputColumn
                       refId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       dataType="i2"
@@ -3591,24 +3729,24 @@ WHERE g_id IS NULL</property>
               startId="Package\Insert from Stage to DWH\Lookup - find changed rows 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output3]"
-              endId="Package\Insert from Stage to DWH\Lookup - find new rows 1.Inputs[Lookup Input]"
-              name="Lookup No Match Output"
-              startId="Package\Insert from Stage to DWH\Lookup - find changed rows 1.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output2]"
               endId="Package\Insert from Stage to DWH\Row Count dwh_ins_s.Inputs[Row Count Input 1]"
               name="Lookup No Match Output"
               startId="Package\Insert from Stage to DWH\Lookup - find new rows.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output]"
-              endId="Package\Insert from Stage to DWH\Lookup - find new rows.Inputs[Lookup Input]"
+              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output2]"
+              endId="Package\Insert from Stage to DWH\Lookup - find new rows 1.Inputs[Lookup Input]"
               name="Lookup No Match Output"
-              startId="Package\Insert from Stage to DWH\Lookup - find changed rows.Outputs[Lookup No Match Output]" />
+              startId="Package\Insert from Stage to DWH\Lookup - find changed rows 1.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output1]"
+              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output]"
               endId="Package\Insert from Stage to DWH\Row Count dwh_ins_g.Inputs[Row Count Input 1]"
               name="Lookup No Match Output"
               startId="Package\Insert from Stage to DWH\Lookup - find new rows 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Insert from Stage to DWH.Paths[Lookup No Match Output1]"
+              endId="Package\Insert from Stage to DWH\Lookup - find new rows.Inputs[Lookup Input]"
+              name="Lookup No Match Output"
+              startId="Package\Insert from Stage to DWH\Lookup - find changed rows.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Insert from Stage to DWH.Paths[OLE DB Destination Error Output]"
               endId="Package\Insert from Stage to DWH\Derived Column package_id.Inputs[Derived Column Input]"
@@ -3626,24 +3764,24 @@ WHERE g_id IS NULL</property>
               startId="Package\Insert from Stage to DWH\OLE DB Source Stage.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Insert from Stage to DWH.Paths[Row Count Output 13]"
-              endId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input]"
-              name="Row Count Output 1"
-              startId="Package\Insert from Stage to DWH\Row Count dwh_upd_g.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 1]"
-              endId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input]"
-              name="Row Count Output 1"
-              startId="Package\Insert from Stage to DWH\Row Count dwh_ins_g.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 11]"
               endId="Package\Insert from Stage to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
               startId="Package\Insert from Stage to DWH\Row Count dwh_ins_s.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 12]"
+              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 1]"
               endId="Package\Insert from Stage to DWH\OLE DB Command Update DWH.Inputs[OLE DB Command Input]"
               name="Row Count Output 1"
               startId="Package\Insert from Stage to DWH\Row Count dwh_upd_s.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 11]"
+              endId="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert from Stage to DWH\Row Count dwh_upd_g.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert from Stage to DWH.Paths[Row Count Output 12]"
+              endId="Package\Insert from Stage to DWH\OLE DB Destination DWH 1.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert from Stage to DWH\Row Count dwh_ins_g.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Insert from Stage to DWH.Paths[s_id]"
               endId="Package\Insert from Stage to DWH\Lookup - find changed rows.Inputs[Lookup Input]"
@@ -3715,6 +3853,13 @@ WHERE g_id IS NULL</property>
                       cachedLength="50"
                       cachedName="email"
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\Derived Column.Inputs[Derived Column Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3845,6 +3990,30 @@ WHERE g_id IS NULL</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,50,1252)LOWER(TRIM(email))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert sources to stage\Derived Column.Outputs[Derived Column Output].Columns[country2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Insert sources to stage\Derived Column.Outputs[Derived Column Output].Columns[country2]"
+                      name="country2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)[UPPER]([TRIM](#{Package\Insert sources to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[country]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(TRIM(country))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3996,6 +4165,13 @@ WHERE g_id IS NULL</property>
                       cachedLength="50"
                       cachedName="mail"
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[mail]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\Derived Column 1.Inputs[Derived Column Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4126,6 +4302,30 @@ WHERE g_id IS NULL</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,50,1252)LOWER(TRIM(mail))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert sources to stage\Derived Column 1.Outputs[Derived Column Output].Columns[country2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Insert sources to stage\Derived Column 1.Outputs[Derived Column Output].Columns[country2]"
+                      name="country2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)[UPPER]([TRIM](#{Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[country]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(TRIM(country))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -4347,6 +4547,14 @@ WHERE g_id IS NULL</property>
                       cachedName="email2"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                       lineageId="Package\Insert sources to stage\Derived Column.Outputs[Derived Column Output].Columns[email2]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].Columns[country2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country2"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert sources to stage\Derived Column.Outputs[Derived Column Output].Columns[country2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4388,6 +4596,12 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       dataType="i4"
                       name="g_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4534,6 +4748,14 @@ WHERE g_id IS NULL</property>
                       cachedName="customerid"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[customerid]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Inputs[OLE DB Destination Input].Columns[country2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country2"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert sources to stage\Derived Column 1.Outputs[Derived Column Output].Columns[country2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4575,6 +4797,12 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       dataType="i4"
                       name="g_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4739,6 +4967,14 @@ WHERE g_id IS NULL</property>
                       cachedName="package_id"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       lineageId="Package\Insert sources to stage\Derived Column - package_id.Outputs[Derived Column Output].Columns[package_id]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4792,6 +5028,12 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       dataType="i4"
                       name="audit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4956,6 +5198,14 @@ WHERE g_id IS NULL</property>
                       cachedName="package_id"
                       externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       lineageId="Package\Insert sources to stage\Derived Column 1 - package_id.Outputs[Derived Column Output].Columns[package_id]" />
+                    <inputColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5009,6 +5259,12 @@ WHERE g_id IS NULL</property>
                       refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
                       dataType="i4"
                       name="audit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5062,7 +5318,7 @@ WHERE g_id IS NULL</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT customerid, firstname, lastname, mail, address, city
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT customerid, firstname, lastname, mail, address, city, country
 FROM     customer 
 WHERE  (inserted &gt;= ?) OR
                   (updated &gt;= ?)</property>
@@ -5165,6 +5421,17 @@ WHERE  (inserted &gt;= ?) OR
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[mail]"
                       name="mail"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5202,6 +5469,12 @@ WHERE  (inserted &gt;= ?) OR
                       dataType="str"
                       length="50"
                       name="mail" />
+                    <externalMetadataColumn
+                      refId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -5249,6 +5522,13 @@ WHERE  (inserted &gt;= ?) OR
                       length="30"
                       lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Error Output].Columns[city]"
                       name="city" />
+                    <outputColumn
+                      refId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
                     <outputColumn
                       refId="Package\Insert sources to stage\OLE DB Source - DB_GW.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -6039,6 +6319,28 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="144.285715108015,488.564711253289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.1529379333177"
+              Start="0,0"
+              End="0,39.6529379333177">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6529379333177" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="144.657143689175,421.552942892424">
           <EdgeLayout.Curve>
@@ -6116,28 +6418,6 @@ ORDER BY c.customer_id asc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="144.285715108015,488.564711253289">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.1529379333177"
-              Start="0,0"
-              End="0,39.6529379333177">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6529379333177" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6159,17 +6439,13 @@ ORDER BY c.customer_id asc</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Source Stage"
-          TopLeft="36,20" />
+          Size="229.6,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Command Update DWH"
+          TopLeft="245.502043944267,414.110925325779" />
         <NodeLayout
-          Size="248.8,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer"
-          TopLeft="825.502043944266,574.910925325779" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Insert from Stage to DWH\Row Count dwh_ins_s"
-          TopLeft="815.902043944266,342.110925325779" />
+          Size="229.6,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1"
+          TopLeft="66.00816400211,726.272274815347" />
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Insert from Stage to DWH\Derived Column package_id"
@@ -6179,212 +6455,114 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert from Stage to DWH\Lookup - find new rows"
           TopLeft="545.502043944267,264.510925325779" />
         <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Command set s_id"
-          TopLeft="519.102043944267,414.910925325779" />
-        <NodeLayout
           Size="187.2,41.6"
           Id="Package\Insert from Stage to DWH\Row Count dwh_upd_s"
           TopLeft="243.102043944267,340.510925325779" />
         <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert from Stage to DWH\Lookup - find changed rows"
-          TopLeft="240.702043944267,262.910925325779" />
+          Size="248.8,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer"
+          TopLeft="825.502043944266,574.910925325779" />
+        <NodeLayout
+          Size="248.8,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1"
+          TopLeft="619.885714577655,886.467232565663" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Insert from Stage to DWH\Lookup - find new rows 1"
+          TopLeft="366.00816400211,576.672274815347" />
+        <NodeLayout
+          Size="235.2,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3"
+          TopLeft="507.918375743722,124.974791668691" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Destination DWH"
+          TopLeft="815.902043944266,415.710925325779" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Insert from Stage to DWH\Derived Column"
           TopLeft="35.2,85.6" />
         <NodeLayout
-          Size="229.6,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Command Update DWH"
-          TopLeft="245.502043944267,414.110925325779" />
+          Size="209.6,41.6"
+          Id="Package\Insert from Stage to DWH\Lookup - find changed rows"
+          TopLeft="240.702043944267,262.910925325779" />
+        <NodeLayout
+          Size="205.6,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Command set g_id"
+          TopLeft="339.60816400211,727.072274815347" />
         <NodeLayout
           Size="197.6,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Destination DWH"
-          TopLeft="815.902043944266,415.710925325779" />
+          Id="Package\Insert from Stage to DWH\OLE DB Destination DWH 1"
+          TopLeft="610.285714577655,727.267232565661" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Insert from Stage to DWH\Row Count dwh_ins_s"
+          TopLeft="815.902043944266,342.110925325779" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Source Stage"
+          TopLeft="36,20" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Insert from Stage to DWH\Row Count dwh_ins_g"
+          TopLeft="610.285714577655,653.667232565661" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Insert from Stage to DWH\Derived Column package_id 2"
+          TopLeft="250.775514221747,138.084035550022" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Insert from Stage to DWH\OLE DB Command set s_id"
+          TopLeft="519.102043944267,414.910925325779" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Insert from Stage to DWH\Lookup - find changed rows 1"
+          TopLeft="60.4081640021099,580.672274815347" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Insert from Stage to DWH\Row Count dwh_upd_g"
+          TopLeft="63.60816400211,652.672274815347" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Insert from Stage to DWH\Conditional Split"
+          TopLeft="45.8775515486826,163.428573720595" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Insert from Stage to DWH\Derived Column package_id 1"
+          TopLeft="615.085714577655,805.667232565662" />
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 11]"
-          TopLeft="910.902043944266,383.710925325779">
+          Id="Package\Insert from Stage to DWH.Paths[Lookup Match Output3]"
+          TopLeft="169.60816400211,622.272274815347">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.0000000000001"
+              EndConnector="-12,30.4000000000003"
               Start="0,0"
-              End="0,24.5000000000001">
+              End="-12,22.9000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 12]"
-          TopLeft="336.702043944267,382.110925325779">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.6,31.9999999999999"
-              Start="0,0"
-              End="23.6,24.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
+                    End="0,11.2000000000002" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
+                    Point1="0,11.2000000000002"
+                    Point2="0,15.2000000000002"
+                    Point3="-4,15.2000000000002" />
                   <mssgle:LineSegment
-                    End="19.6,16" />
+                    End="-7.99999999999997,15.2000000000002" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.6,16"
-                    Point2="23.6,16"
-                    Point3="23.6,20" />
+                    Point1="-7.99999999999997,15.2000000000002"
+                    Point2="-12,15.2000000000002"
+                    Point3="-12,19.2000000000002" />
                   <mssgle:LineSegment
-                    End="23.6,24.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[OLE DB Source Output]"
-          TopLeft="125.6,61.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14,24"
-              Start="0,0"
-              End="-14,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8"
-                    Point2="0,12"
-                    Point3="-4,12" />
-                  <mssgle:LineSegment
-                    End="-9.99999999999999,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.99999999999999,12"
-                    Point2="-14,12"
-                    Point3="-14,16" />
-                  <mssgle:LineSegment
-                    End="-14,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="914.702043944266,457.310925325779">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.8000000000002,36.8"
-              Start="0,0"
-              End="10.8000000000002,29.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.4"
-                    Point2="0,18.4"
-                    Point3="4,18.4" />
-                  <mssgle:LineSegment
-                    End="6.80000000000018,18.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.80000000000018,18.4"
-                    Point2="10.8000000000002,18.4"
-                    Point3="10.8000000000002,22.4" />
-                  <mssgle:LineSegment
-                    End="10.8000000000002,29.3" />
+                    End="-12,22.9000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-67.8089062499999,23.4,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output2]"
-          TopLeft="670.035377277599,306.110925325779">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="237.066666666667,36"
-              Start="0,0"
-              End="237.066666666667,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.581512605042" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.581512605042"
-                    Point2="0,14.581512605042"
-                    Point3="4,14.581512605042" />
-                  <mssgle:LineSegment
-                    End="233.066666666667,14.581512605042" />
-                  <mssgle:CubicBezierSegment
-                    Point1="233.066666666667,14.581512605042"
-                    Point2="237.066666666667,14.581512605042"
-                    Point3="237.066666666667,18.581512605042" />
-                  <mssgle:LineSegment
-                    End="237.066666666667,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.7269466145835,19.581512605042,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output]"
-          TopLeft="450.302043944267,284.510925325779">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.2000000000001,0"
-              Start="0,0"
-              End="87.7000000000001,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="87.7000000000001,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.9563867187499,5,111.6127734375,11.609375"
+              BoundingBox="-54.19138671875,20.2000000000002,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6425,6 +6603,42 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Lookup Match Output1]"
+          TopLeft="430.274830668777,618.272274815347">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.1333333333334,108.8"
+              Start="0,0"
+              End="12.1333333333334,101.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0685714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.0685714285715"
+                    Point2="0,44.0685714285715"
+                    Point3="4,44.0685714285715" />
+                  <mssgle:LineSegment
+                    End="8.13333333333344,44.0685714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.13333333333344,44.0685714285715"
+                    Point2="12.1333333333334,44.0685714285715"
+                    Point3="12.1333333333334,48.0685714285715" />
+                  <mssgle:LineSegment
+                    End="12.1333333333334,101.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-42.1247200520833,49.0685714285715,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Insert from Stage to DWH.Paths[Lookup Match Output]"
           TopLeft="609.768710610933,306.110925325779">
           <EdgeLayout.Curve>
@@ -6461,6 +6675,144 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[g_id]"
+          TopLeft="98.6775515486826,205.028573720595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.9306124534273,375.643701094751"
+              Start="0,0"
+              End="70.9306124534273,368.143701094751">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,148.569133983099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,148.569133983099"
+                    Point2="0,152.569133983099"
+                    Point3="4,152.569133983099" />
+                  <mssgle:LineSegment
+                    End="66.9306124534273,152.569133983099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.9306124534273,152.569133983099"
+                    Point2="70.9306124534273,152.569133983099"
+                    Point3="70.9306124534273,156.569133983099" />
+                  <mssgle:LineSegment
+                    End="70.9306124534273,368.143701094751" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.5377085704637,157.569133983099,19.8551953125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output3]"
+          TopLeft="460.375514221747,158.884035550022">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.542861521974,-13.1092438813312"
+              Start="0,0"
+              End="40.042861521974,-13.1092438813312">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19.771430760987,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.771430760987,0"
+                    Point2="23.771430760987,0"
+                    Point3="23.771430760987,-4" />
+                  <mssgle:LineSegment
+                    End="23.771430760987,-9.10924388133117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.771430760987,-9.10924388133117"
+                    Point2="23.771430760987,-13.1092438813312"
+                    Point3="27.771430760987,-13.1092438813312" />
+                  <mssgle:LineSegment
+                    End="40.042861521974,-13.1092438813312" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output2]"
+          TopLeft="111.6,127.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.4775515486826,36.2285737205955"
+              Start="0,0"
+              End="11.4775515486826,28.7285737205955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1142868602977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1142868602977"
+                    Point2="0,18.1142868602977"
+                    Point3="4,18.1142868602977" />
+                  <mssgle:LineSegment
+                    End="7.47755154868258,18.1142868602977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.47755154868258,18.1142868602977"
+                    Point2="11.4775515486826,18.1142868602977"
+                    Point3="11.4775515486826,22.1142868602977" />
+                  <mssgle:LineSegment
+                    End="11.4775515486826,28.7285737205955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output1]"
+          TopLeft="719.885714577655,847.267232565663">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.4,39.2"
+              Start="0,0"
+              End="24.4,31.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6"
+                    Point2="0,19.6"
+                    Point3="4,19.6" />
+                  <mssgle:LineSegment
+                    End="20.4,19.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.4,19.6"
+                    Point2="24.4,19.6"
+                    Point3="24.4,23.6" />
+                  <mssgle:LineSegment
+                    End="24.4,31.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Insert from Stage to DWH.Paths[Derived Column Output]"
           TopLeft="925.502043944266,535.710925325779">
           <EdgeLayout.Curve>
@@ -6494,42 +6846,40 @@ ORDER BY c.customer_id asc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Insert from Stage to DWH\Conditional Split"
-          TopLeft="45.8775515486826,163.428573720595" />
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output2]"
-          TopLeft="111.6,127.2">
+          Id="Package\Insert from Stage to DWH.Paths[Conditional Split Default Output]"
+          TopLeft="200.277551548683,178.628573720595">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.4775515486826,36.2285737205955"
+              EndConnector="50.4979626730649,-19.7445381705736"
               Start="0,0"
-              End="11.4775515486826,28.7285737205955">
+              End="42.9979626730649,-19.7445381705736">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1142868602977" />
+                    End="17.3213620175163,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.1142868602977"
-                    Point2="0,18.1142868602977"
-                    Point3="4,18.1142868602977" />
+                    Point1="17.3213620175163,0"
+                    Point2="21.3213620175163,0"
+                    Point3="21.3213620175163,-4" />
                   <mssgle:LineSegment
-                    End="7.47755154868258,18.1142868602977" />
+                    End="21.3213620175163,-15.7445381705736" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.47755154868258,18.1142868602977"
-                    Point2="11.4775515486826,18.1142868602977"
-                    Point3="11.4775515486826,22.1142868602977" />
+                    Point1="21.3213620175163,-15.7445381705736"
+                    Point2="21.3213620175163,-19.7445381705736"
+                    Point3="25.3213620175163,-19.7445381705736" />
                   <mssgle:LineSegment
-                    End="11.4775515486826,28.7285737205955" />
+                    End="42.9979626730649,-19.7445381705736" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-49.2925442324837,1,141.2278125,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6568,44 +6918,64 @@ ORDER BY c.customer_id asc</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="248.8,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1"
-          TopLeft="619.885714577655,886.467232565663" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Insert from Stage to DWH\Row Count dwh_ins_g"
-          TopLeft="610.285714577655,653.667232565661" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert from Stage to DWH\Derived Column package_id 1"
-          TopLeft="615.085714577655,805.667232565662" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Insert from Stage to DWH\Lookup - find new rows 1"
-          TopLeft="366.00816400211,576.672274815347" />
-        <NodeLayout
-          Size="205.6,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Command set g_id"
-          TopLeft="339.60816400211,727.072274815347" />
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Insert from Stage to DWH\Row Count dwh_upd_g"
-          TopLeft="63.60816400211,652.672274815347" />
-        <NodeLayout
-          Size="218.4,41.6"
-          Id="Package\Insert from Stage to DWH\Lookup - find changed rows 1"
-          TopLeft="60.4081640021099,580.672274815347" />
-        <NodeLayout
-          Size="229.6,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Command Update DWH 1"
-          TopLeft="66.00816400211,726.272274815347" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Destination DWH 1"
-          TopLeft="610.285714577655,727.267232565661" />
         <EdgeLayout
           Id="Package\Insert from Stage to DWH.Paths[Row Count Output 1]"
+          TopLeft="336.702043944267,382.110925325779">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.6,31.9999999999999"
+              Start="0,0"
+              End="23.6,24.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="19.6,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.6,16"
+                    Point2="23.6,16"
+                    Point3="23.6,20" />
+                  <mssgle:LineSegment
+                    End="23.6,24.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 13]"
+          TopLeft="910.902043944266,383.710925325779">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0000000000001"
+              Start="0,0"
+              End="0,24.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 12]"
           TopLeft="705.485714577655,695.267232565661">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6627,7 +6997,7 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 13]"
+          Id="Package\Insert from Stage to DWH.Paths[Row Count Output 11]"
           TopLeft="157.60816400211,694.272274815347">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6652,6 +7022,40 @@ ORDER BY c.customer_id asc</property>
                     Point3="23.2,20" />
                   <mssgle:LineSegment
                     End="23.2,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert from Stage to DWH.Paths[OLE DB Source Output]"
+          TopLeft="125.6,61.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,24"
+              Start="0,0"
+              End="-14,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
+                  <mssgle:LineSegment
+                    End="-9.99999999999999,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.99999999999999,12"
+                    Point2="-14,12"
+                    Point3="-14,16" />
+                  <mssgle:LineSegment
+                    End="-14,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6697,31 +7101,43 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output3]"
-          TopLeft="278.80816400211,599.472274815347">
+          Id="Package\Insert from Stage to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="914.702043944266,457.310925325779">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.2,0"
+              EndConnector="10.8000000000002,36.8"
               Start="0,0"
-              End="79.7,0">
+              End="10.8000000000002,29.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="79.7,0" />
+                    End="0,14.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4"
+                    Point2="0,18.4"
+                    Point3="4,18.4" />
+                  <mssgle:LineSegment
+                    End="6.80000000000018,18.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.80000000000018,18.4"
+                    Point2="10.8000000000002,18.4"
+                    Point3="10.8000000000002,22.4" />
+                  <mssgle:LineSegment
+                    End="10.8000000000002,29.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.95638671875,5,111.6127734375,11.609375"
+              BoundingBox="-67.8089062499999,23.4,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output1]"
+          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output]"
           TopLeft="490.541497335443,618.272274815347">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6757,254 +7173,92 @@ ORDER BY c.customer_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup Match Output3]"
-          TopLeft="169.60816400211,622.272274815347">
+          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output1]"
+          TopLeft="450.302043944267,284.510925325779">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12,30.4000000000003"
+              EndConnector="95.2000000000001,0"
               Start="0,0"
-              End="-12,22.9000000000003">
+              End="87.7000000000001,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.2000000000002" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.2000000000002"
-                    Point2="0,15.2000000000002"
-                    Point3="-4,15.2000000000002" />
-                  <mssgle:LineSegment
-                    End="-7.99999999999997,15.2000000000002" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.99999999999997,15.2000000000002"
-                    Point2="-12,15.2000000000002"
-                    Point3="-12,19.2000000000002" />
-                  <mssgle:LineSegment
-                    End="-12,22.9000000000003" />
+                    End="87.7000000000001,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.19138671875,20.2000000000002,96.3827734375,11.609375"
+              BoundingBox="-11.9563867187499,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Lookup Match Output1]"
-          TopLeft="430.274830668777,618.272274815347">
+          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output3]"
+          TopLeft="670.035377277599,306.110925325779">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.1333333333334,108.8"
+              EndConnector="237.066666666667,36"
               Start="0,0"
-              End="12.1333333333334,101.3">
+              End="237.066666666667,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.0685714285715" />
+                    End="0,10.581512605042" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.0685714285715"
-                    Point2="0,44.0685714285715"
-                    Point3="4,44.0685714285715" />
+                    Point1="0,10.581512605042"
+                    Point2="0,14.581512605042"
+                    Point3="4,14.581512605042" />
                   <mssgle:LineSegment
-                    End="8.13333333333344,44.0685714285715" />
+                    End="233.066666666667,14.581512605042" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.13333333333344,44.0685714285715"
-                    Point2="12.1333333333334,44.0685714285715"
-                    Point3="12.1333333333334,48.0685714285715" />
+                    Point1="233.066666666667,14.581512605042"
+                    Point2="237.066666666667,14.581512605042"
+                    Point3="237.066666666667,18.581512605042" />
                   <mssgle:LineSegment
-                    End="12.1333333333334,101.3" />
+                    End="237.066666666667,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-42.1247200520833,49.0685714285715,96.3827734375,11.609375"
+              BoundingBox="62.7269466145835,19.581512605042,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output1]"
-          TopLeft="719.885714577655,847.267232565663">
+          Id="Package\Insert from Stage to DWH.Paths[Lookup No Match Output2]"
+          TopLeft="278.80816400211,599.472274815347">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.4,39.2"
+              EndConnector="87.2,0"
               Start="0,0"
-              End="24.4,31.7">
+              End="79.7,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.6"
-                    Point2="0,19.6"
-                    Point3="4,19.6" />
-                  <mssgle:LineSegment
-                    End="20.4,19.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.4,19.6"
-                    Point2="24.4,19.6"
-                    Point3="24.4,23.6" />
-                  <mssgle:LineSegment
-                    End="24.4,31.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[g_id]"
-          TopLeft="98.6775515486826,205.028573720595">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="70.9306124534273,375.643701094751"
-              Start="0,0"
-              End="70.9306124534273,368.143701094751">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,148.569133983099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,148.569133983099"
-                    Point2="0,152.569133983099"
-                    Point3="4,152.569133983099" />
-                  <mssgle:LineSegment
-                    End="66.9306124534273,152.569133983099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.9306124534273,152.569133983099"
-                    Point2="70.9306124534273,152.569133983099"
-                    Point3="70.9306124534273,156.569133983099" />
-                  <mssgle:LineSegment
-                    End="70.9306124534273,368.143701094751" />
+                    End="79.7,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.5377085704637,157.569133983099,19.8551953125,11.6630859375"
+              BoundingBox="-15.95638671875,5,111.6127734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="235.2,41.6"
-          Id="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3"
-          TopLeft="507.918375743722,124.974791668691" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert from Stage to DWH\Derived Column package_id 2"
-          TopLeft="250.775514221747,138.084035550022" />
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Conditional Split Default Output]"
-          TopLeft="200.277551548683,178.628573720595">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50.4979626730649,-19.7445381705736"
-              Start="0,0"
-              End="42.9979626730649,-19.7445381705736">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="17.3213620175163,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.3213620175163,0"
-                    Point2="21.3213620175163,0"
-                    Point3="21.3213620175163,-4" />
-                  <mssgle:LineSegment
-                    End="21.3213620175163,-15.7445381705736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.3213620175163,-15.7445381705736"
-                    Point2="21.3213620175163,-19.7445381705736"
-                    Point3="25.3213620175163,-19.7445381705736" />
-                  <mssgle:LineSegment
-                    End="42.9979626730649,-19.7445381705736" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.2925442324837,1,141.2278125,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert from Stage to DWH.Paths[Derived Column Output3]"
-          TopLeft="460.375514221747,158.884035550022">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.542861521974,-13.1092438813312"
-              Start="0,0"
-              End="40.042861521974,-13.1092438813312">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="19.771430760987,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.771430760987,0"
-                    Point2="23.771430760987,0"
-                    Point3="23.771430760987,-4" />
-                  <mssgle:LineSegment
-                    End="23.771430760987,-9.10924388133117" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.771430760987,-9.10924388133117"
-                    Point2="23.771430760987,-13.1092438813312"
-                    Point3="27.771430760987,-13.1092438813312" />
-                  <mssgle:LineSegment
-                    End="40.042861521974,-13.1092438813312" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Source Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Insert from Stage to DWH\Lookup - find new rows">
     <Properties>
@@ -7025,6 +7279,81 @@ ORDER BY c.customer_id asc</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination Audit_Customer 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\Lookup - find new rows 1">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[dbo].[dimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7052,7 +7381,7 @@ ORDER BY c.customer_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH">
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7064,6 +7393,42 @@ ORDER BY c.customer_id asc</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Source Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\Lookup - find changed rows 1">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[dbo].[dimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Insert sources to stage">
     <LayoutInfo>
@@ -7071,12 +7436,12 @@ ORDER BY c.customer_id asc</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="257.6,41.6"
-          Id="Package\Insert sources to stage\OLE DB Destination - Stage_Customer"
-          TopLeft="32.5714287173991,263.764707023462" />
-        <NodeLayout
-          Size="257.6,41.6"
           Id="Package\Insert sources to stage\OLE DB Destination - Stage_Customer 1"
           TopLeft="362.514291806124,266.352942892425" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Insert sources to stage\Derived Column - package_id"
+          TopLeft="32.0000005449568,355.482356501781" />
         <NodeLayout
           Size="225.6,41.6"
           Id="Package\Insert sources to stage\Derived Column 1 - package_id"
@@ -7106,17 +7471,129 @@ ORDER BY c.customer_id asc</property>
           Id="Package\Insert sources to stage\Row Count g_read"
           TopLeft="357.142863224964,100.988236014818" />
         <NodeLayout
-          Size="216.8,41.6"
-          Id="Package\Insert sources to stage\Derived Column - package_id"
-          TopLeft="32.0000005449568,355.482356501781" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert sources to stage\Derived Column"
-          TopLeft="32.2285714869596,187.529413171788" />
+          Size="257.6,41.6"
+          Id="Package\Insert sources to stage\OLE DB Destination - Stage_Customer"
+          TopLeft="32.5714287173991,263.764707023462" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Insert sources to stage\Derived Column 1"
           TopLeft="361.714291874244,186.400001604417" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Insert sources to stage\Derived Column"
+          TopLeft="32.2285714869596,187.529413171788" />
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Derived Column Output1]"
+          TopLeft="140.400000544957,397.082356501781">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.1428571623198,35.0588235723098"
+              Start="0,0"
+              End="17.1428571623198,27.5588235723098">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5294117861549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5294117861549"
+                    Point2="0,17.5294117861549"
+                    Point3="4,17.5294117861549" />
+                  <mssgle:LineSegment
+                    End="13.1428571623198,17.5294117861549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.1428571623198,17.5294117861549"
+                    Point2="17.1428571623198,17.5294117861549"
+                    Point3="17.1428571623198,21.5294117861549" />
+                  <mssgle:LineSegment
+                    End="17.1428571623198,27.5588235723098" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Derived Column Output]"
+          TopLeft="108.62857148696,229.129413171788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.7428572304395,34.6352938516742"
+              Start="0,0"
+              End="52.7428572304395,27.1352938516742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.3176469258371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3176469258371"
+                    Point2="0,17.3176469258371"
+                    Point3="4,17.3176469258371" />
+                  <mssgle:LineSegment
+                    End="48.7428572304395,17.3176469258371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.7428572304395,17.3176469258371"
+                    Point2="52.7428572304395,17.3176469258371"
+                    Point3="52.7428572304395,21.3176469258371" />
+                  <mssgle:LineSegment
+                    End="52.7428572304395,27.1352938516742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Row Count Output 11]"
+          TopLeft="439.028577549604,142.588236014818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.8117655895986"
+              Start="0,0"
+              End="0,36.3117655895986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3117655895986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert sources to stage.Paths[Row Count Output 1]"
+          TopLeft="111.228571725378,143.20000072928">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.3294124425076"
+              Start="0,0"
+              End="0,36.8294124425076">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.8294124425076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert sources to stage.Paths[OLE DB Source Output1]"
           TopLeft="453.314291738004,69.7411768652576">
@@ -7148,9 +7625,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7184,9 +7659,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7292,9 +7765,7 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7328,181 +7799,12 @@ ORDER BY c.customer_id asc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Derived Column Output1]"
-          TopLeft="140.400000544957,397.082356501781">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="17.1428571623198,35.0588235723098"
-              Start="0,0"
-              End="17.1428571623198,27.5588235723098">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5294117861549" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5294117861549"
-                    Point2="0,17.5294117861549"
-                    Point3="4,17.5294117861549" />
-                  <mssgle:LineSegment
-                    End="13.1428571623198,17.5294117861549" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.1428571623198,17.5294117861549"
-                    Point2="17.1428571623198,17.5294117861549"
-                    Point3="17.1428571623198,21.5294117861549" />
-                  <mssgle:LineSegment
-                    End="17.1428571623198,27.5588235723098" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Derived Column Output]"
-          TopLeft="108.62857148696,229.129413171788">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="52.7428572304395,34.6352938516742"
-              Start="0,0"
-              End="52.7428572304395,27.1352938516742">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.3176469258371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.3176469258371"
-                    Point2="0,17.3176469258371"
-                    Point3="4,17.3176469258371" />
-                  <mssgle:LineSegment
-                    End="48.7428572304395,17.3176469258371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48.7428572304395,17.3176469258371"
-                    Point2="52.7428572304395,17.3176469258371"
-                    Point3="52.7428572304395,21.3176469258371" />
-                  <mssgle:LineSegment
-                    End="52.7428572304395,27.1352938516742" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Row Count Output 11]"
-          TopLeft="439.028577549604,142.588236014818">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.8117655895986"
-              Start="0,0"
-              End="0,36.3117655895986">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.3117655895986" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert sources to stage.Paths[Row Count Output 1]"
-          TopLeft="111.228571725378,143.20000072928">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.3294124425076"
-              Start="0,0"
-              End="0,36.8294124425076">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.8294124425076" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_Sakila">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Destination Audit_Customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_GW">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Insert sources to stage\OLE DB Destination - Stage_Customer">
     <Properties>
@@ -7530,53 +7832,7 @@ ORDER BY c.customer_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\Lookup - find new rows 1">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string">[dbo].[dimCustomer]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q4:boolean">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\Lookup - find changed rows 1">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string">[dbo].[dimCustomer]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q4:boolean">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table 3">
+    design-time-name="Package\Insert sources to stage\OLE DB Destination Audit_Customer">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7585,6 +7841,40 @@ ORDER BY c.customer_id asc</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert sources to stage\OLE DB Destination Audit_Customer 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_Sakila">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert sources to stage\OLE DB Source - DB_GW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
