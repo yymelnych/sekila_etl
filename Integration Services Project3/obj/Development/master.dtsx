@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="master"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{DA907769-E93A-4683-808E-4068C2EAAD78}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{063882F6-7DC3-4A8F-9D7F-F7A365254387}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -25,7 +25,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/6/2018 10:39:16 PM</DTS:VariableValue>
+        DTS:DataType="7">5/7/2018 10:02:22 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -492,14 +492,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.5294127342198"
+              EndConnector="0,34.5294127342197"
               Start="0,0"
-              End="0,27.0294127342198">
+              End="0,27.0294127342197">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.0294127342198" />
+                    End="0,27.0294127342197" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -72,7 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/7/2018 8:15:40 PM</DTS:VariableValue>
+        DTS:DataType="7">5/7/2018 9:47:24 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -849,7 +849,7 @@ where [refTable].[country_name] = ? and [refTable].[city_name] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Insert from Stage to DWH\322:invalid};#{Package\Insert from Stage to DWH\323:invalid};</property>
+                  name="ParameterMap">#{Package\Insert from Stage to DWH\533:invalid};#{Package\Insert from Stage to DWH\534:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
