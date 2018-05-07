@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SakilaETL</Name>
-    <LastWriteTime>2018-05-06T19:40:55.3887034Z</LastWriteTime>
+    <LastWriteTime>2018-05-07T17:15:40.3341Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,17 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3-dimActor.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:35:34.0555637Z</LastWriteTime>
+      <LastWriteTime>2018-05-07T08:55:59.0901833Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>4-dimFilm.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:40:52.8513347Z</LastWriteTime>
+      <LastWriteTime>2018-05-06T19:50:07.2707627Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>5-dimCategory.dtsx</Name>
-      <LastWriteTime>2018-05-02T20:51:55.4706222Z</LastWriteTime>
+      <LastWriteTime>2018-05-07T17:02:42.9857201Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -38,7 +38,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>8-dimGeography.dtsx</Name>
-      <LastWriteTime>2018-05-02T20:15:32.0074831Z</LastWriteTime>
+      <LastWriteTime>2018-05-07T17:14:58.513239Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -58,7 +58,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>1_dimCustomer.dtsx</Name>
-      <LastWriteTime>2018-05-06T19:33:54.2553333Z</LastWriteTime>
+      <LastWriteTime>2018-05-07T17:16:48.3247853Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
