@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="8-dimGeography"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{5E334E97-4D89-45C1-B0C7-69DDC09563C7}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{9C4BD62B-F917-4504-8BF7-FF67785A3A49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -72,7 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/7/2018 9:47:24 PM</DTS:VariableValue>
+        DTS:DataType="7">5/7/2018 10:53:49 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -849,7 +849,7 @@ where [refTable].[country_name] = ? and [refTable].[city_name] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Insert from Stage to DWH\533:invalid};#{Package\Insert from Stage to DWH\534:invalid};</property>
+                  name="ParameterMap">#{Package\Insert from Stage to DWH\551:invalid};#{Package\Insert from Stage to DWH\552:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3932,25 +3932,33 @@ WHERE  (c.last_update &gt;= ?) OR
         <NodeLayout
           Size="172,41.6"
           Id="Package\Populate audit table"
-          TopLeft="42.8571425652017,26.3529407045833" />
+          TopLeft="42.8571425652017,26.9647054190454" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Populate audit table 1"
+          TopLeft="51.4285723043948,400.329412880076" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Populate audit table 2"
+          TopLeft="51.4285712826008,578.541177302826" />
         <NodeLayout
           Size="205.6,41.6"
           Id="Package\Trancate stage_Geography"
           TopLeft="45.1428579116347,234.258826343576" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="129.342856957961,67.9529407045832">
+          TopLeft="129.342856957961,68.5647054190454">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.3058833052955"
+              EndConnector="0,25.6941185908334"
               Start="0,0"
-              End="0,18.8058833052955">
+              End="0,18.1941185908334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.8058833052955" />
+                    End="0,18.1941185908334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3985,6 +3993,72 @@ WHERE  (c.last_update &gt;= ?) OR
                     Point3="-11.4857139840411,24.5411770111138" />
                   <mssgle:LineSegment
                     End="-11.4857139840411,33.5823540222276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="139.342858115994,358.541180365804">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.7882325142722"
+              Start="0,0"
+              End="0,34.2882325142722">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2882325142722" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="144.085715108015,441.929412880076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.3058866599849"
+              Start="0,0"
+              End="0,34.8058866599849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8058866599849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="144.085714597118,525.835299540061">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.7058777627651"
+              Start="0,0"
+              End="0,45.2058777627651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.2058777627651" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4049,83 +4123,21 @@ WHERE  (c.last_update &gt;= ?) OR
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Populate audit table 1"
-          TopLeft="51.4285723043948,400.329412880076" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="139.342858115994,358.541180365804">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.7882325142722"
-              Start="0,0"
-              End="0,34.2882325142722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.2882325142722" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="144.085715108015,441.929412880076">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.3058866599849"
-              Start="0,0"
-              End="0,34.8058866599849">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.8058866599849" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Populate audit table 2"
-          TopLeft="51.4285712826008,578.541177302826" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="144.085714597118,525.835299540061">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.7058777627651"
-              Start="0,0"
-              End="0,45.2058777627651">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.2058777627651" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="368,76.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Insert from Stage to DWH">
     <LayoutInfo>
@@ -4717,6 +4729,45 @@ WHERE  (c.last_update &gt;= ?) OR
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert from Stage to DWH\Lookup - find new rows">
     <Properties>
       <Property>
@@ -4776,7 +4827,7 @@ WHERE  (c.last_update &gt;= ?) OR
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH">
+    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5141,15 +5192,7 @@ WHERE  (c.last_update &gt;= ?) OR
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert to stage\OLE DB Source - DB_Sakila">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert to stage\OLE DB Destination Stage_Geography">
+    design-time-name="Package\Insert to stage\OLE DB Destination audit_table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5175,19 +5218,6 @@ WHERE  (c.last_update &gt;= ?) OR
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert to stage\OLE DB Destination audit_table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Insert to stage\OLE DB Destination audit_table 1">
     <Properties>
       <Property>
@@ -5201,7 +5231,7 @@ WHERE  (c.last_update &gt;= ?) OR
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination DWH 1">
+    design-time-name="Package\Insert to stage\OLE DB Destination Stage_Geography">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5214,42 +5244,12 @@ WHERE  (c.last_update &gt;= ?) OR
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table">
+    design-time-name="Package\Insert to stage\OLE DB Source - DB_Sakila">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert from Stage to DWH\OLE DB Destination audit_table 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package.EventHandlers[OnError]\Execute SQL Task"
-          TopLeft="368,76.8" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

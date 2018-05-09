@@ -11,23 +11,40 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="9-dimLanguage"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{3939121E-6604-4BA7-80C5-FE9A36F46019}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{C230A7E2-3D58-427C-AD5C-E85CCD9519E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
-      DTS:CreationName="SMTP"
-      DTS:DTSID="{BE6A5FCD-CF60-407A-A612-C78193D381D6}"
-      DTS:ObjectName="SMTP Connection Manager">
-      <DTS:ObjectData>
-        <SmtpConnectionManager
-          ConnectionString="SmtpServer=mandriychak;UseWindowsAuthentication=False;EnableSsl=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C3B91F09-804F-4508-81F7-BC4006339800}"
+      DTS:ObjectName="session_id">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E20B45F4-A104-4BAA-BA8C-291ACCA5F134}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="audit_id">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1CC755EA-784A-400C-869B-20BD8EC1A5DC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dwh_ins">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{0EA0A078-4B04-4515-A108-91E4526A34A5}"
@@ -35,53 +52,183 @@
       DTS:Expression="@[System::StartTime]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="EndDate">
+      DTS:ObjectName="end_date">
       <DTS:VariableValue
-        DTS:DataType="7">5/4/2018 1:20:02 PM</DTS:VariableValue>
+        DTS:DataType="7">5/9/2018 11:11:37 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{75A3177A-B2A3-43A0-8C4B-F4DF00D7E43B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="g_read">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{15821218-8869-4AFE-8A84-A20EC69D6E70}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="Package_id">
+      DTS:ObjectName="package_id">
       <DTS:VariableValue
         DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4973CDA5-88E5-4A91-9C18-5672443C0FA3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_name">
+      <DTS:VariableValue
+        DTS:DataType="8">9-dimLanguage</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{FB67F6FA-EAAC-41CC-BD99-230B92304EE7}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="StartDate">
+      DTS:ObjectName="start_date">
       <DTS:VariableValue
         DTS:DataType="7">4/30/2018 3:46:22 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F2B70666-354B-4FCB-9A57-33CD4E0A469D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="s_read">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\get package_id"
+      DTS:refId="Package\audit finish"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{aad4ac80-0ce2-463f-9636-ca027c28d915}"
+      DTS:DTSID="{4b396594-58ed-4521-b1ad-2a5631e95504}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="get package_id"
+      DTS:ObjectName="audit finish"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="SELECT max (id) FROM dbo.audit&#xA;WHERE package_name = ? "
-          SQLTask:CodePage="1251"
+          SQLTask:SqlStatementSource="DECLARE @audit_id INT = ?,&#xA;  @dwh_ins INT = ?;&#xA;&#xA;UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA; dwh_ins = @dwh_ins,&#xA;   &#xA;    status = 1&#xA;WHERE id = @audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dwh_ins"
+            SQLTask:DtsVariableName="User::dwh_ins"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit rows from stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2162422d-e6e8-4118-aea0-4a25eca4ee73}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit rows from stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource="DECLARE @Audit_id INT = ?,&#xA;  @s_read INT = ?,&#xA;  @g_read INT = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET s_read = @s_read,&#xA; g_read = @g_read&#xA;WHERE id = @Audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@s_read"
+            SQLTask:DtsVariableName="User::s_read"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@g_read"
+            SQLTask:DtsVariableName="User::g_read"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\audit table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="audit table"
+      DTS:DTSID="{4e69ab95-6764-40f1-bb04-65200c0ae36e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="audit table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource=" INSERT INTO dbo.audit&#xA;(session_id, package_name, start_date) VALUES (?, ?, ?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@session_id"
+            SQLTask:DtsVariableName="$Package::session_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Package_Name"
+            SQLTask:DtsVariableName="User::package_name"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Start_Date"
+            SQLTask:DtsVariableName="System::StartTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get audit_id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{31bfa4a5-af48-4785-8fe1-aad398465e3f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get audit_id"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource="SELECT MAX(id) FROM dbo.audit&#xA;WHERE package_name = ? "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::Package_id" />
+            SQLTask:DtsVariableName="User::audit_id" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:DtsVariableName="User::package_name"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="-1" />
@@ -91,8 +238,8 @@
     <DTS:Executable
       DTS:refId="Package\get strart_date"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3ddbe979-9295-4619-9b9a-18c89c4b7f85}"
+      DTS:Description="get strart_date"
+      DTS:DTSID="{9b651fc4-d5f3-43ad-8c1b-f73301dc2e44}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="get strart_date"
@@ -102,12 +249,11 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="SELECT ISNULL ((SELECT start_date FROM dbo.audit &#xA;WHERE  id in (SELECT max (id) FROM dbo.audit&#xA;WHERE package_name = ? and end_date is not null)), cast ('2001-01-01' as datetime))"
-          SQLTask:CodePage="1251"
+          SQLTask:SqlStatementSource="SELECT MAX(start_date)&#xA;FROM dbo.audit&#xA;WHERE package_name = ?&#xA;    AND end_date IS NOT NULL&#xA; AND status = 1"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::StartDate" />
+            SQLTask:DtsVariableName="User::start_date" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="System::PackageName"
@@ -167,13 +313,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">@[User::EndDate]</property>
+                          name="Expression">@[User::end_date]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">@[User::EndDate]</property>
+                          name="FriendlyExpression">@[User::end_date]</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -197,6 +343,79 @@
                       refId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Sakila from Stage to DWH\Get session_id"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get session_id"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Sakila from Stage to DWH\Get session_id.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert Sakila from Stage to DWH\Get session_id.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Output].Columns[audit_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Output].Columns[audit_id]"
+                      name="audit_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::audit_id]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::audit_id]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert Sakila from Stage to DWH\Get session_id.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -261,7 +480,7 @@ where [refTable].[s_id] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]};</property>
+                  name="ParameterMap">#{Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -285,10 +504,10 @@ where [refTable].[s_id] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Inputs[Lookup Input].Columns[S_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Inputs[Lookup Input].Columns[s_id]"
                       cachedDataType="ui1"
-                      cachedName="S_id"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]">
+                      cachedName="s_id"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -338,144 +557,6 @@ where [refTable].[s_id] = ?</property>
                       refId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Insert Sakila from Stage to DWH\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.dimLanguage set 
-language_name = ?,
-updated = ?
-WHERE s_id = ?
-</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1251</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[language_name]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="language_name"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
-                    <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[inserted]"
-                      cachedDataType="date"
-                      cachedName="inserted"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
-                    <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[S_id]"
-                      cachedDataType="ui1"
-                      cachedName="S_id"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      codePage="1251"
-                      dataType="str"
-                      length="20"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="dbTimeStamp2"
-                      name="Param_1"
-                      scale="7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="ui1"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -551,57 +632,43 @@ WHERE s_id = ?
                 <input
                   refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[language_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="language_name"
                       externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
                     <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S_id]"
-                      cachedDataType="ui1"
-                      cachedName="S_id"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S_id]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]" />
-                    <inputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[G_id]"
-                      cachedDataType="ui1"
-                      cachedName="G_id"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[G_id]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[G_id]" />
-                    <inputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[inserted]"
                       cachedDataType="date"
                       cachedName="inserted"
                       externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
                       lineageId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Output].Columns[inserted]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[s_id]"
+                      cachedDataType="ui1"
+                      cachedName="s_id"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lang_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="lang_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="language_name" />
-                    <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S_id]"
-                      dataType="ui1"
-                      name="S_id" />
-                    <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[G_id]"
-                      dataType="ui1"
-                      name="G_id" />
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inserted]"
                       dataType="dbTimeStamp2"
@@ -612,6 +679,14 @@ WHERE s_id = ?
                       dataType="dbTimeStamp2"
                       name="updated"
                       scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      dataType="ui1"
+                      name="s_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      dataType="ui1"
+                      name="g_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -633,6 +708,167 @@ WHERE s_id = ?
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination audit_Language"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[audit].[Language]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Connections[OleDbConnection]"
+                  connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].Columns[language_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="language_name"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].Columns[s_id]"
+                      cachedDataType="ui1"
+                      cachedName="s_id"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].Columns[g_id]"
+                      cachedDataType="ui1"
+                      cachedName="g_id"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="language_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      dataType="ui1"
+                      name="s_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      dataType="ui1"
+                      name="g_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                      dataType="i4"
+                      name="error_code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
+                      dataType="i4"
+                      name="error_column" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -703,7 +939,7 @@ WHERE s_id = ?
                   <outputColumns>
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -713,40 +949,40 @@ WHERE s_id = ?
                       name="language_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[S_id]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_id]"
-                      name="S_id"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]"
+                      name="s_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[G_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[G_id]"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[G_id]"
-                      name="G_id"
+                      externalMetadataColumnId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
+                      name="g_id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="language_name" />
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[S_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
                       dataType="ui1"
-                      name="S_id" />
+                      name="s_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[G_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
                       dataType="ui1"
-                      name="G_id" />
+                      name="g_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -756,21 +992,21 @@ WHERE s_id = ?
                   <outputColumns>
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language_name]"
                       name="language_name" />
                     <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[S_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       dataType="ui1"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[S_id]"
-                      name="S_id" />
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
+                      name="s_id" />
                     <outputColumn
-                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[G_id]"
+                      refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
                       dataType="ui1"
-                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[G_id]"
-                      name="G_id" />
+                      lineageId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
+                      name="g_id" />
                     <outputColumn
                       refId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -788,6 +1024,35 @@ WHERE s_id = ?
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Insert Sakila from Stage to DWH\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::dwh_ins</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert Sakila from Stage to DWH\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Sakila from Stage to DWH\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert Sakila from Stage to DWH\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -796,32 +1061,42 @@ WHERE s_id = ?
               name="Derived Column Output"
               startId="Package\Insert Sakila from Stage to DWH\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Insert Sakila from Stage to DWH.Paths[Lookup Match Output]"
-              endId="Package\Insert Sakila from Stage to DWH\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Outputs[Lookup Match Output]" />
+              refId="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output1]"
+              endId="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert Sakila from Stage to DWH\Get session_id.Outputs[Derived Column Output]" />
             <path
               refId="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output]"
-              endId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Insert Sakila from Stage to DWH\Row Count.Inputs[Row Count Input 1]"
               name="Lookup No Match Output"
               startId="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Destination Error Output]"
+              endId="Package\Insert Sakila from Stage to DWH\Get session_id.Inputs[Derived Column Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Source Output]"
               endId="Package\Insert Sakila from Stage to DWH\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Insert Sakila from Stage to DWH\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Insert Sakila from Stage to DWH.Paths[Row Count Output 1]"
+              endId="Package\Insert Sakila from Stage to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert Sakila from Stage to DWH\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Insert Sakila to stage"
+      DTS:refId="Package\load stage_Language"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{f223b648-cde2-4068-9430-6e1d8522aaf8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Insert Sakila to stage"
+      DTS:ObjectName="load stage_Language"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -829,7 +1104,7 @@ WHERE s_id = ?
           version="1">
           <components>
             <component
-              refId="Package\Insert Sakila to stage\Derived Column"
+              refId="Package\load stage_Language\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -837,37 +1112,37 @@ WHERE s_id = ?
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\load stage_Language\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input].Columns[name]"
+                      refId="Package\load stage_Language\Derived Column.Inputs[Derived Column Input].Columns[name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="name"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]" />
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\load stage_Language\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\load stage_Language\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[name2]"
-                      codePage="1251"
+                      refId="Package\load stage_Language\Derived Column.Outputs[Derived Column Output].Columns[name2]"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="20"
-                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[name2]"
+                      lineageId="Package\load stage_Language\Derived Column.Outputs[Derived Column Output].Columns[name2]"
                       name="name2"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -875,36 +1150,36 @@ WHERE s_id = ?
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,20,1251)[TRIM](#{Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]})</property>
+                          name="Expression">(DT_STR,20,1252)[TRIM](#{Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,20,1251)TRIM(name)</property>
+                          name="FriendlyExpression">(DT_STR,20,1252)TRIM(name)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\load stage_Language\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\load stage_Language\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\load stage_Language\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\load stage_Language\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\load stage_Language\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\load stage_Language\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -913,11 +1188,11 @@ WHERE s_id = ?
               </outputs>
             </component>
             <component
-              refId="Package\Insert Sakila to stage\OLE DB Destination 1"
+              refId="Package\load stage_Language\OLE DB Destination stage_Language"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination 1"
+              name="OLE DB Destination stage_Language"
               usesDispositions="true"
               version="4">
               <properties>
@@ -950,7 +1225,7 @@ WHERE s_id = ?
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -970,7 +1245,7 @@ WHERE s_id = ?
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert Sakila to stage\OLE DB Destination 1.Connections[OleDbConnection]"
+                  refId="Package\load stage_Language\OLE DB Destination stage_Language.Connections[OleDbConnection]"
                   connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
                   connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -978,64 +1253,64 @@ WHERE s_id = ?
               </connections>
               <inputs>
                 <input
-                  refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[name2]"
-                      cachedCodepage="1251"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].Columns[name2]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="name2"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
-                      lineageId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output].Columns[name2]" />
+                      externalMetadataColumnId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                      lineageId="Package\load stage_Language\Derived Column.Outputs[Derived Column Output].Columns[name2]" />
                     <inputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[language_id]"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].Columns[language_id]"
                       cachedDataType="ui1"
                       cachedName="language_id"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[S_id]"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]" />
+                      externalMetadataColumnId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
-                      codePage="1251"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].ExternalColumns[language_name]"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="language_name" />
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[S_id]"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
                       dataType="ui1"
-                      name="S_id" />
+                      name="s_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[G_id]"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
                       dataType="ui1"
-                      name="G_id" />
+                      name="g_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Insert Sakila to stage\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\load stage_Language\OLE DB Destination stage_Language.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\load stage_Language\OLE DB Destination stage_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\load stage_Language\OLE DB Destination stage_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\load stage_Language\OLE DB Destination stage_Language.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1044,7 +1319,7 @@ WHERE s_id = ?
               </outputs>
             </component>
             <component
-              refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila"
+              refId="Package\load stage_Language\OLE DB Source - DB_Sakila"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -1096,7 +1371,7 @@ ORDER BY language_id asc</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Connections[OleDbConnection]"
+                  refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Connections[OleDbConnection]"
                   connectionManagerID="{EB83156A-2627-448F-97C9-F9E2729668F0}:external"
                   connectionManagerRefId="Project.ConnectionManagers[DB_Sakila]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1104,38 +1379,38 @@ ORDER BY language_id asc</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output]"
+                  refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[language_id]"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]"
+                      externalMetadataColumnId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[language_id]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[language_id]"
                       name="language_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      externalMetadataColumnId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[name]"
                       length="20"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].Columns[name]"
                       name="name"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[language_id]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[language_id]"
                       dataType="ui1"
                       name="language_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output].ExternalColumns[name]"
                       codePage="1252"
                       dataType="str"
                       length="20"
@@ -1143,32 +1418,32 @@ ORDER BY language_id asc</property>
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output]"
+                  refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[language_id]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[language_id]"
                       dataType="ui1"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[language_id]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[language_id]"
                       name="language_id" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
                       codePage="1252"
                       dataType="str"
                       length="20"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[name]"
                       name="name" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1176,132 +1451,71 @@ ORDER BY language_id asc</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\load stage_Language\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::s_read</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\load stage_Language\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load stage_Language\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\load stage_Language\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Insert Sakila to stage.Paths[Derived Column Output]"
-              endId="Package\Insert Sakila to stage\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              refId="Package\load stage_Language.Paths[Derived Column Output]"
+              endId="Package\load stage_Language\Row Count.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\Insert Sakila to stage\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\load stage_Language\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Insert Sakila to stage.Paths[OLE DB Source Output]"
-              endId="Package\Insert Sakila to stage\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\load stage_Language.Paths[OLE DB Source Output]"
+              endId="Package\load stage_Language\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output]" />
+              startId="Package\load stage_Language\OLE DB Source - DB_Sakila.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\load stage_Language.Paths[Row Count Output 1]"
+              endId="Package\load stage_Language\OLE DB Destination stage_Language.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\load stage_Language\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Populate audit table"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7d8e7460-5ead-470e-bf5b-19cb50d5a180}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Populate audit table"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="INSERT INTO dbo.audit&#xA;(package_name, start_date) values (?, ?)&#xA;"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="System::PackageName"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="129"
-            SQLTask:ParameterSize="0" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::EndDate"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Populate audit table 2"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{f992a8c1-2c2c-46e5-838c-b31da7f53a8b}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Populate audit table 2"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="UPDATE audit&#xA;SET          end_date = GETDATE(), &#xA;status = 1&#xA;WHERE id = ?"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::Package_id"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="131"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Send Mail Task"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Send Mail Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{1EB1E0E1-FF4D-4F07-8DC3-F3D6BA76A79F}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Send Mail Task"
-      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{BE6A5FCD-CF60-407A-A612-C78193D381D6}"
-          SendMailTask:From="mandriychak@gmail.com"
-          SendMailTask:To="mandriychak@gmail.com"
-          SendMailTask:Subject="Send Mail Task" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Trancate stage_Language 1"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4d03c1e0-67fb-44d9-ace9-f84a445f9cea}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Trancate stage_Language 1"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="Truncate table stage.Language"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Trancate stage_Language start"
+      DTS:refId="Package\Trancate stage_Language"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{26c1bda4-aa09-4c42-9cd4-4d0cd1235d44}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Trancate stage_Language start"
+      DTS:ObjectName="Trancate stage_Language"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="Truncate table stage.Language"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="Truncate table stage.Language" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1309,60 +1523,119 @@ ORDER BY language_id asc</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{c49801be-3e7a-4afc-a4a9-f8fa341578e1}"
-      DTS:From="Package\Populate audit table"
+      DTS:DTSID="{9A7E515F-DD6C-4C60-AB0D-EC80CC8B50E5}"
+      DTS:From="Package\Insert Sakila from Stage to DWH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\get strart_date" />
+      DTS:To="Package\audit finish" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{C0BD46FE-9671-49CB-8AB4-7116290086FA}"
-      DTS:From="Package\Trancate stage_Language start"
+      DTS:From="Package\Trancate stage_Language"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Insert Sakila to stage" />
+      DTS:To="Package\load stage_Language" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{36d2f7ef-45f3-49a7-86e6-2bd77886b0a0}"
+      DTS:From="Package\get audit_id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1"
+      DTS:To="Package\get strart_date" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{857C0F12-C030-462C-A950-7CF8244F7BF2}"
-      DTS:From="Package\get package_id"
+      DTS:DTSID="{3A8B7B76-DEA4-4C01-831A-2E0B42A67E9E}"
+      DTS:From="Package\get strart_date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Trancate stage_Language start" />
+      DTS:To="Package\Trancate stage_Language" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{d38f72f3-c007-4711-862e-3471e2242f61}"
-      DTS:From="Package\Insert Sakila to stage"
+      DTS:DTSID="{E8486D27-BDC5-4918-966F-359EB120A6FF}"
+      DTS:From="Package\load stage_Language"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Insert Sakila from Stage to DWH" />
+      DTS:To="Package\Audit rows from stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{661b70b7-cf5e-4b2f-b9cc-3037c8cd52f0}"
+      DTS:From="Package\audit table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 1"
+      DTS:To="Package\get audit_id" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{F747D807-985D-4133-ACC5-9F1457F24D05}"
-      DTS:From="Package\Insert Sakila from Stage to DWH"
+      DTS:DTSID="{3007E4BC-376F-4E2B-9F35-82A93109AA02}"
+      DTS:From="Package\Audit rows from stage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Trancate stage_Language 1" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{78C095BA-CD9A-447B-89F8-CD82A1CF0B7B}"
-      DTS:From="Package\Trancate stage_Language 1"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Populate audit table 2" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
-      DTS:CreationName=""
-      DTS:DTSID="{9e55b65f-b0a6-4cf0-92fb-b53551319931}"
-      DTS:From="Package\get strart_date"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 8"
-      DTS:To="Package\get package_id" />
+      DTS:To="Package\Insert Sakila from Stage to DWH" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{D49EF0CC-98EA-4AD8-9BC2-D5944C558049}"
+      DTS:EventID="1275068416"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{1B5939CF-2F26-4213-BD85-622CFBA7CFA2}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{589344dd-970a-4827-b79e-7b80fe7d69d4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task  - Audit Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+              SQLTask:SqlStatementSource="DECLARE audit_id INT = ?,&#xA;  @ErrorCode VARCHAR(1000) = ?,&#xA;  @ErrorDescription VARCHAR(1000) = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA; error = 'ErrorCode: ' + @ErrorCode + '; ErrorDescription: ' + @ErrorDescription ,&#xA;    status = 0&#xA;WHERE id = audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Audit_id"
+                SQLTask:DtsVariableName="User::audit_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorCode"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorDescription"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1376,55 +1649,51 @@ ORDER BY language_id asc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\get package_id"
-          TopLeft="452.428571623199,66" />
+          Size="131,42"
+          Id="Package\audit finish"
+          TopLeft="337,665.894117715696" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="183,42"
+          Id="Package\Audit rows from stage"
+          TopLeft="313,463.894117715696" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\audit table"
+          TopLeft="339.857142837679,10.74117453156" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\get audit_id"
+          TopLeft="341.857142837679,95.74117453156" />
+        <NodeLayout
+          Size="149,42"
           Id="Package\get strart_date"
-          TopLeft="265.571428785518,64.6470578368555" />
+          TopLeft="335.857142837679,186.74117453156" />
         <NodeLayout
-          Size="232.8,41.6"
+          Size="233,42"
           Id="Package\Insert Sakila from Stage to DWH"
-          TopLeft="343,164.894117715696" />
+          TopLeft="284,561.894117715696" />
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Insert Sakila to stage"
-          TopLeft="658.000000408717,162.54117642769" />
+          Size="179,42"
+          Id="Package\load stage_Language"
+          TopLeft="314.000000408717,365.54117642769" />
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Populate audit table"
-          TopLeft="62,62.74117453156" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Populate audit table 2"
-          TopLeft="38,282" />
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Send Mail Task"
-          TopLeft="144,415" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Trancate stage_Language 1"
-          TopLeft="29,165.894117715696" />
-        <NodeLayout
-          Size="224.8,41.6"
-          Id="Package\Trancate stage_Language start"
-          TopLeft="630.857142837679,66.6470578368555" />
+          Size="201,42"
+          Id="Package\Trancate stage_Language"
+          TopLeft="302.857142837679,273.647057836855" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="235,84.6941161842078">
+          TopLeft="401.5,603.894117715696">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.571428785518,0"
+              EndConnector="0,62"
               Start="0,0"
-              End="23.071428785518,0">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="23.071428785518,0" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1435,18 +1704,40 @@ ORDER BY language_id asc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="745.428571623198,108.647057836856">
+          TopLeft="403.428571623198,315.647057836855">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.894118590834"
+              EndConnector="0,49.894118590835"
               Start="0,0"
-              End="0,46.394118590834">
+              End="0,42.394118590835">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.394118590834" />
+                    End="0,42.394118590835" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="409.857142837679,137.74117453156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1457,18 +1748,18 @@ ORDER BY language_id asc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="602.428571623199,87.3235289184278">
+          TopLeft="406.857142837679,228.74117453156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.42857121448,0"
+              EndConnector="0,44.905883305295"
               Start="0,0"
-              End="20.92857121448,0">
+              End="0,37.405883305295">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="20.92857121448,0" />
+                    End="0,37.405883305295" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1479,18 +1770,40 @@ ORDER BY language_id asc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="658.000000408717,184.717647071693">
+          TopLeft="404.000000204359,407.54117642769">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-82.000000408717,0"
+              EndConnector="0,56.352941288006"
               Start="0,0"
-              End="-74.500000408717,0">
+              End="0,48.852941288006">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-74.500000408717,0" />
+                    End="0,48.852941288006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 1]"
+          TopLeft="406.857142837679,52.74117453156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1501,62 +1814,18 @@ ORDER BY language_id asc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="343,186.394117715696">
+          TopLeft="402.5,505.894117715696">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104,0"
+              EndConnector="0,56"
               Start="0,0"
-              End="-96.5,0">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-96.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="131.5,207.894117715696">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74.105882284304"
-              Start="0,0"
-              End="0,66.605882284304">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.605882284304" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="414.571428785518,86.3235289184278">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="37.857142837681,0"
-              Start="0,0"
-              End="30.357142837681,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="30.357142837681,0" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1574,171 +1843,172 @@ ORDER BY language_id asc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Insert Sakila from Stage to DWH\Derived Column"
-          TopLeft="232.2,31.6" />
+          Size="130,42"
+          Id="Package\Insert Sakila from Stage to DWH\Row Count"
+          TopLeft="307,273" />
         <NodeLayout
           Size="150,42"
           Id="Package\Insert Sakila from Stage to DWH\OLE DB Source"
-          TopLeft="18,29" />
+          TopLeft="293,0" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows"
-          TopLeft="472.6,32.6" />
+          Size="147,42"
+          Id="Package\Insert Sakila from Stage to DWH\Get session_id"
+          TopLeft="300,449" />
         <NodeLayout
           Size="171,42"
           Id="Package\Insert Sakila from Stage to DWH\OLE DB Destination"
-          TopLeft="641,151" />
+          TopLeft="288,353" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Insert Sakila from Stage to DWH\OLE DB Command"
-          TopLeft="401,147" />
+          Size="210,42"
+          Id="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows"
+          TopLeft="265.6,184.6" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insert Sakila from Stage to DWH\Derived Column"
+          TopLeft="293.2,92.6" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language"
+          TopLeft="246,544" />
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output]"
-          TopLeft="385.2,53.1">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Row Count Output 1]"
+          TopLeft="372.75,315">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.4,0"
+              EndConnector="0,38"
               Start="0,0"
-              End="79.9,0">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="79.9,0" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Source Output]"
-          TopLeft="168,51.3">
+          TopLeft="368.85,42">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.2,0"
+              EndConnector="0,50.6"
               Start="0,0"
-              End="56.7,0">
+              End="0,43.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.7,0" />
+                    End="0,43.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Sakila from Stage to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="373.5,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-73.20890625,17.533203125,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup No Match Output]"
-          TopLeft="611.266666666667,74.6">
+          TopLeft="371.3,226.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="115.233333333333,76.4"
+              EndConnector="0,46.4"
               Start="0,0"
-              End="115.233333333333,68.9">
+              End="0,38.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.9066162570889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.9066162570889"
-                    Point2="0,30.9066162570889"
-                    Point3="4,30.9066162570889" />
-                  <mssgle:LineSegment
-                    End="111.233333333333,30.9066162570889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="111.233333333333,30.9066162570889"
-                    Point2="115.233333333333,30.9066162570889"
-                    Point3="115.233333333333,34.9066162570889" />
-                  <mssgle:LineSegment
-                    End="115.233333333333,68.9" />
+                    End="0,38.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="1.8102799479165,35.9066162570889,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,13.6453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila from Stage to DWH.Paths[Lookup Match Output]"
-          TopLeft="543.933333333333,74.6">
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output1]"
+          TopLeft="372,491">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.9333333333334,72.4"
+              EndConnector="0,53"
               Start="0,0"
-              End="-59.9333333333334,64.9">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2884688090737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.2884688090737"
-                    Point2="0,29.2884688090737"
-                    Point3="-4,29.2884688090737" />
-                  <mssgle:LineSegment
-                    End="-55.9333333333334,29.2884688090737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.9333333333334,29.2884688090737"
-                    Point2="-59.9333333333334,29.2884688090737"
-                    Point3="-59.9333333333334,33.2884688090737" />
-                  <mssgle:LineSegment
-                    End="-59.9333333333334,64.9" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.1580533854167,34.2884688090737,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Sakila from Stage to DWH.Paths[Derived Column Output]"
+          TopLeft="370.15,134.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q4:string">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Source">
     <Properties>
@@ -1765,37 +2035,77 @@ ORDER BY language_id asc</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila from Stage to DWH\Lookup - find changed rows">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Sakila from Stage to DWH\OLE DB Destination audit_Language">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Insert Sakila to stage">
+    design-time-name="Package\load stage_Language">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="207,42"
-          Id="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila"
-          TopLeft="27.2,23.2" />
+          Id="Package\load stage_Language\OLE DB Source - DB_Sakila"
+          TopLeft="255.2,12.2" />
         <NodeLayout
-          Size="180,42"
-          Id="Package\Insert Sakila to stage\OLE DB Destination 1"
-          TopLeft="521,19" />
+          Size="251,42"
+          Id="Package\load stage_Language\OLE DB Destination stage_Language"
+          TopLeft="240,269" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\load stage_Language\Row Count"
+          TopLeft="300,185" />
         <NodeLayout
           Size="154,42"
-          Id="Package\Insert Sakila to stage\Derived Column"
-          TopLeft="301,22" />
+          Id="Package\load stage_Language\Derived Column"
+          TopLeft="288,105" />
         <EdgeLayout
-          Id="Package\Insert Sakila to stage.Paths[Derived Column Output]"
-          TopLeft="455,41.5">
+          Id="Package\load stage_Language.Paths[Row Count Output 1]"
+          TopLeft="365.25,227">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66,0"
+              EndConnector="0,42"
               Start="0,0"
-              End="58.5,0">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="58.5,0" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1807,19 +2117,43 @@ ORDER BY language_id asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert Sakila to stage.Paths[OLE DB Source Output]"
-          TopLeft="234.2,43.6">
+          Id="Package\load stage_Language.Paths[OLE DB Source Output]"
+          TopLeft="361.85,54.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.8,0"
+              EndConnector="0,50.8"
               Start="0,0"
-              End="59.3,0">
+              End="0,43.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.3,0" />
+                    End="0,43.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load stage_Language.Paths[Derived Column Output]"
+          TopLeft="365,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1834,7 +2168,7 @@ ORDER BY language_id asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila to stage\OLE DB Source - DB_Sakila">
+    design-time-name="Package\load stage_Language\OLE DB Source - DB_Sakila">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1842,7 +2176,7 @@ ORDER BY language_id asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert Sakila to stage\OLE DB Destination 1">
+    design-time-name="Package\load stage_Language\OLE DB Destination stage_Language">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1854,5 +2188,17 @@ ORDER BY language_id asc</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="228,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          TopLeft="347,97" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

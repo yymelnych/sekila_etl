@@ -11,10 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="3-dimActor"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{44EAAA1A-E086-4FA7-895A-9D218F24BC3E}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{A58E5DE2-F065-4AFC-8431-ED7F23E182F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{576A650C-6029-4646-B7B3-C4A3CE94362B}"
+      DTS:ObjectName="Session_id">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -22,6 +33,33 @@
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Audit_id">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9CFE1ADF-7265-42A0-B452-8F775181DDAF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dwh_ins">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C9CA84A-2AA9-461D-8A33-2D00E3D369A5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dwh_upd">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{74445D66-5FE4-4272-80D1-E2457BB32308}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="g_read">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -45,8 +83,89 @@
       <DTS:VariableValue
         DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B6A29BA7-A43C-40CC-953C-7C20D2274B63}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="s_read">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Audit finish"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{46FD9EFB-FC1E-4CB0-956B-BFB0AB5DFCE0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit finish"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource="DECLARE @Audit_id INT = ?,&#xA;&#x9;&#x9;@dwh_ins INT = ?,&#xA;&#x9;&#x9;@dwh_upd INT = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA;&#x9;dwh_ins = @dwh_ins,&#xA;    dwh_upd = @dwh_upd,&#xA;    status = 1&#xA;WHERE id = @Audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::Audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dwh_ins"
+            SQLTask:DtsVariableName="User::dwh_ins"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dwh_upd"
+            SQLTask:DtsVariableName="User::dwh_upd"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit rows from stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B41D2A51-95D8-403F-9CA9-F7FE43043D56}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit rows from stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+          SQLTask:SqlStatementSource="DECLARE @Audit_id INT = ?,&#xA;&#x9;&#x9;@s_read INT = ?,&#xA;&#x9;&#x9;@g_read INT = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET s_read = @s_read,&#xA;&#x9;g_read = @g_read&#xA;WHERE id = @Audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Audit_id"
+            SQLTask:DtsVariableName="User::Audit_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@s_read"
+            SQLTask:DtsVariableName="User::s_read"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@g_read"
+            SQLTask:DtsVariableName="User::g_read"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\audit table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -61,44 +180,24 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="  INSERT INTO dbo.audit&#xA;(package_name, start_date) VALUES (?, ?)"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource=" INSERT INTO dbo.audit&#xA;(session_id, package_name, start_date) VALUES (?, ?, ?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
+            SQLTask:ParameterName="@Session_id"
+            SQLTask:DtsVariableName="$Package::Session_id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Package_Name"
             SQLTask:DtsVariableName="User::Package_Name"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
-            SQLTask:ParameterSize="0" />
+            SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
+            SQLTask:ParameterName="@Start_Date"
             SQLTask:DtsVariableName="System::StartTime"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="7"
-            SQLTask:ParameterSize="1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{46FD9EFB-FC1E-4CB0-956B-BFB0AB5DFCE0}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA;    status = 1&#xA;WHERE id = ?"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::Audit_id"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -118,7 +217,6 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
           SQLTask:SqlStatementSource="SELECT MAX(id) FROM dbo.audit&#xA;WHERE package_name = ? "
-          SQLTask:CodePage="1251"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -147,7 +245,6 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
           SQLTask:SqlStatementSource="SELECT MAX(start_date)&#xA;FROM dbo.audit&#xA;WHERE package_name = ?&#xA;    AND end_date IS NOT NULL&#xA;&#x9;AND status = 1"
-          SQLTask:CodePage="1251"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -243,38 +340,38 @@
                 <input
                   refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].Columns[first_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="first_name"
                       externalMetadataColumnId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]" />
                     <inputColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].Columns[last_name]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="last_name"
                       externalMetadataColumnId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]" />
                     <inputColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].Columns[s_id]"
                       cachedDataType="i2"
                       cachedName="s_id"
                       externalMetadataColumnId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]" />
                     <inputColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].Columns[g_id]"
                       cachedDataType="i4"
                       cachedName="g_id"
                       externalMetadataColumnId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -284,13 +381,13 @@
                       name="actor_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="last_name" />
@@ -341,11 +438,84 @@
               </outputs>
             </component>
             <component
-              refId="Package\Insert to DWH\Lookup"
+              refId="Package\Insert to DWH\Get Session_id"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get Session_id"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert to DWH\Get Session_id.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert to DWH\Get Session_id.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Output].Columns[Audit_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Output].Columns[Audit_id]"
+                      name="Audit_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Audit_id]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Audit_id]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert to DWH\Get Session_id.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to DWH\Lookup dimActor"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              name="Lookup dimActor"
               usesDispositions="true"
               version="6">
               <properties>
@@ -392,12 +562,12 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="actor_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="last_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="actor_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="last_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]};#{Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]};</property>
+                  name="ParameterMap">#{Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]};#{Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -409,7 +579,7 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert to DWH\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Insert to DWH\Lookup dimActor.Connections[OleDbConnection]"
                   connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
                   connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
                   description="Connection manager used to access lookup data."
@@ -417,14 +587,14 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Insert to DWH\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert to DWH\Lookup.Inputs[Lookup Input].Columns[s_id]"
+                      refId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input].Columns[s_id]"
                       cachedDataType="i2"
                       cachedName="s_id"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]">
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -437,10 +607,10 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Insert to DWH\Lookup.Inputs[Lookup Input].Columns[g_id]"
+                      refId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input].Columns[g_id]"
                       cachedDataType="i4"
                       cachedName="g_id"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]">
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -458,38 +628,38 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Insert to DWH\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Insert to DWH\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Insert to DWH\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Insert to DWH\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Insert to DWH\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Insert to DWH\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert to DWH\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert to DWH\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -498,13 +668,13 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Insert to DWH\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
+              refId="Package\Insert to DWH\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
               usesDispositions="true"
-              version="2">
+              version="4">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -512,40 +682,50 @@ where [refTable].[s_id] = ? and [refTable].[g_id] = ?</property>
                   name="CommandTimeout">0</property>
                 <property
                   dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[audit].[Actor]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
                   description="The SQL command to be executed."
-                  expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @g_id  INT=?
-DECLARE @s_id  INT=?
-DECLARE @first_name VARCHAR(50)=?
-DECLARE @last_name VARCHAR(50)=?
-
-IF(EXISTS(
-      SELECT first_name,
-			last_name
-      FROM [dbo].[dimActor]
-      WHERE g_id= @g_id
-			OR s_id = @s_id
-      EXCEPT
-      SELECT @first_name, @last_name
-    )
-  )
-BEGIN
-  UPDATE [dbo].[dimActor]
-  SET first_name = @first_name,
-	  last_name = @last_name,
-	  updated = GETDATE()
-  WHERE g_id= @g_id
-		OR s_id = @s_id
-END</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1251</property>
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert to DWH\OLE DB Command.Connections[OleDbConnection]"
+                  refId="Package\Insert to DWH\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
                   connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -553,119 +733,114 @@ END</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
+                  refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="OLE DB Command Input">
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[g_id]"
-                      cachedDataType="i4"
-                      cachedName="g_id"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]" />
-                    <inputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[s_id]"
-                      cachedDataType="i2"
-                      cachedName="s_id"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
-                    <inputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[first_name]"
-                      cachedCodepage="1251"
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="first_name"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[first_name]" />
                     <inputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[last_name]"
-                      cachedCodepage="1251"
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="last_name"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[s_id]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[g_id]"
+                      cachedDataType="i4"
+                      cachedName="g_id"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[g_id]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Audit_id]"
+                      cachedDataType="i4"
+                      cachedName="Audit_id"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      lineageId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Output].Columns[Audit_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i4"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
+                      name="first_name" />
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      dataType="i2"
+                      name="s_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
+                      dataType="i4"
+                      name="g_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                      dataType="i4"
+                      name="error_code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_column]"
+                      dataType="i4"
+                      name="error_column" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Insert to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input]">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert to DWH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -674,11 +849,11 @@ END</property>
               </outputs>
             </component>
             <component
-              refId="Package\Insert to DWH\OLE DB Source"
+              refId="Package\Insert to DWH\OLE DB Source stage dimActor"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="OLE DB Source stage dimActor"
               usesDispositions="true"
               version="7">
               <properties>
@@ -723,7 +898,7 @@ END</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert to DWH\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Insert to DWH\OLE DB Source stage dimActor.Connections[OleDbConnection]"
                   connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
                   connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -731,113 +906,586 @@ END</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
                       length="50"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]"
                       name="first_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
                       length="50"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]"
                       name="last_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]"
                       name="s_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[g_id]"
+                      externalMetadataColumnId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]"
                       name="g_id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="first_name" />
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="last_name" />
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
                       dataType="i2"
                       name="s_id" />
                     <externalMetadataColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].ExternalColumns[g_id]"
                       dataType="i4"
                       name="g_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1251"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       name="last_name" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       dataType="i2"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       name="s_id" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[g_id]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[g_id]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[g_id]"
                       name="g_id" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to DWH\Row Count dwh upd"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count dwh upd">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::dwh_upd</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert to DWH\Row Count dwh upd.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to DWH\Row Count dwh upd.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert to DWH\Row Count dwh upd.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to DWH\Row Count New Ins dwh"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count New Ins dwh">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::dwh_ins</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert to DWH\Row Count New Ins dwh.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to DWH\Row Count New Ins dwh.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert to DWH\Row Count New Ins dwh.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to DWH\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[first_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[last_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[s_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[g_id]"
+                      cachedDataType="i4"
+                      cachedName="g_id"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[g_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[first_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[last_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[s_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[g_id]"
+                      cachedDataType="i4"
+                      cachedName="g_id"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[g_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Insert to DWH\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[s_id]"
+                      dataType="i2"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[s_id]"
+                      name="s_id" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[g_id]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[g_id]"
+                      name="g_id" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to DWH\Update dimActor (if they differ)"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update dimActor (if they differ)"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @g_id  INT=?
+DECLARE @s_id  INT=?
+DECLARE @first_name VARCHAR(50)=?
+DECLARE @last_name VARCHAR(50)=?
+
+IF(EXISTS(
+      SELECT first_name,
+			last_name
+      FROM [dbo].[dimActor]
+      WHERE g_id= @g_id
+			OR s_id = @s_id
+      EXCEPT
+      SELECT @first_name, @last_name
+    )
+  )
+BEGIN
+  UPDATE [dbo].[dimActor]
+  SET first_name = @first_name,
+	  last_name = @last_name,
+	  updated = GETDATE()
+  WHERE g_id= @g_id
+		OR s_id = @s_id
+END</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert to DWH\Update dimActor (if they differ).Connections[OleDbConnection]"
+                  connectionManagerID="{D67259FE-843D-429A-8571-22B183FC602C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DB_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].Columns[g_id]"
+                      cachedDataType="i4"
+                      cachedName="g_id"
+                      externalMetadataColumnId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[g_id]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      externalMetadataColumnId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[s_id]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output].Columns[last_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -848,20 +1496,50 @@ END</property>
           </components>
           <paths>
             <path
+              refId="Package\Insert to DWH.Paths[Derived Column Output]"
+              endId="Package\Insert to DWH\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert to DWH\Get Session_id.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Insert to DWH.Paths[Lookup Match Output]"
-              endId="Package\Insert to DWH\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Insert to DWH\Row Count dwh upd.Inputs[Row Count Input 1]"
               name="Lookup Match Output"
-              startId="Package\Insert to DWH\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Insert to DWH.Paths[Lookup No Match Output]"
-              endId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input]"
+              endId="Package\Insert to DWH\Row Count New Ins dwh.Inputs[Row Count Input 1]"
               name="Lookup No Match Output"
-              startId="Package\Insert to DWH\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Insert to DWH\Lookup dimActor.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Insert to DWH.Paths[OLE DB Command Error Output]"
+              endId="Package\Insert to DWH\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Error Output"
+              startId="Package\Insert to DWH\Update dimActor (if they differ).Outputs[OLE DB Command Error Output]" />
+            <path
+              refId="Package\Insert to DWH.Paths[OLE DB Destination Error Output]"
+              endId="Package\Insert to DWH\Union All.Inputs[Union All Input 1]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Insert to DWH.Paths[OLE DB Source Output]"
-              endId="Package\Insert to DWH\Lookup.Inputs[Lookup Input]"
+              endId="Package\Insert to DWH\Lookup dimActor.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Insert to DWH\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Insert to DWH\OLE DB Source stage dimActor.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Insert to DWH.Paths[Row Count Output 1]"
+              endId="Package\Insert to DWH\Destination Insert New rows To DWH dimActor.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert to DWH\Row Count New Ins dwh.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert to DWH.Paths[Row Count Output 11]"
+              endId="Package\Insert to DWH\Update dimActor (if they differ).Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert to DWH\Row Count dwh upd.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert to DWH.Paths[Union All Output 1]"
+              endId="Package\Insert to DWH\Get Session_id.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Insert to DWH\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -954,7 +1632,7 @@ END</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load stage_Actor\Insert stage_Actor.Inputs[OLE DB Destination Input].Columns[FirstName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName_UPPER"
@@ -963,7 +1641,7 @@ END</property>
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[FirstName_UPPER]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\Insert stage_Actor.Inputs[OLE DB Destination Input].Columns[LastName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName_UPPER"
@@ -987,13 +1665,13 @@ END</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Insert stage_Actor.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Insert stage_Actor.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="last_name" />
@@ -1073,7 +1751,7 @@ END</property>
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[PersonId]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\Merge Join.Inputs[Merge Join Left Input].Columns[FirstName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName_UPPER"
@@ -1081,7 +1759,7 @@ END</property>
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[FirstName_UPPER]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\Merge Join.Inputs[Merge Join Left Input].Columns[LastName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName_UPPER"
@@ -1129,7 +1807,7 @@ END</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[FirstName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[FirstName_UPPER]"
@@ -1145,7 +1823,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[LastName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output].Columns[LastName_UPPER]"
@@ -1235,7 +1913,7 @@ END</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load stage_Actor\REPLACE First_Last Name.Inputs[Derived Column Input].Columns[FirstName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName_UPPER"
@@ -1261,7 +1939,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\REPLACE First_Last Name.Inputs[Derived Column Input].Columns[LastName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName_UPPER"
@@ -1338,6 +2016,64 @@ END</property>
               </outputs>
             </component>
             <component
+              refId="Package\Load stage_Actor\Row Count GroupWorks"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count GroupWorks">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::g_read</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load stage_Actor\Row Count GroupWorks.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load stage_Actor\Row Count GroupWorks.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load stage_Actor\Row Count GroupWorks.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load stage_Actor\Row Count sakila"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count sakila">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::s_read</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load stage_Actor\Row Count sakila.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load stage_Actor\Row Count sakila.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load stage_Actor\Row Count sakila.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load stage_Actor\Sort GroupWorks"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1378,7 +2114,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Inputs[Sort Input].Columns[FirstName]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName"
@@ -1396,7 +2132,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Inputs[Sort Input].Columns[LastName]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName"
@@ -1414,7 +2150,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Inputs[Sort Input].Columns[FirstName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName_UPPER"
@@ -1432,7 +2168,7 @@ END</property>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Inputs[Sort Input].Columns[LastName_UPPER]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName_UPPER"
@@ -1474,7 +2210,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[FirstName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[FirstName]"
@@ -1489,7 +2225,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[LastName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[LastName]"
@@ -1504,7 +2240,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[FirstName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[FirstName_UPPER]"
@@ -1520,7 +2256,7 @@ END</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[LastName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Sort GroupWorks.Outputs[Sort Output].Columns[LastName_UPPER]"
@@ -1700,14 +2436,16 @@ END</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PersonId]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Start_Date DATETIME = ? ;
+
+SELECT [PersonId]
       ,[FirstName]
       ,[LastName]
  FROM [GroupWorks].[dbo].[Person]
- WHERE (Inserted &gt;= ?
-	OR Updated &gt;= ?
+ WHERE (Inserted &gt;= @Start_Date
+	OR Updated &gt;= @Start_Date
 		)
-	OR ? IS NULL</property>
+	OR @Start_Date IS NULL</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1728,7 +2466,7 @@ END</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{C477EE1E-14FF-47A9-81AC-BB8D9E16C256};"Parameter1:Input",{C477EE1E-14FF-47A9-81AC-BB8D9E16C256};"Parameter2:Input",{C477EE1E-14FF-47A9-81AC-BB8D9E16C256};</property>
+                  name="ParameterMapping">"@Start_Date:Input",{C477EE1E-14FF-47A9-81AC-BB8D9E16C256};</property>
               </properties>
               <connections>
                 <connection
@@ -1754,7 +2492,7 @@ END</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[FirstName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1765,7 +2503,7 @@ END</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[LastName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1783,13 +2521,13 @@ END</property>
                       name="PersonId" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="FirstName" />
                     <externalMetadataColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="LastName" />
@@ -1807,14 +2545,14 @@ END</property>
                       name="PersonId" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                       name="FirstName" />
                     <outputColumn
                       refId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Error Output].Columns[LastName]"
@@ -2010,14 +2748,14 @@ END</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load stage_Actor\UPPER COLUMN.Inputs[Derived Column Input].Columns[FirstName]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FirstName"
                       lineageId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[FirstName]" />
                     <inputColumn
                       refId="Package\Load stage_Actor\UPPER COLUMN.Inputs[Derived Column Input].Columns[LastName]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LastName"
@@ -2036,7 +2774,7 @@ END</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load stage_Actor\UPPER COLUMN.Outputs[Derived Column Output].Columns[FirstName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2049,18 +2787,18 @@ END</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,50,1251)[UPPER]([TRIM](#{Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[FirstName]}))</property>
+                          name="Expression">(DT_STR,50,1252)[UPPER]([TRIM](#{Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[FirstName]}))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,50,1251)UPPER(TRIM(FirstName))</property>
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(TRIM(FirstName))</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load stage_Actor\UPPER COLUMN.Outputs[Derived Column Output].Columns[LastName_UPPER]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2073,13 +2811,13 @@ END</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,50,1251)[UPPER]([TRIM](#{Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[LastName]}))</property>
+                          name="Expression">(DT_STR,50,1252)[UPPER]([TRIM](#{Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output].Columns[LastName]}))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,50,1251)UPPER(TRIM(LastName))</property>
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(TRIM(LastName))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2129,14 +2867,24 @@ END</property>
               startId="Package\Load stage_Actor\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Load stage_Actor.Paths[OLE DB Source Output]"
-              endId="Package\Load stage_Actor\Sort sakila.Inputs[Sort Input]"
+              endId="Package\Load stage_Actor\Row Count sakila.Inputs[Row Count Input 1]"
               name="OLE DB Source Output"
               startId="Package\Load stage_Actor\Source sakila.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Load stage_Actor.Paths[OLE DB Source Output1]"
-              endId="Package\Load stage_Actor\UPPER COLUMN.Inputs[Derived Column Input]"
+              endId="Package\Load stage_Actor\Row Count GroupWorks.Inputs[Row Count Input 1]"
               name="OLE DB Source Output"
               startId="Package\Load stage_Actor\Source GroupWorks.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load stage_Actor.Paths[Row Count Output 1]"
+              endId="Package\Load stage_Actor\Sort sakila.Inputs[Sort Input]"
+              name="Row Count Output 1"
+              startId="Package\Load stage_Actor\Row Count sakila.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load stage_Actor.Paths[Row Count Output 11]"
+              endId="Package\Load stage_Actor\UPPER COLUMN.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Load stage_Actor\Row Count GroupWorks.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Load stage_Actor.Paths[Sort Output]"
               endId="Package\Load stage_Actor\Merge Join.Inputs[Merge Join Left Input]"
@@ -2165,8 +2913,7 @@ END</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [stage].[Actor]"
-          SQLTask:CodePage="1251" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [stage].[Actor]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2174,19 +2921,19 @@ END</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{03F57B8B-69D0-4306-8176-87D9AFD8CE07}"
+      DTS:DTSID="{6A031CB9-BEEE-4B27-9016-7A791ABEEA87}"
       DTS:From="Package\audit table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\get strart_date" />
+      DTS:To="Package\Get Audit_id" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{23CB0F43-CFD4-448C-8217-8B6470CBF3E5}"
-      DTS:From="Package\get strart_date"
+      DTS:DTSID="{6F2D6C94-958E-4641-919F-BFFBB38C3BAE}"
+      DTS:From="Package\Get Audit_id"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\TRUNCATE TABLE stage_Actor" />
+      DTS:To="Package\get strart_date" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -2198,28 +2945,95 @@ END</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{EDD73585-A9FB-43D7-9D58-A65A8A08D94A}"
+      DTS:DTSID="{ABA71423-C696-4934-8905-874754A58583}"
       DTS:From="Package\Load stage_Actor"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Insert to DWH" />
+      DTS:To="Package\Audit rows from stage" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{0BF422F3-6CBB-4162-9175-1AF926EA466D}"
+      DTS:DTSID="{6DBF1C7A-22ED-4338-A974-2A25AEB12D95}"
       DTS:From="Package\Insert to DWH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Get Audit_id" />
+      DTS:To="Package\Audit finish" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{4926BC37-5BF0-41F4-8A2B-DF3759F9BF63}"
-      DTS:From="Package\Get Audit_id"
+      DTS:DTSID="{560822E0-430C-43AD-816A-80A9DFAFD26B}"
+      DTS:From="Package\get strart_date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Execute SQL Task" />
+      DTS:To="Package\TRUNCATE TABLE stage_Actor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{113795AB-82E5-4E09-ABC5-41E4C2403D89}"
+      DTS:From="Package\Audit rows from stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Insert to DWH" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{5BB4E176-D424-4D4B-B764-4AEB2FBEE397}"
+      DTS:EventID="430781856"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{EAFEF9D2-03AC-493D-8A58-05ECFCE16B55}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{012B558F-CC7A-4015-8ABA-B5D3F74666F5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task  - Audit Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D67259FE-843D-429A-8571-22B183FC602C}"
+              SQLTask:SqlStatementSource="DECLARE @Audit_id INT = ?,&#xA;&#x9;&#x9;@ErrorCode VARCHAR(1000) = ?,&#xA;&#x9;&#x9;@ErrorDescription VARCHAR(1000) = ? ;&#xA;&#xA;UPDATE dbo.audit&#xA;SET end_date = GETDATE(),&#xA;&#x9;error = 'ErrorCode: ' + @ErrorCode + '; ErrorDescription: ' + @ErrorDescription ,&#xA;    status = 0&#xA;WHERE id = @Audit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Audit_id"
+                SQLTask:DtsVariableName="User::Audit_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorCode"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ErrorDescription"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2233,47 +3047,51 @@ END</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.6"
+          Size="131,42"
+          Id="Package\Audit finish"
+          TopLeft="282,493" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Audit rows from stage"
+          TopLeft="259,361" />
+        <NodeLayout
+          Size="163,42"
           Id="Package\audit table"
-          TopLeft="267,18" />
+          TopLeft="265,16" />
         <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="243,517" />
-        <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Get Audit_id"
-          TopLeft="241,430" />
+          TopLeft="243,85" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\get strart_date"
-          TopLeft="261,103" />
+          TopLeft="258,155" />
         <NodeLayout
-          Size="204,41.6"
+          Size="204,42"
           Id="Package\Insert to DWH"
-          TopLeft="243,350" />
+          TopLeft="250,426" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Load stage_Actor"
-          TopLeft="245,263" />
+          TopLeft="248,291" />
         <NodeLayout
-          Size="232,41.6"
+          Size="232,42"
           Id="Package\TRUNCATE TABLE stage_Actor"
-          TopLeft="227,180" />
+          TopLeft="230,221" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="347.75,60">
+          TopLeft="347,58">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,27"
               Start="0,0"
-              End="0,35.5">
+              End="0,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2284,18 +3102,18 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="345,145">
+          TopLeft="345.75,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,27.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2306,18 +3124,18 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="345.25,222">
+          TopLeft="348.25,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,33.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2328,18 +3146,18 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="346.25,305">
+          TopLeft="350.5,333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,37.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2350,18 +3168,18 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="345.25,392">
+          TopLeft="349.75,468">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,25"
               Start="0,0"
-              End="0,30.5">
+              End="0,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2372,18 +3190,40 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="346.5,472">
+          TopLeft="345,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,24"
               Start="0,0"
-              End="0,37.5">
+              End="0,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="351.25,403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2395,118 +3235,356 @@ END</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="228,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task  - Audit Error"
+          TopLeft="301,92" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Insert to DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\Insert to DWH\OLE DB Command"
-          TopLeft="424,226" />
+          Size="171,42"
+          Id="Package\Insert to DWH\OLE DB Destination"
+          TopLeft="241,500" />
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\Insert to DWH\Lookup"
-          TopLeft="224,132" />
+          Size="148,42"
+          Id="Package\Insert to DWH\Get Session_id"
+          TopLeft="254,429" />
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Insert to DWH\OLE DB Source"
+          Size="121,42"
+          Id="Package\Insert to DWH\Union All"
+          TopLeft="265,357" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Insert to DWH\OLE DB Source stage dimActor"
           TopLeft="234,38" />
         <NodeLayout
-          Size="300,41.6"
+          Size="227,42"
+          Id="Package\Insert to DWH\Update dimActor (if they differ)"
+          TopLeft="385,272" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Insert to DWH\Row Count New Ins dwh"
+          TopLeft="60,198" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Insert to DWH\Lookup dimActor"
+          TopLeft="255,118" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Insert to DWH\Row Count dwh upd"
+          TopLeft="377,201" />
+        <NodeLayout
+          Size="300,42"
           Id="Package\Insert to DWH\Destination Insert New rows To DWH dimActor"
-          TopLeft="47,228" />
+          TopLeft="22,274" />
         <EdgeLayout
-          Id="Package\Insert to DWH.Paths[OLE DB Source Output]"
-          TopLeft="306.5,80">
+          Id="Package\Insert to DWH.Paths[Union All Output 1]"
+          TopLeft="326.75,399">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,30"
               Start="0,0"
-              End="0,44.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert to DWH.Paths[Lookup No Match Output]"
-          TopLeft="304,174">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-107,54"
-              Start="0,0"
-              End="-107,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="-4,27" />
-                  <mssgle:LineSegment
-                    End="-103,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-103,27"
-                    Point2="-107,27"
-                    Point3="-107,31" />
-                  <mssgle:LineSegment
-                    End="-107,46.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-109.30638671875,32,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[Row Count Output 11]"
+          TopLeft="464,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.5,29"
+              Start="0,0"
+              End="34.5,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="30.5,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,14.5"
+                    Point2="34.5,14.5"
+                    Point3="34.5,18.5" />
+                  <mssgle:LineSegment
+                    End="34.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[Row Count Output 1]"
+          TopLeft="157.5,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,34"
+              Start="0,0"
+              End="14.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="10.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,17"
+                    Point2="14.5,17"
+                    Point3="14.5,21" />
+                  <mssgle:LineSegment
+                    End="14.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[OLE DB Source Output]"
+          TopLeft="346,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,38"
+              Start="0,0"
+              End="-12,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="-4,19" />
+                  <mssgle:LineSegment
+                    End="-8,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,19"
+                    Point2="-12,19"
+                    Point3="-12,23" />
+                  <mssgle:LineSegment
+                    End="-12,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="172,316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.666666666667,41"
+              Start="0,0"
+              End="134.666666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.278955954323" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.278955954323"
+                    Point2="0,24.278955954323"
+                    Point3="4,24.278955954323" />
+                  <mssgle:LineSegment
+                    End="130.666666666667,24.278955954323" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130.666666666667,24.278955954323"
+                    Point2="134.666666666667,24.278955954323"
+                    Point3="134.666666666667,28.278955954323" />
+                  <mssgle:LineSegment
+                    End="134.666666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.87557291666666,29.278955954323,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[OLE DB Command Error Output]"
+          TopLeft="498.5,314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-154.166666666667,43"
+              Start="0,0"
+              End="-154.166666666667,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.463295269168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.463295269168"
+                    Point2="0,25.463295269168"
+                    Point3="-4,25.463295269168" />
+                  <mssgle:LineSegment
+                    End="-150.166666666667,25.463295269168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-150.166666666667,25.463295269168"
+                    Point2="-154.166666666667,25.463295269168"
+                    Point3="-154.166666666667,29.463295269168" />
+                  <mssgle:LineSegment
+                    End="-154.166666666667,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-147.792239583333,30.463295269168,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[Lookup No Match Output]"
+          TopLeft="309,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-151.5,38"
+              Start="0,0"
+              End="-151.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4285714285714"
+                    Point2="0,15.4285714285714"
+                    Point3="-4,15.4285714285714" />
+                  <mssgle:LineSegment
+                    End="-147.5,15.4285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-147.5,15.4285714285714"
+                    Point2="-151.5,15.4285714285714"
+                    Point3="-151.5,19.4285714285714" />
+                  <mssgle:LineSegment
+                    End="-151.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.55638671875,20.4285714285714,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert to DWH.Paths[Lookup Match Output]"
-          TopLeft="329.333333333333,174">
+          TopLeft="359,160">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="187.166666666667,52"
+              EndConnector="105,41"
               Start="0,0"
-              End="187.166666666667,44.5">
+              End="105,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.1089108910891" />
+                    End="0,12.6466165413534" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.1089108910891"
-                    Point2="0,21.1089108910891"
-                    Point3="4,21.1089108910891" />
+                    Point1="0,12.6466165413534"
+                    Point2="0,16.6466165413534"
+                    Point3="4,16.6466165413534" />
                   <mssgle:LineSegment
-                    End="183.166666666667,21.1089108910891" />
+                    End="101,16.6466165413534" />
                   <mssgle:CubicBezierSegment
-                    Point1="183.166666666667,21.1089108910891"
-                    Point2="187.166666666667,21.1089108910891"
-                    Point3="187.166666666667,25.1089108910891" />
+                    Point1="101,16.6466165413534"
+                    Point2="105,16.6466165413534"
+                    Point3="105,20.6466165413534" />
                   <mssgle:LineSegment
-                    End="187.166666666667,44.5" />
+                    End="105,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="45.3919466145833,26.1089108910891,96.3827734375,11.609375"
+              BoundingBox="4.30861328125,21.6466165413534,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to DWH.Paths[Derived Column Output]"
+          TopLeft="327.25,471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2514,7 +3592,33 @@ END</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert to DWH\Lookup">
+    design-time-name="Package\Insert to DWH\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to DWH\OLE DB Source stage dimActor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to DWH\Lookup dimActor">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -2537,19 +3641,6 @@ END</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert to DWH\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Insert to DWH\Destination Insert New rows To DWH dimActor">
     <Properties>
       <Property>
@@ -2566,65 +3657,73 @@ END</property>
     design-time-name="Package\Load stage_Actor">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Load stage_Actor\Sort GroupWorks"
-          TopLeft="237,161" />
+          Size="192,42"
+          Id="Package\Load stage_Actor\Row Count GroupWorks"
+          TopLeft="21,93" />
         <NodeLayout
-          Size="172,41.6"
-          Id="Package\Load stage_Actor\Source GroupWorks"
-          TopLeft="225,48" />
-        <NodeLayout
-          Size="200.8,41.6"
-          Id="Package\Load stage_Actor\REPLACE First_Last Name"
-          TopLeft="295,354" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Load stage_Actor\Merge Join"
-          TopLeft="308,267" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Load stage_Actor\UPPER COLUMN"
-          TopLeft="45,100" />
-        <NodeLayout
-          Size="140.8,41.6"
+          Size="141,42"
           Id="Package\Load stage_Actor\Source sakila"
-          TopLeft="473,50" />
+          TopLeft="532,23" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="201,42"
+          Id="Package\Load stage_Actor\REPLACE First_Last Name"
+          TopLeft="320,365" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load stage_Actor\Merge Join"
+          TopLeft="353,276" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load stage_Actor\Sort GroupWorks"
+          TopLeft="222,204" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load stage_Actor\Source GroupWorks"
+          TopLeft="170,25" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load stage_Actor\UPPER COLUMN"
+          TopLeft="51,163" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load stage_Actor\Row Count sakila"
+          TopLeft="504,106" />
+        <NodeLayout
+          Size="166,42"
           Id="Package\Load stage_Actor\Insert stage_Actor"
-          TopLeft="304,437" />
+          TopLeft="344,437" />
         <NodeLayout
-          Size="128,41.6"
+          Size="128,42"
           Id="Package\Load stage_Actor\Sort sakila"
-          TopLeft="462,157" />
+          TopLeft="472,192" />
         <EdgeLayout
           Id="Package\Load stage_Actor.Paths[Sort Output1]"
-          TopLeft="526,199">
+          TopLeft="536,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-132.666666666667,68"
+              EndConnector="-97.6666666666667,42"
               Start="0,0"
-              End="-132.666666666667,60.5">
+              End="-97.6666666666667,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.3039513677812" />
+                    End="0,20.8936170212766" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.3039513677812"
-                    Point2="0,40.3039513677812"
-                    Point3="-4,40.3039513677812" />
+                    Point1="0,20.8936170212766"
+                    Point2="0,24.8936170212766"
+                    Point3="-4,24.8936170212766" />
                   <mssgle:LineSegment
-                    End="-128.666666666667,40.3039513677812" />
+                    End="-93.6666666666667,24.8936170212766" />
                   <mssgle:CubicBezierSegment
-                    Point1="-128.666666666667,40.3039513677812"
-                    Point2="-132.666666666667,40.3039513677812"
-                    Point3="-132.666666666667,44.3039513677812" />
+                    Point1="-93.6666666666667,24.8936170212766"
+                    Point2="-97.6666666666667,24.8936170212766"
+                    Point3="-97.6666666666667,28.8936170212766" />
                   <mssgle:LineSegment
-                    End="-132.666666666667,60.5" />
+                    End="-97.6666666666667,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2635,30 +3734,98 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load stage_Actor.Paths[Sort Output]"
-          TopLeft="316.5,203">
+          TopLeft="301.5,246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.1666666666667,64"
+              EndConnector="96.1666666666667,30"
               Start="0,0"
-              End="36.1666666666667,56.5">
+              End="96.1666666666667,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.9331306990881" />
+                    End="0,13.7811550151976" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.9331306990881"
-                    Point2="0,37.9331306990881"
-                    Point3="4,37.9331306990881" />
+                    Point1="0,13.7811550151976"
+                    Point2="0,17.7811550151976"
+                    Point3="4,17.7811550151976" />
                   <mssgle:LineSegment
-                    End="32.1666666666667,37.9331306990881" />
+                    End="92.1666666666667,17.7811550151976" />
                   <mssgle:CubicBezierSegment
-                    Point1="32.1666666666667,37.9331306990881"
-                    Point2="36.1666666666667,37.9331306990881"
-                    Point3="36.1666666666667,41.9331306990881" />
+                    Point1="92.1666666666667,17.7811550151976"
+                    Point2="96.1666666666667,17.7811550151976"
+                    Point3="96.1666666666667,21.7811550151976" />
                   <mssgle:LineSegment
-                    End="36.1666666666667,56.5" />
+                    End="96.1666666666667,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load stage_Actor.Paths[Row Count Output 11]"
+          TopLeft="117,135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,28"
+              Start="0,0"
+              End="11.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="7.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,14"
+                    Point2="11.5,14"
+                    Point3="11.5,18" />
+                  <mssgle:LineSegment
+                    End="11.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load stage_Actor.Paths[Row Count Output 1]"
+          TopLeft="584,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48,44"
+              Start="0,0"
+              End="-48,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-44,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44,22"
+                    Point2="-48,22"
+                    Point3="-48,26" />
+                  <mssgle:LineSegment
+                    End="-48,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2669,30 +3836,30 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load stage_Actor.Paths[OLE DB Source Output1]"
-          TopLeft="225,69">
+          TopLeft="256,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25,46.3333333333333"
+              EndConnector="-139,26"
               Start="0,0"
-              End="-17.5,46.3333333333333">
+              End="-139,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-10.4495412844037,0" />
+                    End="0,9" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.4495412844037,0"
-                    Point2="-14.4495412844037,0"
-                    Point3="-14.4495412844037,4" />
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="-4,13" />
                   <mssgle:LineSegment
-                    End="-14.4495412844037,42.3333333333333" />
+                    End="-135,13" />
                   <mssgle:CubicBezierSegment
-                    Point1="-14.4495412844037,42.3333333333333"
-                    Point2="-14.4495412844037,46.3333333333333"
-                    Point3="-18.4495412844037,46.3333333333333" />
+                    Point1="-135,13"
+                    Point2="-139,13"
+                    Point3="-139,17" />
                   <mssgle:LineSegment
-                    End="-17.5,46.3333333333333" />
+                    End="-139,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2703,81 +3870,13 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load stage_Actor.Paths[OLE DB Source Output]"
-          TopLeft="543.5,92">
+          TopLeft="602.5,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.5,65"
+              EndConnector="-18.5,41"
               Start="0,0"
-              End="-17.5,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="-4,32.5" />
-                  <mssgle:LineSegment
-                    End="-13.5,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.5,32.5"
-                    Point2="-17.5,32.5"
-                    Point3="-17.5,36.5" />
-                  <mssgle:LineSegment
-                    End="-17.5,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load stage_Actor.Paths[Merge Join Output]"
-          TopLeft="373,309">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.5,45"
-              Start="0,0"
-              End="22.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="18.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,22.5"
-                    Point2="22.5,22.5"
-                    Point3="22.5,26.5" />
-                  <mssgle:LineSegment
-                    End="22.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load stage_Actor.Paths[Derived Column Output1]"
-          TopLeft="395.5,396">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.5,41"
-              Start="0,0"
-              End="-8.5,33.5">
+              End="-18.5,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2788,13 +3887,57 @@ END</property>
                     Point2="0,20.5"
                     Point3="-4,20.5" />
                   <mssgle:LineSegment
-                    End="-4.5,20.5" />
+                    End="-14.5,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4.5,20.5"
-                    Point2="-8.5,20.5"
-                    Point3="-8.5,24.5" />
+                    Point1="-14.5,20.5"
+                    Point2="-18.5,20.5"
+                    Point3="-18.5,24.5" />
                   <mssgle:LineSegment
-                    End="-8.5,33.5" />
+                    End="-18.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load stage_Actor.Paths[Merge Join Output]"
+          TopLeft="419.25,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load stage_Actor.Paths[Derived Column Output1]"
+          TopLeft="423.75,407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2805,30 +3948,24 @@ END</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load stage_Actor.Paths[Derived Column Output]"
-          TopLeft="200,126.666666666667">
+          TopLeft="206,181.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37,55.3333333333333"
+              EndConnector="95.5,22.5"
               Start="0,0"
-              End="29.5,55.3333333333333">
+              End="95.5,15">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="11.6146788990826,0" />
+                    End="91.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.6146788990826,0"
-                    Point2="15.6146788990826,0"
-                    Point3="15.6146788990826,4" />
+                    Point1="91.5,0"
+                    Point2="95.5,0"
+                    Point3="95.5,4" />
                   <mssgle:LineSegment
-                    End="15.6146788990826,51.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.6146788990826,51.3333333333333"
-                    Point2="15.6146788990826,55.3333333333333"
-                    Point3="19.6146788990826,55.3333333333333" />
-                  <mssgle:LineSegment
-                    End="29.5,55.3333333333333" />
+                    End="95.5,15" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2841,7 +3978,7 @@ END</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load stage_Actor\Source GroupWorks">
+    design-time-name="Package\Load stage_Actor\Source sakila">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2849,7 +3986,7 @@ END</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load stage_Actor\Source sakila">
+    design-time-name="Package\Load stage_Actor\Source GroupWorks">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

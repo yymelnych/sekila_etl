@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="5-dimCategory"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{DD7E2B2A-F077-4CFB-93C0-A27B1F82AB62}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{888E32C6-901C-4DBF-BAF3-5CDC1D67D8F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -90,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="end">
       <DTS:VariableValue
-        DTS:DataType="7">5/7/2018 9:55:30 PM</DTS:VariableValue>
+        DTS:DataType="7">5/8/2018 10:55:50 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -851,7 +851,7 @@ where [refTable].[g_id] = ?</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert GW to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="category_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
@@ -867,7 +867,7 @@ where [refTable].[g_id] = ?</property>
                       name="category_description" />
                     <externalMetadataColumn
                       refId="Package\Insert GW to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="i2"
+                      dataType="ui1"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -1693,7 +1693,7 @@ where [refTable].[g_type_id] = ?</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert GW type to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="category_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW type to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
@@ -1709,7 +1709,7 @@ where [refTable].[g_type_id] = ?</property>
                       name="category_description" />
                     <externalMetadataColumn
                       refId="Package\Insert GW type to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="i2"
+                      dataType="ui1"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert GW type to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -2148,6 +2148,86 @@ WHERE s_id IS NULL and g_id IS NULL</property>
               </outputs>
             </component>
             <component
+              refId="Package\Insert S to DWH\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert S to DWH\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert S to DWH\Derived Column 2.Inputs[Derived Column Input].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      lineageId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert S to DWH\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[s_id2]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[s_id2]"
+                      name="s_id2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)#{Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)s_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert S to DWH\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Insert S to DWH\Lookup find new rows"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -2199,12 +2279,12 @@ where [refTable].[s_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_name" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category_description" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_type_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_name" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category_description" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="s_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_type_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]};</property>
+                  name="ParameterMap">#{Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[s_id2]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2228,10 +2308,10 @@ where [refTable].[s_id] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert S to DWH\Lookup find new rows.Inputs[Lookup Input].Columns[s_id]"
-                      cachedDataType="i2"
-                      cachedName="s_id"
-                      lineageId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]">
+                      refId="Package\Insert S to DWH\Lookup find new rows.Inputs[Lookup Input].Columns[s_id2]"
+                      cachedDataType="ui1"
+                      cachedName="s_id2"
+                      lineageId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[s_id2]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2526,12 +2606,6 @@ where [refTable].[s_id] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].Columns[s_id]"
-                      cachedDataType="i2"
-                      cachedName="s_id"
-                      externalMetadataColumnId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      lineageId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].Columns[s_id]" />
-                    <inputColumn
                       refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].Columns[category_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2547,12 +2621,18 @@ where [refTable].[s_id] = ?</property>
                       cachedName="category_name2"
                       externalMetadataColumnId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
                       lineageId="Package\Insert S to DWH\Derived Column 1.Outputs[Derived Column Output].Columns[category_name2]" />
+                    <inputColumn
+                      refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].Columns[s_id2]"
+                      cachedDataType="ui1"
+                      cachedName="s_id2"
+                      externalMetadataColumnId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      lineageId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[s_id2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="category_id" />
                     <externalMetadataColumn
                       refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
@@ -2568,7 +2648,7 @@ where [refTable].[s_id] = ?</property>
                       name="category_description" />
                     <externalMetadataColumn
                       refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="i2"
+                      dataType="ui1"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert S to DWH\OLE DB Destination DWH.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -2709,7 +2789,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <externalMetadataColumn
                       refId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="s_id" />
                   </externalMetadataColumns>
                 </output>
@@ -2727,7 +2807,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <outputColumn
                       refId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       name="s_id" />
                     <outputColumn
@@ -2789,6 +2869,11 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
               name="Derived Column Output"
               startId="Package\Insert S to DWH\Derived Column.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Insert S to DWH.Paths[Derived Column Output2]"
+              endId="Package\Insert S to DWH\Lookup find new rows.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Insert S to DWH\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Insert S to DWH.Paths[Lookup No Match Output]"
               endId="Package\Insert S to DWH\Row Count dwh_ins_s.Inputs[Row Count Input 1]"
               name="Lookup No Match Output"
@@ -2800,7 +2885,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
               startId="Package\Insert S to DWH\OLE DB Destination DWH.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Insert S to DWH.Paths[OLE DB Source Output]"
-              endId="Package\Insert S to DWH\Lookup find new rows.Inputs[Lookup Input]"
+              endId="Package\Insert S to DWH\Derived Column 2.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Insert S to DWH\OLE DB Source.Outputs[OLE DB Source Output]" />
             <path
@@ -3889,7 +3974,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -4024,7 +4109,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -4159,7 +4244,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage types.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Insert to Stage\OLE DB Destination Stage types.Inputs[OLE DB Destination Input].ExternalColumns[g_id]"
@@ -6581,6 +6666,13 @@ WHERE s_id IS NULL and g_id IS NULL</property>
                   refId="Package\Update S to DWH\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update S to DWH\Derived Column.Inputs[Derived Column Input].Columns[s_id]"
+                      cachedDataType="i2"
+                      cachedName="s_id"
+                      lineageId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].Columns[s_id]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -6612,6 +6704,28 @@ WHERE s_id IS NULL and g_id IS NULL</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">@[User::end]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[s_id2]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[s_id2]"
+                      name="s_id2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)#{Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].Columns[s_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)s_id</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -6778,12 +6892,12 @@ where [refTable].[s_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_name" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category_description" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="s_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_type_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_name" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category_description" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="s_id" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="g_type_id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inserted" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="updated" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].Columns[s_id]};</property>
+                  name="ParameterMap">#{Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[s_id2]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6807,10 +6921,10 @@ where [refTable].[s_id] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Update S to DWH\Lookup - find changed row.Inputs[Lookup Input].Columns[s_id]"
-                      cachedDataType="i2"
-                      cachedName="s_id"
-                      lineageId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].Columns[s_id]">
+                      refId="Package\Update S to DWH\Lookup - find changed row.Inputs[Lookup Input].Columns[s_id2]"
+                      cachedDataType="ui1"
+                      cachedName="s_id2"
+                      lineageId="Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[s_id2]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -6925,12 +7039,6 @@ WHERE (s_id =?) and (category_description not like ('%'+?+'%') )</property>
                       externalMetadataColumnId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[updated]" />
                     <inputColumn
-                      refId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[s_id]"
-                      cachedDataType="i2"
-                      cachedName="s_id"
-                      externalMetadataColumnId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].Columns[s_id]" />
-                    <inputColumn
                       refId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[category_name2]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -6938,6 +7046,12 @@ WHERE (s_id =?) and (category_description not like ('%'+?+'%') )</property>
                       cachedName="category_name2"
                       externalMetadataColumnId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Update S to DWH\Derived Column 2.Outputs[Derived Column Output].Columns[category_name2]" />
+                    <inputColumn
+                      refId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].Columns[s_id2]"
+                      cachedDataType="ui1"
+                      cachedName="s_id2"
+                      externalMetadataColumnId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Update S to DWH\Derived Column.Outputs[Derived Column Output].Columns[s_id2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6968,7 +7082,7 @@ WHERE (s_id =?) and (category_description not like ('%'+?+'%') )</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Update S to DWH\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i2"
+                      dataType="ui1"
                       name="Param_2">
                       <properties>
                         <property
@@ -7093,7 +7207,7 @@ WHERE category_description  like ('%'+?+'%')</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Update S to DWH\OLE DB Command - set s_id.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i2"
+                      dataType="ui1"
                       name="Param_0">
                       <properties>
                         <property
@@ -7250,7 +7364,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].ExternalColumns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="s_id" />
                     <externalMetadataColumn
                       refId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Output].ExternalColumns[category_name]"
@@ -7274,7 +7388,7 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                       name="category_name" />
                     <outputColumn
                       refId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Error Output].Columns[s_id]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\Update S to DWH\OLE DB Source Stage_Category.Outputs[OLE DB Source Error Output].Columns[s_id]"
                       name="s_id" />
                     <outputColumn
@@ -7530,55 +7644,55 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\get package_id"
           TopLeft="42.8571435869956,163.341178761387" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\get strart_date"
           TopLeft="44.0000007493151,92.9882365982425" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\Insert GW to DWH"
           TopLeft="298.28571936549,566.023527824507" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="190,42"
           Id="Package\Insert GW type to DWH"
           TopLeft="305.714290920569,658.223530778093" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Insert S to DWH"
           TopLeft="280.428576204241,470.6352980815" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\Insert to Stage"
           TopLeft="53.7142866290345,303.623526803515" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\Populate audit table"
           TopLeft="31.4285719637968,25.082353292947" />
         <NodeLayout
-          Size="181.6,43.2"
+          Size="182,43"
           Id="Package\Populate audit table 1"
           TopLeft="49.714286560915,377.835287288151" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Populate audit table 2"
           TopLeft="58.2857152783141,751.576473196485" />
         <NodeLayout
-          Size="223.2,41.6"
+          Size="223,42"
           Id="Package\Trancate stage_Category_start"
           TopLeft="33.7142873102298,232.98823893194" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Update GW DWH"
           TopLeft="69.1428593421468,562.117642623083" />
         <NodeLayout
-          Size="183.2,41.6"
+          Size="183,42"
           Id="Package\Update GW type DWH"
           TopLeft="58.857143859474,660.094119320113" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Update S to DWH"
           TopLeft="64.5714306928673,468.894123695796" />
         <EdgeLayout
@@ -7932,53 +8046,69 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="356,62.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Insert GW to DWH">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
+          Size="198,42"
           Id="Package\Insert GW to DWH\OLE DB Destination DWH"
           TopLeft="380,392.000000000001" />
         <NodeLayout
-          Size="227.2,41.6"
-          Id="Package\Insert GW to DWH\OLE DB Source Stage_Category"
-          TopLeft="323.2,21.6" />
-        <NodeLayout
-          Size="181.6,41.6"
+          Size="182,42"
           Id="Package\Insert GW to DWH\Lookup find new rows"
           TopLeft="349.6,175.2" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="183,42"
+          Id="Package\Insert GW to DWH\Row Count dwh_ins_g"
+          TopLeft="373.6,249.6" />
+        <NodeLayout
+          Size="162,42"
           Id="Package\Insert GW to DWH\Derived Column 1"
           TopLeft="386.4,325.600000000001" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Insert GW to DWH\OLE DB Source Stage_Category"
+          TopLeft="323.2,21.6" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Insert GW to DWH\Derived Column 2"
+          TopLeft="392.8,472.8" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Insert GW to DWH\OLE DB Destination audit_table"
+          TopLeft="394.4,551.2" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insert GW to DWH\Derived Column"
+          TopLeft="368,99.2" />
         <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[Derived Column Output]"
-          TopLeft="467.6,367.200000000001">
+          Id="Package\Insert GW to DWH.Paths[Row Count Output 1]"
+          TopLeft="466.4,291.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.2000000000001,24.8"
+              EndConnector="0,34.4000000000009"
               Start="0,0"
-              End="11.2000000000001,17.3">
+              End="0,26.9000000000009">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.39999999999998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.39999999999998"
-                    Point2="0,12.4"
-                    Point3="4,12.4" />
-                  <mssgle:LineSegment
-                    End="7.2000000000001,12.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.2000000000001,12.4"
-                    Point2="11.2000000000001,12.4"
-                    Point3="11.2000000000001,16.4" />
-                  <mssgle:LineSegment
-                    End="11.2000000000001,17.3" />
+                    End="0,26.9000000000009" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7987,10 +8117,6 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert GW to DWH\Derived Column"
-          TopLeft="368,99.2" />
         <EdgeLayout
           Id="Package\Insert GW to DWH.Paths[OLE DB Source Output]"
           TopLeft="440.6,63.2">
@@ -8014,31 +8140,29 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[Derived Column Output1]"
-          TopLeft="442.4,140.8">
+          Id="Package\Insert GW to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="476.4,433.600000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.4"
+              EndConnector="0,39.199999999999"
               Start="0,0"
-              End="0,26.9">
+              End="0,31.699999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.9" />
+                    End="0,31.699999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,10.1332031249995,146.4178125,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Insert GW to DWH\Row Count dwh_ins_g"
-          TopLeft="373.6,249.6" />
         <EdgeLayout
           Id="Package\Insert GW to DWH.Paths[Lookup No Match Output]"
           TopLeft="440.4,216.8">
@@ -8076,60 +8200,6 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[Row Count Output 1]"
-          TopLeft="466.4,291.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.4000000000009"
-              Start="0,0"
-              End="0,26.9000000000009">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.9000000000009" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Insert GW to DWH\Derived Column 2"
-          TopLeft="392.8,472.8" />
-        <EdgeLayout
-          Id="Package\Insert GW to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="476.4,433.600000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.199999999999"
-              Start="0,0"
-              End="0,31.699999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.699999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,10.1332031249995,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="226.4,41.6"
-          Id="Package\Insert GW to DWH\OLE DB Destination audit_table"
-          TopLeft="394.4,551.2" />
-        <EdgeLayout
           Id="Package\Insert GW to DWH.Paths[Derived Column Output2]"
           TopLeft="474,514.4">
           <EdgeLayout.Curve>
@@ -8155,6 +8225,62 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                     Point3="33.6,22.4" />
                   <mssgle:LineSegment
                     End="33.6,29.3000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert GW to DWH.Paths[Derived Column Output1]"
+          TopLeft="442.4,140.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.4"
+              Start="0,0"
+              End="0,26.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert GW to DWH.Paths[Derived Column Output]"
+          TopLeft="467.6,367.200000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2000000000001,24.8"
+              Start="0,0"
+              End="11.2000000000001,17.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.39999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.39999999999998"
+                    Point2="0,12.4"
+                    Point3="4,12.4" />
+                  <mssgle:LineSegment
+                    End="7.2000000000001,12.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.2000000000001,12.4"
+                    Point2="11.2000000000001,12.4"
+                    Point3="11.2000000000001,16.4" />
+                  <mssgle:LineSegment
+                    End="11.2000000000001,17.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8234,21 +8360,55 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Insert GW type to DWH\OLE DB Destination DWH"
-          TopLeft="362.4,332.000000000001" />
-        <NodeLayout
-          Size="227.2,41.6"
+          Size="227,42"
           Id="Package\Insert GW type to DWH\OLE DB Source Stage_Category"
           TopLeft="324,21.6" />
         <NodeLayout
-          Size="181.6,41.6"
+          Size="162,42"
+          Id="Package\Insert GW type to DWH\Derived Column 1"
+          TopLeft="364.8,184.800000000001" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Insert GW type to DWH\OLE DB Destination"
+          TopLeft="381.6,471.2" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Insert GW type to DWH\OLE DB Destination DWH"
+          TopLeft="362.4,332.000000000001" />
+        <NodeLayout
+          Size="182,42"
           Id="Package\Insert GW type to DWH\Lookup find new rows"
           TopLeft="351.2,100" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Insert GW type to DWH\Derived Column 1"
-          TopLeft="364.8,184.800000000001" />
+          Size="210,42"
+          Id="Package\Insert GW type to DWH\Row Count dwh_ins_g_type"
+          TopLeft="360,251.2" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insert GW type to DWH\Derived Column"
+          TopLeft="384.8,402.4" />
+        <EdgeLayout
+          Id="Package\Insert GW type to DWH.Paths[Row Count Output 1]"
+          TopLeft="463,292.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.200000000001"
+              Start="0,0"
+              End="0,31.700000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.700000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert GW type to DWH.Paths[OLE DB Source Output]"
           TopLeft="439.8,63.2">
@@ -8269,6 +8429,30 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert GW type to DWH.Paths[OLE DB Destination Error Output]"
+          TopLeft="461.2,373.600000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.799999999999"
+              Start="0,0"
+              End="0,21.299999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.299999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,4.93320312499949,146.4178125,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8295,10 +8479,28 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Insert GW type to DWH\Row Count dwh_ins_g_type"
-          TopLeft="360,251.2" />
+        <EdgeLayout
+          Id="Package\Insert GW type to DWH.Paths[Derived Column Output1]"
+          TopLeft="464,444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.1999999999999"
+              Start="0,0"
+              End="0,19.6999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert GW type to DWH.Paths[Derived Column Output]"
           TopLeft="446,226.400000000001">
@@ -8325,82 +8527,6 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
                     Point3="18.8000000000001,16.3999999999995" />
                   <mssgle:LineSegment
                     End="18.8000000000001,17.2999999999991" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert GW type to DWH.Paths[Row Count Output 1]"
-          TopLeft="463,292.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.200000000001"
-              Start="0,0"
-              End="0,31.700000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.700000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert GW type to DWH\Derived Column"
-          TopLeft="384.8,402.4" />
-        <EdgeLayout
-          Id="Package\Insert GW type to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="461.2,373.600000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.799999999999"
-              Start="0,0"
-              End="0,21.299999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.299999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,4.93320312499949,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Insert GW type to DWH\OLE DB Destination"
-          TopLeft="381.6,471.2" />
-        <EdgeLayout
-          Id="Package\Insert GW type to DWH.Paths[Derived Column Output1]"
-          TopLeft="464,444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.1999999999999"
-              Start="0,0"
-              End="0,19.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.6999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8480,47 +8606,63 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Insert S to DWH\Lookup find new rows"
-          TopLeft="25.6,98.4" />
+          Size="182,42"
+          Id="Package\Insert S to DWH\Row Count dwh_ins_s"
+          TopLeft="48,266.4" />
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Insert S to DWH\OLE DB Source"
           TopLeft="28,22.4" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Insert S to DWH\Derived Column 1"
-          TopLeft="43.2,266.4" />
+          TopLeft="44.8,351.2" />
         <NodeLayout
-          Size="197.6,41.6"
+          Size="162,42"
+          Id="Package\Insert S to DWH\Derived Column 2"
+          TopLeft="28,96" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Insert S to DWH\OLE DB Destination audit_table"
+          TopLeft="55.2,568.8" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insert S to DWH\Derived Column"
+          TopLeft="66.4,497.6" />
+        <NodeLayout
+          Size="198,42"
           Id="Package\Insert S to DWH\OLE DB Destination DWH"
-          TopLeft="39.1999999999999,336.8" />
+          TopLeft="40.7999999999999,421.6" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Insert S to DWH\Lookup find new rows"
+          TopLeft="27.2,183.2" />
         <EdgeLayout
-          Id="Package\Insert S to DWH.Paths[Derived Column Output]"
-          TopLeft="124.4,308">
+          Id="Package\Insert S to DWH.Paths[Row Count Output 1]"
+          TopLeft="139.2,308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.5999999999999,28.8"
+              EndConnector="-13.2,43.2"
               Start="0,0"
-              End="13.5999999999999,21.3">
+              End="-13.2,35.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.4" />
+                    End="0,17.6" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.4"
-                    Point2="0,14.4"
-                    Point3="4,14.4" />
+                    Point1="0,17.6"
+                    Point2="0,21.6"
+                    Point3="-4,21.6" />
                   <mssgle:LineSegment
-                    End="9.59999999999988,14.4" />
+                    End="-9.2,21.6" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.59999999999988,14.4"
-                    Point2="13.5999999999999,14.4"
-                    Point3="13.5999999999999,18.4" />
+                    Point1="-9.2,21.6"
+                    Point2="-13.2,21.6"
+                    Point3="-13.2,25.6" />
                   <mssgle:LineSegment
-                    End="13.5999999999999,21.3" />
+                    End="-13.2,35.7" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8531,30 +8673,18 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert S to DWH.Paths[OLE DB Source Output]"
-          TopLeft="102.8,64">
+          TopLeft="106,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.6,34.4"
+              EndConnector="0,32"
               Start="0,0"
-              End="13.6,26.9">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.2"
-                    Point2="0,17.2"
-                    Point3="4,17.2" />
-                  <mssgle:LineSegment
-                    End="9.59999999999999,17.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.59999999999999,17.2"
-                    Point2="13.6,17.2"
-                    Point3="13.6,21.2" />
-                  <mssgle:LineSegment
-                    End="13.6,26.9" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8563,13 +8693,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Insert S to DWH\Derived Column"
-          TopLeft="64.8,412.8" />
         <EdgeLayout
           Id="Package\Insert S to DWH.Paths[OLE DB Destination Error Output]"
-          TopLeft="139.6,378.4">
+          TopLeft="141.2,463.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8587,17 +8713,83 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,7.73320312500002,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,7.73320312499999,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="226.4,41.6"
-          Id="Package\Insert S to DWH\OLE DB Destination audit_table"
-          TopLeft="53.6,484" />
+        <EdgeLayout
+          Id="Package\Insert S to DWH.Paths[Lookup No Match Output]"
+          TopLeft="118,224.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.2,41.6000000000001"
+              Start="0,0"
+              End="21.2,34.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8"
+                    Point2="0,20.8"
+                    Point3="4,20.8" />
+                  <mssgle:LineSegment
+                    End="17.2,20.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.2,20.8"
+                    Point2="21.2,20.8"
+                    Point3="21.2,24.8" />
+                  <mssgle:LineSegment
+                    End="21.2,34.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.20638671875,25.8,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert S to DWH.Paths[Derived Column Output2]"
+          TopLeft="109.2,137.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.80000000000001,45.6"
+              Start="0,0"
+              End="8.80000000000001,38.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8"
+                    Point2="0,22.8"
+                    Point3="4,22.8" />
+                  <mssgle:LineSegment
+                    End="4.80000000000001,22.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.80000000000001,22.8"
+                    Point2="8.80000000000001,22.8"
+                    Point3="8.80000000000001,26.8" />
+                  <mssgle:LineSegment
+                    End="8.80000000000001,38.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert S to DWH.Paths[Derived Column Output1]"
-          TopLeft="141.2,454.4">
+          TopLeft="142.8,539.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8629,72 +8821,32 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Insert S to DWH\Row Count dwh_ins_s"
-          TopLeft="46.4,181.6" />
         <EdgeLayout
-          Id="Package\Insert S to DWH.Paths[Lookup No Match Output]"
-          TopLeft="116.4,140">
+          Id="Package\Insert S to DWH.Paths[Derived Column Output]"
+          TopLeft="126,392.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.2,41.6"
+              EndConnector="13.5999999999999,28.8"
               Start="0,0"
-              End="21.2,34.1">
+              End="13.5999999999999,21.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8" />
+                    End="0,10.4" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.8"
-                    Point2="0,20.8"
-                    Point3="4,20.8" />
+                    Point1="0,10.4"
+                    Point2="0,14.4"
+                    Point3="4,14.4" />
                   <mssgle:LineSegment
-                    End="17.2,20.8" />
+                    End="9.59999999999991,14.4" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.2,20.8"
-                    Point2="21.2,20.8"
-                    Point3="21.2,24.8" />
+                    Point1="9.59999999999991,14.4"
+                    Point2="13.5999999999999,14.4"
+                    Point3="13.5999999999999,18.4" />
                   <mssgle:LineSegment
-                    End="21.2,34.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.20638671875,25.8,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Insert S to DWH.Paths[Row Count Output 1]"
-          TopLeft="137.6,223.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-13.2,43.2"
-              Start="0,0"
-              End="-13.2,35.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6"
-                    Point2="0,21.6"
-                    Point3="-4,21.6" />
-                  <mssgle:LineSegment
-                    End="-9.19999999999999,21.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.19999999999999,21.6"
-                    Point2="-13.2,21.6"
-                    Point3="-13.2,25.6" />
-                  <mssgle:LineSegment
-                    End="-13.2,35.7" />
+                    End="13.5999999999999,21.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8706,6 +8858,19 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert S to DWH\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Insert S to DWH\OLE DB Destination audit_table">
     <Properties>
@@ -8755,94 +8920,81 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert S to DWH\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Insert to Stage">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Insert to Stage\OLE DB Destination Stage"
           TopLeft="36.0000006130764,263.858825322583" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Insert to Stage\Derived Column 3"
           TopLeft="339.591842517909,332.531094991295" />
         <NodeLayout
-          Size="196,41.6"
+          Size="196,42"
           Id="Package\Insert to Stage\OLE DB Source - DB_GW"
           TopLeft="318.448985014991,30.1781490358927" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Insert to Stage\OLE DB Destination Stage 1"
           TopLeft="329.534699271511,254.836973337483" />
         <NodeLayout
-          Size="192,41.6"
+          Size="192,42"
           Id="Package\Insert to Stage\Row Count g_type_read"
           TopLeft="640.000010899135,104.000001458561" />
         <NodeLayout
-          Size="226.4,41.6"
+          Size="226,42"
           Id="Package\Insert to Stage\OLE DB Destination audit_table"
           TopLeft="29.714286220317,420.800003938114" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Insert to Stage\Derived Column 2"
           TopLeft="323.134699271511,178.131091053181" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Insert to Stage\OLE DB Source - DB_Sakila"
           TopLeft="27.2,31.7647060024697" />
         <NodeLayout
-          Size="165.6,41.6"
+          Size="166,42"
           Id="Package\Insert to Stage\Row Count g_read"
           TopLeft="319.59184217731,101.989917396757" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\Insert to Stage\OLE DB Destination audit_table 1"
           TopLeft="335.591842449789,415.778154286711" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Insert to Stage\Derived Column 5"
           TopLeft="656.326541789419,330.957987434135" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Insert to Stage\Derived Column 1"
           TopLeft="37.7142863565561,339.247062650107" />
         <NodeLayout
-          Size="228.8,41.6"
+          Size="229,42"
           Id="Package\Insert to Stage\OLE DB Destination Stage types"
           TopLeft="637.306133302238,259.105883451151" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\Insert to Stage\OLE DB Destination audit_table 2"
           TopLeft="666.938786868104,412.100844576992" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Insert to Stage\Row Count s_read"
           TopLeft="34.2857148695965,109.458824447447" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Insert to Stage\Derived Column 4"
           TopLeft="651.836745658352,182.406724069193" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Insert to Stage\Derived Column"
           TopLeft="37.1428577753963,186.447061191546" />
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Insert to Stage\OLE DB Source GW type"
           TopLeft="638.024500579667,28.4907567020931" />
         <EdgeLayout
@@ -8876,7 +9028,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8910,7 +9064,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8944,7 +9100,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8978,7 +9136,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9012,7 +9172,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9046,7 +9208,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9068,7 +9232,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9090,7 +9256,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9112,7 +9280,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9134,7 +9304,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9168,7 +9340,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9202,7 +9376,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9317,6 +9493,19 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert to Stage\OLE DB Destination Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert to Stage\OLE DB Source - DB_GW">
     <Properties>
       <Property>
@@ -9325,10 +9514,36 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Insert to Stage\OLE DB Destination Stage 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Insert to Stage\OLE DB Source - DB_Sakila">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to Stage\OLE DB Destination Stage types">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9346,29 +9561,33 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="250.4,41.6"
-          Id="Package\Update GW DWH\OLE DB Command - set g_id type_id"
-          TopLeft="383.2,164.8" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Update GW DWH\Derived Column 2"
-          TopLeft="36.1142864246758,89.6941188825453" />
+          Size="188,41.6"
+          Id="Package\Update GW DWH\Row Count dwh_upd_g"
+          TopLeft="43.2,247.2" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Update GW DWH\OLE DB Command"
           TopLeft="59.8857152101945,397.741178323819" />
         <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Update GW DWH\Lookup - find changed row"
-          TopLeft="40,164" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Update GW DWH\Derived Column"
           TopLeft="59.2,328" />
         <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Update GW DWH\Derived Column 2"
+          TopLeft="36.1142864246758,89.6941188825453" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Update GW DWH\Lookup - find changed row"
+          TopLeft="40,164" />
+        <NodeLayout
           Size="227.2,41.6"
           Id="Package\Update GW DWH\OLE DB Source Stage_Category"
           TopLeft="30.4,21.6" />
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Update GW DWH\OLE DB Command - set g_id type_id"
+          TopLeft="383.2,164.8" />
         <EdgeLayout
           Id="Package\Update GW DWH.Paths[OLE DB Source Output]"
           TopLeft="144,63.2">
@@ -9400,7 +9619,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9428,6 +9649,30 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Update GW DWH.Paths[Lookup Match Output]"
+          TopLeft="139.8,205.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6"
+              Start="0,0"
+              End="0,34.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.2453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Update GW DWH.Paths[Derived Column Output1]"
           TopLeft="138.942857605097,369.6">
           <EdgeLayout.Curve>
@@ -9446,7 +9691,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9480,34 +9727,8 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Update GW DWH\Row Count dwh_upd_g"
-          TopLeft="43.2,247.2" />
-        <EdgeLayout
-          Id="Package\Update GW DWH.Paths[Lookup Match Output]"
-          TopLeft="139.8,205.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.6"
-              Start="0,0"
-              End="0,34.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.2453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9530,7 +9751,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9590,6 +9813,10 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           Id="Package\Update GW type DWH\OLE DB Command"
           TopLeft="61.4857152101945,388.941178323819" />
         <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\Update GW type DWH\Row Count dwh_upd_g_type"
+          TopLeft="39.2,311.2" />
+        <NodeLayout
           Size="204.8,41.6"
           Id="Package\Update GW type DWH\Lookup - find changed row"
           TopLeft="40.8,164" />
@@ -9601,6 +9828,30 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           Size="227.2,41.6"
           Id="Package\Update GW type DWH\OLE DB Source Stage_Category"
           TopLeft="30.4,21.6" />
+        <EdgeLayout
+          Id="Package\Update GW type DWH.Paths[Row Count Output 1]"
+          TopLeft="145.142857605097,352.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.141178323819"
+              Start="0,0"
+              End="0,28.641178323819">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.641178323819" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Update GW type DWH.Paths[OLE DB Source Output]"
           TopLeft="144,63.2">
@@ -9632,7 +9883,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9684,6 +9937,30 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Update GW type DWH.Paths[Derived Column Output1]"
+          TopLeft="143.4,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1999999999999"
+              Start="0,0"
+              End="0,23.6999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Update GW type DWH.Paths[Derived Column Output]"
           TopLeft="117.314286424676,131.294118882545">
           <EdgeLayout.Curve>
@@ -9714,55 +9991,9 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="214.4,41.6"
-          Id="Package\Update GW type DWH\Row Count dwh_upd_g_type"
-          TopLeft="39.2,311.2" />
-        <EdgeLayout
-          Id="Package\Update GW type DWH.Paths[Derived Column Output1]"
-          TopLeft="143.4,280">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.1999999999999"
-              Start="0,0"
-              End="0,23.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update GW type DWH.Paths[Row Count Output 1]"
-          TopLeft="145.142857605097,352.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.141178323819"
-              Start="0,0"
-              End="0,28.641178323819">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.641178323819" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9810,29 +10041,33 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="227.2,41.6"
-          Id="Package\Update S to DWH\OLE DB Source Stage_Category"
-          TopLeft="36,20" />
-        <NodeLayout
-          Size="212,41.6"
-          Id="Package\Update S to DWH\OLE DB Command - set s_id"
-          TopLeft="319.771427559366,162.635294143387" />
-        <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Update S to DWH\Derived Column 2"
           TopLeft="56.0000009536744,301.82353238251" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Update S to DWH\OLE DB Command"
           TopLeft="56.8571438254143,381.035297789788" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="153,42"
+          Id="Package\Update S to DWH\Derived Column"
+          TopLeft="41.7142864246758,88.0941188825456" />
+        <NodeLayout
+          Size="205,42"
           Id="Package\Update S to DWH\Lookup - find changed row"
           TopLeft="47.2,162.4" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Update S to DWH\Derived Column"
-          TopLeft="41.7142864246758,88.0941188825456" />
+          Size="187,42"
+          Id="Package\Update S to DWH\Row Count dwh_upd_s"
+          TopLeft="46.2857150739553,227.011765589599" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Update S to DWH\OLE DB Source Stage_Category"
+          TopLeft="36,20" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Update S to DWH\OLE DB Command - set s_id"
+          TopLeft="319.771427559366,162.635294143387" />
         <EdgeLayout
           Id="Package\Update S to DWH.Paths[OLE DB Source Output]"
           TopLeft="149.6,61.6">
@@ -9865,6 +10100,66 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update S to DWH.Paths[Lookup No Match Output]"
+          TopLeft="252,183.317647071693">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.7714275593657,0"
+              Start="0,0"
+              End="60.2714275593657,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.2714275593657,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.6706729390672,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update S to DWH.Paths[Lookup Match Output]"
+          TopLeft="149.6,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.71428492604474,23.0117655895986"
+              Start="0,0"
+              End="-9.71428492604474,15.5117655895986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.50588279479929" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.50588279479929"
+                    Point2="0,11.5058827947993"
+                    Point3="-4,11.5058827947993" />
+                  <mssgle:LineSegment
+                    End="-5.71428492604474,11.5058827947993" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.71428492604474,11.5058827947993"
+                    Point2="-9.71428492604474,11.5058827947993"
+                    Point3="-9.71428492604474,15.5058827947993" />
+                  <mssgle:LineSegment
+                    End="-9.71428492604474,15.5117655895986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-53.0485291817724,16.5058827947993,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9923,46 +10218,6 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Update S to DWH\Row Count dwh_upd_s"
-          TopLeft="46.2857150739553,227.011765589599" />
-        <EdgeLayout
-          Id="Package\Update S to DWH.Paths[Lookup Match Output]"
-          TopLeft="149.6,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.71428492604474,23.0117655895986"
-              Start="0,0"
-              End="-9.71428492604474,15.5117655895986">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.50588279479929" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.50588279479929"
-                    Point2="0,11.5058827947993"
-                    Point3="-4,11.5058827947993" />
-                  <mssgle:LineSegment
-                    End="-5.71428492604474,11.5058827947993" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.71428492604474,11.5058827947993"
-                    Point2="-9.71428492604474,11.5058827947993"
-                    Point3="-9.71428492604474,15.5058827947993" />
-                  <mssgle:LineSegment
-                    End="-9.71428492604474,15.5117655895986" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-53.0485291817724,16.5058827947993,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Update S to DWH.Paths[Row Count Output 1]"
           TopLeft="138.542858013815,268.611765589599">
@@ -9983,30 +10238,6 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update S to DWH.Paths[Lookup No Match Output]"
-          TopLeft="252,183.317647071693">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="67.7714275593657,0"
-              Start="0,0"
-              End="60.2714275593657,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="60.2714275593657,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.6706729390672,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10048,17 +10279,5 @@ WHERE g_id IS NULL and g_type_id IS NULL</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package.EventHandlers[OnError]\Execute SQL Task"
-          TopLeft="356,62.4" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
